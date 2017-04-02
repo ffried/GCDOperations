@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072674CA1E915FB000AE6582 /* ExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072674C91E915FB000AE6582 /* ExclusivityController.swift */; };
 		07352FBB1E90FBE50011C4A8 /* GCDOperations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07352FB11E90FBE50011C4A8 /* GCDOperations.framework */; };
 		07352FC01E90FBE50011C4A8 /* GCDOperationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07352FBF1E90FBE50011C4A8 /* GCDOperationsTests.swift */; };
 		07352FC21E90FBE50011C4A8 /* GCDOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = 07352FB41E90FBE50011C4A8 /* GCDOperations.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		072674C91E915FB000AE6582 /* ExclusivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusivityController.swift; sourceTree = "<group>"; };
 		07352FB11E90FBE50011C4A8 /* GCDOperations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GCDOperations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07352FB41E90FBE50011C4A8 /* GCDOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDOperations.h; sourceTree = "<group>"; };
 		07352FB51E90FBE50011C4A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,11 +92,12 @@
 				07352FCF1E912AF40011C4A8 /* Atomic.swift */,
 				07352FD61E914E770011C4A8 /* BlockObserver.swift */,
 				07352FD11E912E2F0011C4A8 /* BlockOperation.swift */,
+				072674C91E915FB000AE6582 /* ExclusivityController.swift */,
 				07352FCB1E90FBF10011C4A8 /* Operation.swift */,
-				07352FD41E9149620011C4A8 /* OperationObserver.swift */,
-				07352FCD1E911EC50011C4A8 /* OperationQueue.swift */,
 				07352FD81E91540C0011C4A8 /* OperationCondition.swift */,
 				07352FDA1E91542E0011C4A8 /* OperationErrors.swift */,
+				07352FD41E9149620011C4A8 /* OperationObserver.swift */,
+				07352FCD1E911EC50011C4A8 /* OperationQueue.swift */,
 				07352FD31E9132060011C4A8 /* Supporting Files */,
 			);
 			path = GCDOperations;
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07352FD91E91540C0011C4A8 /* OperationCondition.swift in Sources */,
+				072674CA1E915FB000AE6582 /* ExclusivityController.swift in Sources */,
 				07352FCC1E90FBF10011C4A8 /* Operation.swift in Sources */,
 				07352FCE1E911EC50011C4A8 /* OperationQueue.swift in Sources */,
 				07352FD01E912AF40011C4A8 /* Atomic.swift in Sources */,

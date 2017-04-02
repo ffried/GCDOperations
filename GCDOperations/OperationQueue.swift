@@ -64,6 +64,15 @@ public final class OperationQueue {
         operations.value.append(op)
         let dependencies = op.conditions.flatMap { $0.dependencyForOperation(op) }
         dependencies.forEach(addOperation)
+        
+        let concurrencyCategories: [String] = op.conditions.map { type(of: $0) }.filter { $0.isMutuallyExclusive }.map { String(describing: $0) }
+        if !concurrencyCategories.isEmpty {
+            ExclusivityController.addOperation(op, categories: concurrencyCategories)
+            op.addObserver(BlockObserver(finishHandler: {
+                ExclusivityController.removeOperation($0.0, categories: concurrencyCategories)
+            }))
+        }
+        
         op.enqueue(on: queue)
     }
     
