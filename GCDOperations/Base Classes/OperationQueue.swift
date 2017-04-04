@@ -3,7 +3,7 @@
 //  GCDOperations
 //
 //  Created by Florian Friedrich on 02.04.17.
-//  Copyright © 2017 Florian Friedrfcih. All rights reserved.
+//  Copyright © 2017 Florian Friedrich. All rights reserved.
 //
 
 import Dispatch
@@ -63,7 +63,10 @@ public final class OperationQueue {
                                      finishHandler: { [weak self] in self?.operationFinished($0.0) }))
         operations.value.append(op)
         let dependencies = op.conditions.flatMap { $0.dependencyForOperation(op) }
-        dependencies.forEach(addOperation)
+        dependencies.forEach {
+            op.addDependency($0)
+            addOperation($0)
+        }
         
         let concurrencyCategories: [String] = op.conditions.map { type(of: $0) }.filter { $0.isMutuallyExclusive }.map { String(describing: $0) }
         if !concurrencyCategories.isEmpty {
