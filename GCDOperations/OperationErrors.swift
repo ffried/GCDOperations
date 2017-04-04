@@ -6,20 +6,6 @@
 //  Copyright © 2017 Florian Friedrich. All rights reserved.
 //
 
-public struct ConditionError: Error, Equatable {
-    public let conditionName: String
-    public let information: ErrorInformation?
-    
-    public init<Condition: OperationCondition>(condition: Condition, errorInformation: ErrorInformation? = nil) {
-        self.conditionName = Condition.name
-        self.information = errorInformation
-    }
-    
-    public static func ==(lhs: ConditionError, rhs: ConditionError) -> Bool {
-        return lhs.conditionName == rhs.conditionName
-    }
-}
-
 public struct ErrorInformation {
     fileprivate typealias RawKey = String
     
@@ -67,5 +53,19 @@ public extension ErrorInformation {
         public static func ==<T>(lhs: Key<T>, rhs: Key<T>) -> Bool {
             return lhs.rawValue == rhs.rawValue
         }
+    }
+}
+
+public struct ConditionError: Error, Equatable {
+    public let conditionName: String
+    public let information: ErrorInformation?
+    
+    public init<Condition: OperationCondition>(condition: Condition, errorInformation: ErrorInformation? = nil) {
+        self.conditionName = Condition.name
+        self.information = errorInformation
+    }
+    
+    public static func ==(lhs: ConditionError, rhs: ConditionError) -> Bool {
+        return lhs.conditionName == rhs.conditionName
     }
 }

@@ -30,6 +30,7 @@ class GCDOperationsTests: XCTestCase {
         let operation = BlockOperation {
             sleep(1)
             expectation.fulfill()
+            $0([])
         }
         let queue = OperationQueue()
         
@@ -37,8 +38,8 @@ class GCDOperationsTests: XCTestCase {
         
         waitForExpectations(timeout: 4) {
             XCTAssertNil($0)
-//            XCTAssertEqual(operation.state, .finished(cancelled: false))
             XCTAssertTrue(operation.isFinished)
+            XCTAssertFalse(operation.isCancelled)
         }
     }
     
@@ -49,13 +50,14 @@ class GCDOperationsTests: XCTestCase {
         let operation1 = BlockOperation {
             sleep(1)
             op1Executed = true
-            
+            $0([])
         }
         var op1DidExecuteFirst = false
         let operation2 = BlockOperation {
             sleep(1)
             op1DidExecuteFirst = op1Executed
             expectation.fulfill()
+            $0([])
         }
         operation2.addDependency(operation1)
         
@@ -68,10 +70,45 @@ class GCDOperationsTests: XCTestCase {
             XCTAssertNil($0)
             XCTAssertTrue(operation1.isFinished)
             XCTAssertTrue(operation2.isFinished)
-//            XCTAssertEqual(operation1.state, .finished(cancelled: false))
-//            XCTAssertEqual(operation2.state, .finished(cancelled: false))
+            XCTAssertFalse(operation1.isCancelled)
+            XCTAssertFalse(operation2.isCancelled)
             XCTAssertTrue(op1Executed)
             XCTAssertTrue(op1DidExecuteFirst)
+        }
+    }
+
+    func testOperationQueue_WhenAccessingCurrentQueue_ReturnsCurrentQueue() {
+        let expectation = self.expectation(description: "Waiting for Operation to execute...")
+        var currentOperationQueue: OperationQueue? = nil
+        let operation = BlockOperation {
+            currentOperationQueue = .current
+            expectation.fulfill()
+            $0([])
+        }
+        let queue = OperationQueue()
+        queue.addOperation(operation)
+
+        waitForExpectations(timeout: 2) {
+            XCTAssertNil($0)
+            XCTAssertTrue(operation.isFinished)
+            XCTAssertNotNil(currentOperationQueue)
+            XCTAssertTrue(currentOperationQueue === queue)
+        }
+    }
+    
+    func testOperationQueue_WhenAccessingCurrentQueueOnMainThread_ReturnsMainQueue() {
+        let expectation = self.expectation(description: "Waiting for block to execute...")
+        var currentOperationQueue: OperationQueue? = nil
+        
+        DispatchQueue.main.async {
+            currentOperationQueue = .current
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 2) {
+            XCTAssertNil($0)
+            XCTAssertNotNil(currentOperationQueue)
+            XCTAssertTrue(currentOperationQueue === OperationQueue.main)
         }
     }
 }

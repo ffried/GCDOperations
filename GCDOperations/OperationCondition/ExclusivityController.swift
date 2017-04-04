@@ -6,10 +6,12 @@
 //  Copyright © 2017 Florian Friedrich. All rights reserved.
 //
 
+import class Dispatch.DispatchQueue
+
 struct ExclusivityController {
     private init() {}
     
-    private static let serialQueue = DispatchQueue(label: "net.ffried.GCDOperations.ExclusivityController.Queue")
+    private static let serialQueue = DispatchQueue(label: "net.ffried.GCDOperations.ExclusivityController.Lock")
     private static var operations: [String: [Operation]] = [:]
     
     static func addOperation(_ operation: Operation, categories: [String]) {

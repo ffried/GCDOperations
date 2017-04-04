@@ -17,8 +17,10 @@ open class Operation {
     private final var state: State {
         get { return _state.value }
         set {
-            precondition(state <= newValue, "Invalid state transition!")
-            _state.value = newValue
+            _state.withValue {
+                precondition($0 <= newValue, "Invalid state transition!")
+                $0 = newValue
+            }
         }
     }
     
@@ -26,9 +28,8 @@ open class Operation {
     public private(set) final var conditions: [OperationCondition] = []
     
     private final var _dependencies = Atomic<ContiguousArray<Operation>>([])
-    public private(set) var dependencies: ContiguousArray<Operation> {
-        get { return _dependencies.value }
-        set { _dependencies.value = newValue }
+    public var dependencies: ContiguousArray<Operation> {
+        return _dependencies.value
     }
     
     public private(set) var errors: [Error] = []
@@ -40,7 +41,7 @@ open class Operation {
     // MARK: - Dependency Management
     public final func addDependency(_ dep: Operation) {
         precondition(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
-        dependencies.append(dep)
+        _dependencies.withValue { $0.append(dep) }
     }
     
     public final func removeDependency(_ dep: Operation) {
@@ -97,6 +98,10 @@ open class Operation {
     
     private final func evaluateConditions(completion: @escaping () -> ()) {
         precondition(state == .evaluatingConditions, "Incorrect state for evaluateConditions!")
+
+        guard !conditions.isEmpty else {
+            return completion()
+        }
         
         let conditionGroup = DispatchGroup()
         
@@ -118,6 +123,7 @@ open class Operation {
             
             let failures = results.flatMap { $0?.error }
             if !failures.isEmpty {
+                // TODO: If operation was cancelled by condition, this won't do anything!
                 self.finish(with: failures)
             } else {
                 completion()
@@ -131,6 +137,7 @@ open class Operation {
     }
     
     private final func finish(cancelled: Bool, errors errs: [Error]) {
+        precondition(state > .enqueued, "Finishing Operation that was never enqueued!")
         guard !state.isFinished else { return }
         errors.append(contentsOf: errs)
         
@@ -204,8 +211,8 @@ fileprivate extension Operation {
                  (.evaluatingConditions, .evaluatingConditions),
                  (.running, .running):
                 return true
-            case (.finished(let lhsCanclled), .finished(let rhsCancelled)):
-                return lhsCanclled == rhsCancelled
+            case (.finished(let lhsCancelled), .finished(let rhsCancelled)):
+                return lhsCancelled == rhsCancelled
             default:
                 return false
             }

@@ -7,13 +7,15 @@
 //
 
 public final class BlockOperation: Operation {
-    public let block: () -> ()
-    public init(block: @escaping () -> ()) {
+    public typealias Block = (_ finish: @escaping ([Error]) -> ()) -> ()
+
+    public let block: Block
+
+    public init(block: @escaping Block) {
         self.block = block
     }
     
     public override func execute() {
-        block()
-        finish()
+        block(finish)
     }
 }
