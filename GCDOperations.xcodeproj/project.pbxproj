@@ -16,6 +16,7 @@
 		324E43484D2B3273879D1345 /* ExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E4145FFF6ED1633C87427 /* ExclusivityController.swift */; };
 		324E45486595233EDF5F6967 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E4EA1E9C0C47370D80BED /* Atomic.swift */; };
 		324E46AA3C273EB39F0D91FF /* GroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E46C14BAC65DEE6020544 /* GroupOperation.swift */; };
+		324E4796E8225FA703E153E1 /* DelayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E43BB2FEF67FDCE911C15 /* DelayOperation.swift */; };
 		324E47F8CF9A5FD1F32441CD /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E4F354F0E59D50BBA3707 /* Operation.swift */; };
 		324E49E865C04195F04D6DE6 /* OperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E4B4F08A6DA048B6EA675 /* OperationCondition.swift */; };
 		324E4EF4D866E6E6C87DCDC4 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E46F8BCEE411BA148FA0E /* BlockObserver.swift */; };
@@ -41,6 +42,7 @@
 		07352FC11E90FBE50011C4A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07352FDA1E91542E0011C4A8 /* OperationErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperationErrors.swift; path = GCDOperations/OperationErrors.swift; sourceTree = "<group>"; };
 		324E4145FFF6ED1633C87427 /* ExclusivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusivityController.swift; sourceTree = "<group>"; };
+		324E43BB2FEF67FDCE911C15 /* DelayOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayOperation.swift; sourceTree = "<group>"; };
 		324E448AA85EF59D7F3425DC /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		324E4518889C2211CE5A6147 /* BlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockOperation.swift; sourceTree = "<group>"; };
 		324E468ABE22B5ED18E508A5 /* OperationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationObserver.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				324E4518889C2211CE5A6147 /* BlockOperation.swift */,
 				324E46C14BAC65DEE6020544 /* GroupOperation.swift */,
+				324E43BB2FEF67FDCE911C15 /* DelayOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				324E4EF4D866E6E6C87DCDC4 /* BlockObserver.swift in Sources */,
 				324E4F594C6A2EFAAE8E0DE3 /* BlockOperation.swift in Sources */,
 				324E46AA3C273EB39F0D91FF /* GroupOperation.swift in Sources */,
+				324E4796E8225FA703E153E1 /* DelayOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
