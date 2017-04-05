@@ -10,6 +10,7 @@ import class Dispatch.DispatchQueue
 import enum Dispatch.DispatchPredicate
 import func Dispatch.dispatchPrecondition
 
+/// Atomic wrapper for a value. All access to the stored value will be synced to a serial DispatchQueue.
 internal struct Atomic<Value> {
     private let accessQueue = DispatchQueue(label: "net.ffried.Atomic<\(Value.self)>.Lock")
     

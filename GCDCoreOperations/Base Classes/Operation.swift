@@ -28,11 +28,11 @@ open class Operation {
     public private(set) final var conditions: [OperationCondition] = []
     
     private final var _dependencies = Atomic<ContiguousArray<Operation>>([])
-    public var dependencies: ContiguousArray<Operation> {
+    public final var dependencies: ContiguousArray<Operation> {
         return _dependencies.value
     }
     
-    public private(set) var errors: [Error] = []
+    public private(set) final var errors: [Error] = []
     
     // MARK: - Convenience State Accessors
     public final var isCancelled: Bool { return state.isCancelled }
@@ -69,11 +69,20 @@ open class Operation {
         errors.append(error)
     }
     
+    // MARK: - Produce Operation
+    public final func produce(_ operation: Operation) {
+        observers.operation(self, didProduce: operation)
+    }
+    
     // MARK: - Lifecycle
-    internal final func enqueue(on queue: DispatchQueue) {
+    internal final func enqueue(on queue: DispatchQueue, in group: DispatchGroup? = nil) {
         precondition(state < .enqueued, "Operation is already enqueued!")
         state = .enqueued
-        queue.async(execute: startItem)
+        if let group = group {
+            queue.async(group: group, execute: startItem)
+        } else {
+            queue.async(execute: startItem)
+        }
     }
     
     private final func run() {
@@ -150,7 +159,7 @@ open class Operation {
         }
         
         state = .finished(cancelled: cancelled)
-        observers.operationDidFinish(self, errors: errors)
+        observers.operationDidFinish(self, wasCancelled: cancelled, errors: errors)
         
         // TODO: This might be bad for cancelled Operations that do not regularly check `isCancelled`
         finishItem.perform()
@@ -174,11 +183,6 @@ open class Operation {
     
     public final func cancel(with errors: Error...) {
         cancel(with: errors)
-    }
-    
-    // MARK: - Produce Operation
-    public final func produce(_ operation: Operation) {
-        observers.operation(self, didProduce: operation)
     }
 }
 

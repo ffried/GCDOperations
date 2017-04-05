@@ -6,20 +6,14 @@
 //  Copyright © 2017 Florian Friedrich. All rights reserved.
 //
 
-/**
-    A protocol for defining conditions that must be satisfied in order for an
-    operation to begin execution.
-*/
+/// A protocol for defining conditions that must be satisfied in order for an operation to begin execution.
 public protocol OperationCondition {
-    /** 
-        The name of the condition. This is will be passed as `conditionName` in `ConditionError`s.
-    */
+    
+    /// The name of the condition. This is will be passed as `conditionName` in `ConditionError`s.
     static var name: String { get }
     
-    /**
-        Specifies whether multiple instances of the conditionalized operation may
-        be executing simultaneously.
-    */
+    /// Specifies whether multiple instances of the conditionalized operation may
+    /// be executing simultaneously.
     static var isMutuallyExclusive: Bool { get }
     
     /**
@@ -28,7 +22,7 @@ public protocol OperationCondition {
         (for example) asks for permission to perform the operation
         
         - parameter operation: The `Operation` to which the Condition has been added.
-        - returns: An `NSOperation`, if a dependency should be automatically added. Otherwise, `nil`.
+        - returns: An `Operation`, if a dependency should be automatically added. Otherwise, `nil`.
         - note: Only a single operation may be returned as a dependency. If you 
             find that you need to return multiple operations, then you should be
             expressing that as multiple conditions. Alternatively, you could return
@@ -40,10 +34,12 @@ public protocol OperationCondition {
     func evaluateForOperation(_ operation: Operation, completion: @escaping (OperationConditionResult) -> Void)
 }
 
-/**
-    An enum to indicate whether an `OperationCondition` was satisfied, or if it 
-    failed with an error.
-*/
+/// An enum to indicate whether an `OperationCondition` was satisfied, or if it
+/// failed with an error.
+///
+/// - satisfied: The condition was satisified, continue execution.
+/// - failed: The condition failed, abort execution.
+///     The associated `ConditionError` describes what failure happened during evaluation.
 public enum OperationConditionResult {
     case satisfied
     case failed(ConditionError)

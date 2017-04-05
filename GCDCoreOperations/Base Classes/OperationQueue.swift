@@ -28,6 +28,7 @@ public final class OperationQueue {
     private let lockQueue = DispatchQueue(label: "net.ffried.GCDOperations.OperationQueue.Lock")
 
     private let queue: DispatchQueue
+    private let operationsGroup: DispatchGroup = .init()
     private var operations: ContiguousArray<Operation> = []
 
     public private(set) var isSuspended: Bool
@@ -85,6 +86,7 @@ public final class OperationQueue {
     }
 
     private func _unsafeAddOperation(_ op: Operation) {
+        operationsGroup.enter()
         op.addObserver(BlockObserver(produceHandler: { [weak self] in self?.addOperation($1) },
                                      finishHandler: { [weak self] in self?.operationFinished($0.0) }))
         operations.append(op)
@@ -116,6 +118,7 @@ public final class OperationQueue {
     private final func operationFinished(_ op: Operation) {
         lockQueue.sync {
             _ = operations.index(where: { $0 === op }).map { operations.remove(at: $0) }
+            operationsGroup.leave()
         }
     }
     
@@ -127,10 +130,12 @@ public final class OperationQueue {
 }
 
 public extension OperationQueue {
+    /// The `OperationQueue` associated to the main queue.
     public static var main: OperationQueue {
         return DispatchQueue.main.getSpecific(key: .operationQueue)?.takeUnretainedValue() ?? .init(queue: .main, isSuspended: false)
     }
 
+    /// If the current queue belongs to an `OperationQueue` it will be returned here. `nil` otherwise.
     public static var current: OperationQueue? {
         return DispatchQueue.getSpecific(key: .operationQueue)?.takeUnretainedValue() ?? (isMainThread() ? .main : nil)
     }

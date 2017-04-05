@@ -9,6 +9,7 @@
 import class Dispatch.DispatchQueue
 
 internal struct ExclusivityController {
+    // No instances necessary
     private init() {}
     
     private static let serialQueue = DispatchQueue(label: "net.ffried.GCDOperations.ExclusivityController.Lock")
