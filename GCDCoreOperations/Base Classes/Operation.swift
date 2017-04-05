@@ -1,6 +1,6 @@
 //
 //  Operation.swift
-//  GCDOperations
+//  GCDCoreOperations
 //
 //  Created by Florian Friedrich on 02.04.17.
 //  Copyright © 2017 Florian Friedrich. All rights reserved.
@@ -37,6 +37,9 @@ open class Operation {
     // MARK: - Convenience State Accessors
     public final var isCancelled: Bool { return state.isCancelled }
     public final var isFinished: Bool { return state.isFinished }
+    
+    // MARK: - Init
+    public init() {}
     
     // MARK: - Dependency Management
     public final func addDependency(_ dep: Operation) {

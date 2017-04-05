@@ -1,6 +1,6 @@
 //
 //  ExclusivityController.swift
-//  GCDOperations
+//  GCDCoreOperations
 //
 //  Created by Florian Friedrich on 02.04.17.
 //  Copyright © 2017 Florian Friedrich. All rights reserved.
@@ -8,7 +8,7 @@
 
 import class Dispatch.DispatchQueue
 
-struct ExclusivityController {
+internal struct ExclusivityController {
     private init() {}
     
     private static let serialQueue = DispatchQueue(label: "net.ffried.GCDOperations.ExclusivityController.Lock")

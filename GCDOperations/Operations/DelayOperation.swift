@@ -21,7 +21,7 @@ import typealias Foundation.TimeInterval
     If the interval is negative, or the `Date` is in the past, then this operation
     immediately finishes.
 */
-public final class DelayOperation: Operation {
+public final class DelayOperation: GCDCoreOperations.Operation {
     // MARK: Types
     private enum Delay {
         case interval(TimeInterval)

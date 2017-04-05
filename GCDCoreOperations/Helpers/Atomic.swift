@@ -1,6 +1,6 @@
 //
 //  Atomic.swift
-//  GCDOperations
+//  GCDCoreOperations
 //
 //  Created by Florian Friedrich on 02.04.17.
 //  Copyright © 2017 Florian Friedrich. All rights reserved.
@@ -10,7 +10,7 @@ import class Dispatch.DispatchQueue
 import enum Dispatch.DispatchPredicate
 import func Dispatch.dispatchPrecondition
 
-struct Atomic<Value> {
+internal struct Atomic<Value> {
     private let accessQueue = DispatchQueue(label: "net.ffried.Atomic<\(Value.self)>.Lock")
     
     private var _value: Value

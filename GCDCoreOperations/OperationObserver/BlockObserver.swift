@@ -25,7 +25,6 @@ public struct BlockObserver: OperationObserver {
     }
     
     // MARK: OperationObserver
-    
     public func operationDidStart(_ operation: Operation) {
         startHandler?(operation)
     }

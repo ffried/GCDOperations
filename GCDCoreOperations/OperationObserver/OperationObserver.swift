@@ -1,6 +1,6 @@
 //
 //  OperationObserver.swift
-//  GCDOperations
+//  GCDCoreOperations
 //
 //  Created by Florian Friedrich on 02.04.17.
 //  Copyright © 2017 Florian Friedrich. All rights reserved.
