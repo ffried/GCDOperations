@@ -11,10 +11,10 @@ import Dispatch
 open class Operation {
     // MARK: - Stored Properties
     private final lazy var startItem: DispatchWorkItem! = DispatchWorkItem(block: self.run)
-    private final lazy var finishItem: DispatchWorkItem = DispatchWorkItem(block: {})
-    
+    private final let finishItem: DispatchWorkItem = DispatchWorkItem(block: {})
+
     private final var _state = Atomic<State>(.created)
-    private final var state: State {
+    internal final var state: State {
         get { return _state.value }
         set {
             _state.withValue {
@@ -53,7 +53,7 @@ open class Operation {
     }
     
     // MARK: - Conditions
-    public final func addCondition<Condition: OperationCondition>(_ condition: Condition) {
+    public final func addCondition<Condition>(_ condition: Condition) where Condition: OperationCondition {
         precondition(state < .evaluatingConditions, "Can't modify conditions after evaluation has begun!")
         conditions.append(condition)
     }
@@ -75,7 +75,8 @@ open class Operation {
     }
     
     // MARK: - Lifecycle
-    internal final func enqueue(on queue: DispatchQueue, in group: DispatchGroup? = nil) {
+    internal func enqueue(on queue: DispatchQueue, in group: DispatchGroup? = nil) {
+        guard !isCancelled else { return }
         precondition(state < .enqueued, "Operation is already enqueued!")
         state = .enqueued
         if let group = group {
@@ -86,12 +87,15 @@ open class Operation {
     }
     
     private final func run() {
+        guard !isCancelled else { return }
         precondition(state == .enqueued, "Operation.run() called without the Operation being enqueued!")
         state = .waitingForDependencies
         waitForDependencies()
-        
+
+        guard !isCancelled else { return }
         state = .evaluatingConditions
         evaluateConditions {
+            guard !self.isCancelled else { return }
             // Run
             self.state = .running
             self.observers.operationDidStart(self)
@@ -102,7 +106,7 @@ open class Operation {
     private final func waitForDependencies() {
         precondition(state == .waitingForDependencies, "Incorrect state for waitForDependencies!")
         /*
-         * TODO: Using signal might be better.
+         * TODO: Using notify might be better.
          * This would also allow for dependencies being added while waiting for other dependencies.
          */
         dependencies.forEach { $0.finishItem.wait() }
@@ -111,9 +115,7 @@ open class Operation {
     private final func evaluateConditions(completion: @escaping () -> ()) {
         precondition(state == .evaluatingConditions, "Incorrect state for evaluateConditions!")
 
-        guard !conditions.isEmpty else {
-            return completion()
-        }
+        guard !conditions.isEmpty else { return completion() }
         
         let conditionGroup = DispatchGroup()
         
@@ -149,21 +151,27 @@ open class Operation {
     }
     
     private final func finish(cancelled: Bool, errors errs: [Error]) {
-        precondition(state > .enqueued, "Finishing Operation that was never enqueued!")
+        precondition(cancelled || state > .enqueued, "Finishing Operation that was never enqueued!")
         guard !state.isFinished else { return }
+
         errors.append(contentsOf: errs)
-        
+        state = .finished(cancelled: cancelled)
+
+        didFinish()
+        observers.operationDidFinish(self, wasCancelled: cancelled, errors: errors)
+
         if cancelled {
             startItem.cancel()
             finishItem.cancel()
+        } else {
+            // TODO: This might be bad for cancelled Operations that do not regularly check `isCancelled`
+            finishItem.perform()
         }
         
-        state = .finished(cancelled: cancelled)
-        observers.operationDidFinish(self, wasCancelled: cancelled, errors: errors)
-        
-        // TODO: This might be bad for cancelled Operations that do not regularly check `isCancelled`
-        finishItem.perform()
-        
+        cleanup()
+    }
+
+    internal func cleanup() {
         // Cleanup to prevent any retain cycles
         startItem = nil
         observers.removeAll()
@@ -184,11 +192,13 @@ open class Operation {
     public final func cancel(with errors: Error...) {
         cancel(with: errors)
     }
+
+    open func didFinish() {}
 }
 
 // MARK: - Nested Types
-fileprivate extension Operation {
-    enum State: Comparable {
+internal extension Operation {
+    enum State: Comparable, CustomStringConvertible {
         case created
         case enqueued
         case waitingForDependencies
@@ -209,7 +219,18 @@ fileprivate extension Operation {
             }
             return false
         }
-        
+
+        public var description: String {
+            switch self {
+            case .created: return "Created"
+            case .enqueued: return "Enqueued"
+            case .waitingForDependencies: return "Waiting for Dependencies"
+            case .evaluatingConditions: return "Evaluating Conditions"
+            case .running: return "Running"
+            case .finished(let cancelled): return cancelled ? "Cancelled" : "Finished"
+            }
+        }
+
         static func ==(lhs: State, rhs: State) -> Bool {
             switch (lhs, rhs) {
             case (.created, .created),
