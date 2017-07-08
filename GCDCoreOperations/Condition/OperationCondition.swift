@@ -31,8 +31,24 @@ public protocol OperationCondition {
     func dependencyForOperation(_ operation: Operation) -> Operation?
     
     /// Evaluate the condition, to see if it has been satisfied or not.
-    func evaluateForOperation(_ operation: Operation, completion: @escaping (OperationConditionResult) -> Void)
+    func evaluateForOperation(_ operation: Operation, completion: @escaping (OperationConditionResult) -> ())
 }
+
+/// An error representing a failed condition.
+public struct ConditionError: Error, Equatable {
+    public let conditionName: String
+    public let information: ErrorInformation?
+    
+    public init<Condition: OperationCondition>(condition: Condition, errorInformation: ErrorInformation? = nil) {
+        self.conditionName = Condition.name
+        self.information = errorInformation
+    }
+    
+    public static func ==(lhs: ConditionError, rhs: ConditionError) -> Bool {
+        return lhs.conditionName == rhs.conditionName
+    }
+}
+
 
 /// An enum to indicate whether an `OperationCondition` was satisfied, or if it
 /// failed with an error.

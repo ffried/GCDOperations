@@ -19,7 +19,7 @@ public final class GroupOperation: Operation {
     public init(operations: ContiguousArray<Operation>) {
         self.operations = operations
     }
-
+    
     public convenience init(operations: Operation...) {
         self.init(operations: ContiguousArray(operations))
     }
@@ -51,12 +51,10 @@ public final class GroupOperation: Operation {
         }
     }
 
-    public override func didFinish() {
-        super.didFinish()
-        if isCancelled {
-            // Cancel all operations that reside within us
-            operations.forEach { $0.cancel() }
-        }
+    override func handleCancellation() {
+        // Cancel all operations that reside within us
+        operations.forEach { $0.cancel() }
+        super.handleCancellation()
     }
 
     override func cleanup() {

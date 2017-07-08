@@ -27,14 +27,14 @@ public struct ErrorInformation {
         return infoDict[key.rawKey] as? T
     }
 
-    // For Swift 4.0
-//    public subscript<T>(_ key: ErrorInformation.Key<T>) -> T? {
-//        return value(for: key)
-//    }
+    #if swift(>=4.0)
+    public subscript<T>(_ key: Key<T>) -> T? {
+        return value(for: key)
+    }
+    #endif
 }
 
 public extension ErrorInformation {
-    @available(swift, introduced: 3.1)
     public struct Key<T>: RawRepresentable, Hashable {
         public typealias RawValue = String
         
@@ -56,16 +56,3 @@ public extension ErrorInformation {
     }
 }
 
-public struct ConditionError: Error, Equatable {
-    public let conditionName: String
-    public let information: ErrorInformation?
-    
-    public init<Condition: OperationCondition>(condition: Condition, errorInformation: ErrorInformation? = nil) {
-        self.conditionName = Condition.name
-        self.information = errorInformation
-    }
-    
-    public static func ==(lhs: ConditionError, rhs: ConditionError) -> Bool {
-        return lhs.conditionName == rhs.conditionName
-    }
-}

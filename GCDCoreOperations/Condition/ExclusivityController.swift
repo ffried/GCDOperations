@@ -27,7 +27,6 @@ internal struct ExclusivityController {
         }
     }
     
-    
     // MARK: Operation Management
     private static func _unsafeAddOperation(_ operation: Operation, category: String) {
         var operationsWithThisCategory = operations[category] ?? []

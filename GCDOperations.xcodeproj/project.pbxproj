@@ -13,19 +13,25 @@
 		07B145BC1E953D500030938C /* GCDCoreOperations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B145B31E953D500030938C /* GCDCoreOperations.framework */; };
 		07B145C11E953D500030938C /* GCDCoreOperationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145C01E953D500030938C /* GCDCoreOperationsTests.swift */; };
 		07B145C31E953D500030938C /* GCDCoreOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B145B51E953D500030938C /* GCDCoreOperations.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07B145D31E953F030030938C /* BlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145CF1E953F020030938C /* BlockOperation.swift */; };
 		07B145D41E953F030030938C /* DelayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145D01E953F020030938C /* DelayOperation.swift */; };
 		07B145E11E953F0E0030938C /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145D71E953F0E0030938C /* Operation.swift */; };
 		07B145E21E953F0E0030938C /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145D81E953F0E0030938C /* OperationQueue.swift */; };
 		07B145E31E953F0E0030938C /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145DA1E953F0E0030938C /* Atomic.swift */; };
-		07B145E41E953F0E0030938C /* ExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145DC1E953F0E0030938C /* ExclusivityController.swift */; };
-		07B145E51E953F0E0030938C /* OperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145DD1E953F0E0030938C /* OperationCondition.swift */; };
 		07B145E61E953F0E0030938C /* OperationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145DE1E953F0E0030938C /* OperationErrors.swift */; };
-		07B145E71E953F0E0030938C /* OperationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145E01E953F0E0030938C /* OperationObserver.swift */; };
 		07B145E91E953F9C0030938C /* GroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145E81E953F9C0030938C /* GroupOperation.swift */; };
 		07B145ED1E95400E0030938C /* GCDOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145EC1E95400E0030938C /* GCDOperations.swift */; };
 		07B145EF1E9540880030938C /* GCDCoreOperations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B145B31E953D500030938C /* GCDCoreOperations.framework */; };
-		07B145F11E95411C0030938C /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B145F01E95411C0030938C /* BlockObserver.swift */; };
+		07FFD3581F1104B300228835 /* BlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD3571F1104B300228835 /* BlockOperation.swift */; };
+		07FFD3611F11055700228835 /* ExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD35F1F11055700228835 /* ExclusivityController.swift */; };
+		07FFD3621F11055700228835 /* OperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD3601F11055700228835 /* OperationCondition.swift */; };
+		07FFD3661F11056100228835 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD3641F11056100228835 /* BlockObserver.swift */; };
+		07FFD3671F11056100228835 /* OperationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD3651F11056100228835 /* OperationObserver.swift */; };
+		07FFD3691F1106EB00228835 /* MutuallyExclusive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD3681F1106EB00228835 /* MutuallyExclusive.swift */; };
+		07FFD36B1F11084900228835 /* Negated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD36A1F11084900228835 /* Negated.swift */; };
+		07FFD36D1F1108EC00228835 /* NoCancelledDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD36C1F1108EC00228835 /* NoCancelledDependencies.swift */; };
+		07FFD36F1F110A0100228835 /* NoFailedDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD36E1F110A0100228835 /* NoFailedDependencies.swift */; };
+		07FFD3711F110BC700228835 /* Silent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD3701F110BC700228835 /* Silent.swift */; };
+		07FFD3731F110DBA00228835 /* Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFD3721F110DBA00228835 /* Timeout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,18 +64,24 @@
 		07B145BB1E953D500030938C /* GCDCoreOperationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCDCoreOperationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B145C01E953D500030938C /* GCDCoreOperationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDCoreOperationsTests.swift; sourceTree = "<group>"; };
 		07B145C21E953D500030938C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07B145CF1E953F020030938C /* BlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockOperation.swift; sourceTree = "<group>"; };
 		07B145D01E953F020030938C /* DelayOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayOperation.swift; sourceTree = "<group>"; };
 		07B145D71E953F0E0030938C /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		07B145D81E953F0E0030938C /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		07B145DA1E953F0E0030938C /* Atomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
-		07B145DC1E953F0E0030938C /* ExclusivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusivityController.swift; sourceTree = "<group>"; };
-		07B145DD1E953F0E0030938C /* OperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCondition.swift; sourceTree = "<group>"; };
 		07B145DE1E953F0E0030938C /* OperationErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationErrors.swift; sourceTree = "<group>"; };
-		07B145E01E953F0E0030938C /* OperationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationObserver.swift; sourceTree = "<group>"; };
 		07B145E81E953F9C0030938C /* GroupOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOperation.swift; sourceTree = "<group>"; };
 		07B145EC1E95400E0030938C /* GCDOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDOperations.swift; sourceTree = "<group>"; };
-		07B145F01E95411C0030938C /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
+		07FFD3571F1104B300228835 /* BlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockOperation.swift; sourceTree = "<group>"; };
+		07FFD35F1F11055700228835 /* ExclusivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusivityController.swift; sourceTree = "<group>"; };
+		07FFD3601F11055700228835 /* OperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCondition.swift; sourceTree = "<group>"; };
+		07FFD3641F11056100228835 /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
+		07FFD3651F11056100228835 /* OperationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationObserver.swift; sourceTree = "<group>"; };
+		07FFD3681F1106EB00228835 /* MutuallyExclusive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutuallyExclusive.swift; sourceTree = "<group>"; };
+		07FFD36A1F11084900228835 /* Negated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Negated.swift; sourceTree = "<group>"; };
+		07FFD36C1F1108EC00228835 /* NoCancelledDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCancelledDependencies.swift; sourceTree = "<group>"; };
+		07FFD36E1F110A0100228835 /* NoFailedDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoFailedDependencies.swift; sourceTree = "<group>"; };
+		07FFD3701F110BC700228835 /* Silent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Silent.swift; sourceTree = "<group>"; };
+		07FFD3721F110DBA00228835 /* Timeout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				07B145CB1E953F020030938C /* Conditions */,
-				07B145CC1E953F020030938C /* OperationObservers */,
+				07FFD35D1F11052400228835 /* Observers */,
 				07B145CE1E953F020030938C /* Operations */,
 				07352FD31E9132060011C4A8 /* Supporting Files */,
 				07B145EC1E95400E0030938C /* GCDOperations.swift */,
@@ -163,11 +175,11 @@
 			isa = PBXGroup;
 			children = (
 				07B145D61E953F0E0030938C /* Base Classes */,
+				07FFD35E1F11055700228835 /* Condition */,
 				07B145D91E953F0E0030938C /* Helpers */,
-				07B145DB1E953F0E0030938C /* OperationCondition */,
-				07B145DF1E953F0E0030938C /* OperationObserver */,
-				07B145CA1E953E260030938C /* Supporting Files */,
+				07FFD3631F11056100228835 /* Observer */,
 				07B145DE1E953F0E0030938C /* OperationErrors.swift */,
+				07B145CA1E953E260030938C /* Supporting Files */,
 			);
 			path = GCDCoreOperations;
 			sourceTree = "<group>";
@@ -193,21 +205,19 @@
 		07B145CB1E953F020030938C /* Conditions */ = {
 			isa = PBXGroup;
 			children = (
+				07FFD3591F1104F500228835 /* Capabilities */,
+				07FFD3681F1106EB00228835 /* MutuallyExclusive.swift */,
+				07FFD36A1F11084900228835 /* Negated.swift */,
+				07FFD36C1F1108EC00228835 /* NoCancelledDependencies.swift */,
+				07FFD36E1F110A0100228835 /* NoFailedDependencies.swift */,
+				07FFD3701F110BC700228835 /* Silent.swift */,
 			);
 			path = Conditions;
-			sourceTree = "<group>";
-		};
-		07B145CC1E953F020030938C /* OperationObservers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OperationObservers;
 			sourceTree = "<group>";
 		};
 		07B145CE1E953F020030938C /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				07B145CF1E953F020030938C /* BlockOperation.swift */,
 				07B145D01E953F020030938C /* DelayOperation.swift */,
 			);
 			path = Operations;
@@ -219,6 +229,7 @@
 				07B145E81E953F9C0030938C /* GroupOperation.swift */,
 				07B145D71E953F0E0030938C /* Operation.swift */,
 				07B145D81E953F0E0030938C /* OperationQueue.swift */,
+				07FFD3571F1104B300228835 /* BlockOperation.swift */,
 			);
 			path = "Base Classes";
 			sourceTree = "<group>";
@@ -231,22 +242,37 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		07B145DB1E953F0E0030938C /* OperationCondition */ = {
+		07FFD3591F1104F500228835 /* Capabilities */ = {
 			isa = PBXGroup;
 			children = (
-				07B145DC1E953F0E0030938C /* ExclusivityController.swift */,
-				07B145DD1E953F0E0030938C /* OperationCondition.swift */,
 			);
-			path = OperationCondition;
+			path = Capabilities;
 			sourceTree = "<group>";
 		};
-		07B145DF1E953F0E0030938C /* OperationObserver */ = {
+		07FFD35D1F11052400228835 /* Observers */ = {
 			isa = PBXGroup;
 			children = (
-				07B145F01E95411C0030938C /* BlockObserver.swift */,
-				07B145E01E953F0E0030938C /* OperationObserver.swift */,
+				07FFD3721F110DBA00228835 /* Timeout.swift */,
 			);
-			path = OperationObserver;
+			path = Observers;
+			sourceTree = "<group>";
+		};
+		07FFD35E1F11055700228835 /* Condition */ = {
+			isa = PBXGroup;
+			children = (
+				07FFD35F1F11055700228835 /* ExclusivityController.swift */,
+				07FFD3601F11055700228835 /* OperationCondition.swift */,
+			);
+			path = Condition;
+			sourceTree = "<group>";
+		};
+		07FFD3631F11056100228835 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				07FFD3641F11056100228835 /* BlockObserver.swift */,
+				07FFD3651F11056100228835 /* OperationObserver.swift */,
+			);
+			path = Observer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,9 +457,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FFD36F1F110A0100228835 /* NoFailedDependencies.swift in Sources */,
+				07FFD36B1F11084900228835 /* Negated.swift in Sources */,
+				07FFD36D1F1108EC00228835 /* NoCancelledDependencies.swift in Sources */,
 				07B145ED1E95400E0030938C /* GCDOperations.swift in Sources */,
-				07B145D31E953F030030938C /* BlockOperation.swift in Sources */,
+				07FFD3711F110BC700228835 /* Silent.swift in Sources */,
+				07FFD3691F1106EB00228835 /* MutuallyExclusive.swift in Sources */,
 				07B145D41E953F030030938C /* DelayOperation.swift in Sources */,
+				07FFD3731F110DBA00228835 /* Timeout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,13 +482,14 @@
 			files = (
 				07B145E11E953F0E0030938C /* Operation.swift in Sources */,
 				07B145E31E953F0E0030938C /* Atomic.swift in Sources */,
-				07B145E71E953F0E0030938C /* OperationObserver.swift in Sources */,
+				07FFD3581F1104B300228835 /* BlockOperation.swift in Sources */,
 				07B145E21E953F0E0030938C /* OperationQueue.swift in Sources */,
-				07B145E41E953F0E0030938C /* ExclusivityController.swift in Sources */,
-				07B145F11E95411C0030938C /* BlockObserver.swift in Sources */,
+				07FFD3611F11055700228835 /* ExclusivityController.swift in Sources */,
+				07FFD3661F11056100228835 /* BlockObserver.swift in Sources */,
 				07B145E91E953F9C0030938C /* GroupOperation.swift in Sources */,
 				07B145E61E953F0E0030938C /* OperationErrors.swift in Sources */,
-				07B145E51E953F0E0030938C /* OperationCondition.swift in Sources */,
+				07FFD3621F11055700228835 /* OperationCondition.swift in Sources */,
+				07FFD3671F11056100228835 /* OperationObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +792,7 @@
 				07B145C51E953D500030938C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07B145C91E953D500030938C /* Build configuration list for PBXNativeTarget "GCDCoreOperationsTests" */ = {
 			isa = XCConfigurationList;
@@ -768,6 +801,7 @@
 				07B145C71E953D500030938C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

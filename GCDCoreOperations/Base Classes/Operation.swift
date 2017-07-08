@@ -132,6 +132,7 @@ open class Operation {
         
         conditionGroup.notify(queue: .global()) {
             if self.state.isCancelled && self.errors.isEmpty {
+                // TODO: Do we really need this? We could just assume it was cancelled for good.
                 self.aggregate(error: ConditionError(name: "AnyCondition"))
             }
             
@@ -149,9 +150,28 @@ open class Operation {
         assertionFailure("Operations should always do some kind of work!")
         finish()
     }
-    
+
+    internal func handleCancellation() {}
+    internal func handleFinishing() {}
+
+    internal func cleanup() {
+        // Cleanup to prevent any retain cycles
+        startItem = nil
+        observers.removeAll()
+    }
+
     private final func finish(cancelled: Bool, errors errs: [Error]) {
         precondition(cancelled || state > .enqueued, "Finishing Operation that was never enqueued!")
+        guard !state.isFinished else { return }
+
+        state = .finishing(cancelled: cancelled)
+
+        if cancelled {
+            handleCancellation()
+        } else {
+            handleFinishing()
+        }
+
         guard !state.isFinished else { return }
 
         errors.append(contentsOf: errs)
@@ -169,12 +189,6 @@ open class Operation {
         }
         
         cleanup()
-    }
-
-    internal func cleanup() {
-        // Cleanup to prevent any retain cycles
-        startItem = nil
-        observers.removeAll()
     }
     
     public final func finish(with errors: [Error] = []) {
@@ -204,8 +218,16 @@ internal extension Operation {
         case waitingForDependencies
         case evaluatingConditions
         case running
+        case finishing(cancelled: Bool)
         case finished(cancelled: Bool)
-        
+
+        fileprivate var isFinishing: Bool {
+            if case .finishing(_) = self {
+                return true
+            }
+            return false
+        }
+
         var isFinished: Bool {
             if case .finished(_) = self {
                 return true
@@ -214,6 +236,9 @@ internal extension Operation {
         }
         
         var isCancelled: Bool {
+            if case .finishing(let cancelled) = self {
+                return cancelled
+            }
             if case .finished(let cancelled) = self {
                 return cancelled
             }
@@ -227,6 +252,7 @@ internal extension Operation {
             case .waitingForDependencies: return "Waiting for Dependencies"
             case .evaluatingConditions: return "Evaluating Conditions"
             case .running: return "Running"
+            case .finishing(let cancelled): return cancelled ? "Cancelling" : "Finishing"
             case .finished(let cancelled): return cancelled ? "Cancelled" : "Finished"
             }
         }
@@ -239,7 +265,8 @@ internal extension Operation {
                  (.evaluatingConditions, .evaluatingConditions),
                  (.running, .running):
                 return true
-            case (.finished(let lhsCancelled), .finished(let rhsCancelled)):
+            case (.finishing(let lhsCancelled), .finishing(let rhsCancelled)),
+                 (.finished(let lhsCancelled), .finished(let rhsCancelled)):
                 return lhsCancelled == rhsCancelled
             default:
                 return false
@@ -252,21 +279,28 @@ internal extension Operation {
                  (.created, .waitingForDependencies),
                  (.created, .evaluatingConditions),
                  (.created, .running),
+                 (.created, .finishing(_)),
                  (.created, .finished(_)),
                  
                  (.enqueued, .waitingForDependencies),
                  (.enqueued, .evaluatingConditions),
                  (.enqueued, .running),
+                 (.enqueued, .finishing(_)),
                  (.enqueued, .finished(_)),
                  
                  (.waitingForDependencies, .evaluatingConditions),
                  (.waitingForDependencies, .running),
+                 (.waitingForDependencies, .finishing(_)),
                  (.waitingForDependencies, .finished(_)),
                  
                  (.evaluatingConditions, .running),
+                 (.evaluatingConditions, .finishing(_)),
                  (.evaluatingConditions, .finished(_)),
-                 
-                 (.running, .finished(_)):
+
+                 (.running, .finishing(_)),
+                 (.running, .finished(_)),
+
+                 (.finishing(_), .finished(_)):
                 return true
             default:
                 return false

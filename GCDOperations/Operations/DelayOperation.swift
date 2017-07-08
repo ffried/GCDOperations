@@ -8,6 +8,7 @@
 
 import struct Foundation.Date
 import typealias Foundation.TimeInterval
+import class GCDCoreOperations.Operation
 
 /** 
     `DelayOperation` is an `Operation` that will simply wait for a given time 
