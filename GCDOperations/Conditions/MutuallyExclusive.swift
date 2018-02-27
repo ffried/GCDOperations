@@ -21,11 +21,11 @@ public struct MutuallyExclusive<T>: OperationCondition {
     
     public init() {}
     
-    public func dependencyForOperation(_ operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
+    public func dependency(for operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
         return nil
     }
     
-    public func evaluateForOperation(_ operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
+    public func evaluate(for operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
         completion(.satisfied)
     }
 }

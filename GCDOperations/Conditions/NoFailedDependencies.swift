@@ -11,7 +11,7 @@ import struct GCDCoreOperations.ErrorInformation
 import protocol GCDCoreOperations.OperationCondition
 
 public extension ErrorInformation.Key {
-    public static var failedDependencies: ErrorInformation.Key<ContigousArray<GCDCoreOperations.Operation>> {
+    public static var failedDependencies: ErrorInformation.Key<ContiguousArray<GCDCoreOperations.Operation>> {
         return .init(rawValue: "FailedDependencies")
     }
 }
@@ -20,17 +20,17 @@ public extension ErrorInformation.Key {
  A condition that specifies that every dependency must have succeeded.
  If any dependency has errors, the target operation will fail as well.
  */
-public struct NoCancelledDependencies: OperationCondition {
+public struct NoFailedDependencies: OperationCondition {
     public static let name = "NoFailedDependencies"
     public static let isMutuallyExclusive = false
     
     public init() {}
     
-    public func dependencyForOperation(_ operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
+    public func dependency(for operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
         return nil
     }
     
-    public func evaluateForOperation(_ operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
+    public func evaluate(for operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
         // Verify that all of the dependencies executed without errors.
         let failed = ContiguousArray(operation.dependencies.filter { !$0.errors.isEmpty })
         

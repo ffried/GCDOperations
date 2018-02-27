@@ -69,10 +69,10 @@ public final class OperationQueue {
     private func _unsafeAddOperation(_ op: Operation) {
         operationsGroup.enter()
         op.addObserver(BlockObserver(produceHandler: { [weak self] in self?.addOperation($1) },
-                                     finishHandler: { [weak self] in self?.operationFinished($0.0) }))
+                                     finishHandler: { [weak self] op, _, _ in self?.operationFinished(op) }))
         operations.append(op)
 
-        let dependencies = op.conditions.flatMap { $0.dependencyForOperation(op) }
+        let dependencies = op.conditions.flatMap { $0.dependency(for: op) }
         dependencies.forEach {
             op.addDependency($0)
             _unsafeAddOperation($0)
@@ -84,8 +84,8 @@ public final class OperationQueue {
             .map { String(describing: $0) }
         if !concurrencyCategories.isEmpty {
             ExclusivityController.addOperation(op, categories: concurrencyCategories)
-            op.addObserver(BlockObserver(finishHandler: {
-                ExclusivityController.removeOperation($0.0, categories: concurrencyCategories)
+            op.addObserver(BlockObserver(finishHandler: { op, _, _ in
+                ExclusivityController.removeOperation(op, categories: concurrencyCategories)
             }))
         }
 

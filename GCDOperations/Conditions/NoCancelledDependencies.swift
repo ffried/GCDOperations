@@ -11,7 +11,7 @@ import struct GCDCoreOperations.ErrorInformation
 import protocol GCDCoreOperations.OperationCondition
 
 public extension ErrorInformation.Key {
-    public static var cancelledDependencies: ErrorInformation.Key<ContigousArray<GCDCoreOperations.Operation>> {
+    public static var cancelledDependencies: ErrorInformation.Key<ContiguousArray<GCDCoreOperations.Operation>> {
         return .init(rawValue: "CancelledDependencies")
     }
 }
@@ -26,11 +26,11 @@ public struct NoCancelledDependencies: OperationCondition {
     
     public init() {}
     
-    public func dependencyForOperation(_ operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
+    public func dependency(for operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
         return nil
     }
     
-    public func evaluateForOperation(_ operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
+    public func evaluate(for operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
         // Verify that all of the dependencies executed.
         let cancelled = ContiguousArray(operation.dependencies.filter { $0.isCancelled })
         

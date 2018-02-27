@@ -12,7 +12,7 @@ import class GCDCoreOperations.Operation
 
 /** 
     `DelayOperation` is an `Operation` that will simply wait for a given time 
-    interval, or until a specific `NSDate`.
+    interval, or until a specific `Date`.
 
     It is important to note that this operation does **not** use the `sleep()`
     function, since that is inefficient and blocks the thread on which it is called. 

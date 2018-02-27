@@ -33,7 +33,7 @@ public struct TimeoutObserver: OperationObserver {
              been cancelled.
              */
             if !operation.isFinished && !operation.isCancelled {
-                operation.cancelWithError(TimeoutError(timeout: self.timeout))
+                operation.cancel(with: TimeoutError(timeout: self.timeout))
             }
         }
     }

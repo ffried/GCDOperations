@@ -30,12 +30,12 @@ public struct SilentCondition<Condition: OperationCondition>: OperationCondition
         self.condition = condition
     }
     
-    public func dependencyForOperation(_ operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
+    public func dependency(for operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
         // Returning nil means we will never a dependency to be generated.
         return nil
     }
     
-    public func evaluateForOperation(_ operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
-        condition.evaluateForOperation(operation, completion: completion)
+    public func evaluate(for operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
+        condition.evaluate(for: operation, completion: completion)
     }
 }

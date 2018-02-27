@@ -28,10 +28,10 @@ public protocol OperationCondition {
             expressing that as multiple conditions. Alternatively, you could return
             a single `GroupOperation` that executes multiple operations internally.
     */
-    func dependencyForOperation(_ operation: Operation) -> Operation?
+    func dependency(for operation: Operation) -> Operation?
     
     /// Evaluate the condition, to see if it has been satisfied or not.
-    func evaluateForOperation(_ operation: Operation, completion: @escaping (OperationConditionResult) -> ())
+    func evaluate(for operation: Operation, completion: @escaping (OperationConditionResult) -> ())
 }
 
 /// An error representing a failed condition.

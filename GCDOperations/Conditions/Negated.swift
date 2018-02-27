@@ -36,13 +36,13 @@ public struct NegatedCondition<Condition: OperationCondition>: OperationConditio
         self.condition = condition
     }
     
-    public func dependencyForOperation(_ operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
-        return condition.dependencyForOperation(operation)
+    public func dependency(for operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
+        return condition.dependency(for: operation)
     }
     
-    public func evaluateForOperation(_ operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
-        condition.evaluateForOperation(operation) { result in
-            switch result {
+    public func evaluate(for operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
+        condition.evaluate(for: operation) {
+            switch $0 {
             case .failed(_):
                 // If the composed condition failed, then this one succeeded.
                 completion(.satisfied)
