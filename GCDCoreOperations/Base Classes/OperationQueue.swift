@@ -28,7 +28,7 @@ public final class OperationQueue {
     private let lockQueue = DispatchQueue(label: "net.ffried.GCDOperations.OperationQueue.Lock")
 
     private let queue: DispatchQueue
-    private let operationsGroup: DispatchGroup = .init()
+    private let operationsGroup = DispatchGroup()
     private var operations: ContiguousArray<Operation> = []
 
     public private(set) var isSuspended: Bool
@@ -72,8 +72,7 @@ public final class OperationQueue {
                                      finishHandler: { [weak self] op, _, _ in self?.operationFinished(op) }))
         operations.append(op)
 
-        let dependencies = op.conditions.flatMap { $0.dependency(for: op) }
-        dependencies.forEach {
+        op.conditions.flatMap { $0.dependency(for: op) }.forEach {
             op.addDependency($0)
             _unsafeAddOperation($0)
         }

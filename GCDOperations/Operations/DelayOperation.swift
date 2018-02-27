@@ -23,16 +23,13 @@ import class GCDCoreOperations.Operation
     immediately finishes.
 */
 public final class DelayOperation: GCDCoreOperations.Operation {
-    // MARK: Types
     private enum Delay {
         case interval(TimeInterval)
         case date(Date)
     }
     
-    // MARK: Properties
     private let delay: Delay
     
-    // MARK: Initialization
     public init(interval: TimeInterval) {
         delay = .interval(interval)
         super.init()

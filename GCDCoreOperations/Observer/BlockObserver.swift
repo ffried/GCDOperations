@@ -7,12 +7,10 @@
 //
 
 public struct BlockObserver: OperationObserver {
-    // MARK: Properties
     private let startHandler: ((Operation) -> Void)?
     private let produceHandler: ((Operation, Operation) -> Void)?
     private let finishHandler: ((Operation, Bool, [Error]) -> Void)?
     
-    // MARK: Init
     public init(startHandler: ((Operation) -> Void)? = nil,
                 produceHandler: ((Operation, Operation) -> Void)? = nil,
                 finishHandler: ((Operation, Bool, [Error]) -> Void)? = nil) {
@@ -21,7 +19,6 @@ public struct BlockObserver: OperationObserver {
         self.finishHandler = finishHandler
     }
     
-    // MARK: OperationObserver
     public func operationDidStart(_ operation: Operation) {
         startHandler?(operation)
     }

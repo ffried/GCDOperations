@@ -11,7 +11,7 @@ import Dispatch
 open class Operation {
     // MARK: - Stored Properties
     private final lazy var startItem: DispatchWorkItem! = DispatchWorkItem(block: self.run)
-    private final let finishItem: DispatchWorkItem = DispatchWorkItem(block: {})
+    private final let finishItem = DispatchWorkItem(block: {})
 
     private final var _state = Atomic<State>(.created)
     internal final var state: State {
@@ -28,9 +28,7 @@ open class Operation {
     public private(set) final var conditions: [OperationCondition] = []
     
     private final var _dependencies = Atomic<ContiguousArray<Operation>>([])
-    public final var dependencies: ContiguousArray<Operation> {
-        return _dependencies.value
-    }
+    public final var dependencies: ContiguousArray<Operation> { return _dependencies.value }
     
     public private(set) final var errors: [Error] = []
     
@@ -60,7 +58,10 @@ open class Operation {
     
     // MARK: - Observers
     public final func addObserver<Observer>(_ observer: Observer) where Observer: OperationObserver {
-        guard !state.isFinished else { return }
+        guard !state.isFinished else {
+            observer.operationDidFinish(self, wasCancelled: state.isCancelled, errors: errors)
+            return
+        }
         observers.append(observer)
     }
     

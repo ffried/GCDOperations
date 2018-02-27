@@ -39,8 +39,7 @@ public struct NoCancelledDependencies: OperationCondition {
             let info = ErrorInformation(key: .cancelledDependencies, value: cancelled)
             let error = ConditionError(condition: self, errorInformation: info)
             completion(.failed(error))
-        }
-        else {
+        } else {
             completion(.satisfied)
         }
     }

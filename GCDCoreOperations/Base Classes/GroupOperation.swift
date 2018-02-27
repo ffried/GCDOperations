@@ -10,7 +10,7 @@ import Dispatch
 
 public final class GroupOperation: Operation {
 
-    private let group: DispatchGroup = DispatchGroup()
+    private let group = DispatchGroup()
 
     public private(set) var operations: ContiguousArray<Operation>
 

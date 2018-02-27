@@ -39,8 +39,7 @@ public struct NoFailedDependencies: OperationCondition {
             let info = ErrorInformation(key: .failedDependencies, value: failed)
             let error = ConditionError(condition: self, errorInformation: info)
             completion(.failed(error))
-        }
-        else {
+        } else {
             completion(.satisfied)
         }
     }
