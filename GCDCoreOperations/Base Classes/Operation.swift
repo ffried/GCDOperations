@@ -18,7 +18,7 @@ open class Operation {
         get { return _state.value }
         set {
             _state.withValue {
-                precondition($0 <= newValue, "Invalid state transition!")
+                assert($0 <= newValue, "Invalid state transition!")
                 $0 = newValue
             }
         }
@@ -43,18 +43,18 @@ open class Operation {
     
     // MARK: - Dependency Management
     public final func addDependency(_ dep: Operation) {
-        precondition(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
+        assert(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
         _dependencies.withValue { $0.append(dep) }
     }
     
     public final func removeDependency(_ dep: Operation) {
-        precondition(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
+        assert(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
         _dependencies.withValue { if let idx = $0.index(where: { $0 === dep }) { $0.remove(at: idx) } }
     }
     
     // MARK: - Conditions
     public final func addCondition<Condition>(_ condition: Condition) where Condition: OperationCondition {
-        precondition(state < .evaluatingConditions, "Can't modify conditions after evaluation has begun!")
+        assert(state < .evaluatingConditions, "Can't modify conditions after evaluation has begun!")
         conditions.append(condition)
     }
     
@@ -77,7 +77,7 @@ open class Operation {
     // MARK: - Lifecycle
     internal func enqueue(on queue: DispatchQueue, in group: DispatchGroup? = nil) {
         guard !isCancelled else { return }
-        precondition(state < .enqueued, "Operation is already enqueued!")
+        assert(state < .enqueued, "Operation is already enqueued!")
         state = .enqueued
         if let group = group {
             queue.async(group: group, execute: startItem)
@@ -88,7 +88,7 @@ open class Operation {
     
     private final func run() {
         guard !isCancelled else { return }
-        precondition(state == .enqueued, "Operation.run() called without the Operation being enqueued!")
+        assert(state == .enqueued, "Operation.run() called without the Operation being enqueued!")
         state = .waitingForDependencies
         waitForDependencies()
 
@@ -104,7 +104,7 @@ open class Operation {
     }
     
     private final func waitForDependencies() {
-        precondition(state == .waitingForDependencies, "Incorrect state for waitForDependencies!")
+        assert(state == .waitingForDependencies, "Incorrect state for waitForDependencies!")
         /*
          * TODO: Using notify might be better.
          * This would also allow for dependencies being added while waiting for other dependencies.
@@ -113,7 +113,7 @@ open class Operation {
     }
     
     private final func evaluateConditions(completion: @escaping () -> ()) {
-        precondition(state == .evaluatingConditions, "Incorrect state for evaluateConditions!")
+        assert(state == .evaluatingConditions, "Incorrect state for evaluateConditions!")
 
         guard !conditions.isEmpty else { return completion() }
         
@@ -122,9 +122,9 @@ open class Operation {
         var results = [OperationConditionResult?](repeating: nil, count: conditions.count)
         for (index, condition) in conditions.enumerated() {
             conditionGroup.enter()
-            condition.evaluateForOperation(self) { result in
+            condition.evaluate(for: self) { result in
                 //guard results[index] == nil else { return }
-                precondition(results[index] == nil, "Completion of condition evalution called twice!")
+                assert(results[index] == nil, "Completion of condition evalution called twice!")
                 results[index] = result
                 conditionGroup.leave()
             }
@@ -161,7 +161,7 @@ open class Operation {
     }
 
     private final func finish(cancelled: Bool, errors errs: [Error]) {
-        precondition(cancelled || state > .enqueued, "Finishing Operation that was never enqueued!")
+        assert(cancelled || state > .enqueued, "Finishing Operation that was never enqueued!")
         guard !state.isFinished else { return }
 
         state = .finishing(cancelled: cancelled)
