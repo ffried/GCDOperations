@@ -27,11 +27,9 @@ public struct ErrorInformation {
         return infoDict[key.rawKey] as? T
     }
 
-    #if swift(>=4.0)
     public subscript<T>(_ key: Key<T>) -> T? {
         return value(for: key)
     }
-    #endif
 }
 
 public extension ErrorInformation {

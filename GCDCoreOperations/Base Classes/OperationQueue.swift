@@ -34,24 +34,11 @@ public final class OperationQueue {
     public private(set) var isSuspended: Bool
     
     public convenience init(initiallySuspended: Bool = false) {
-        let attributes: DispatchQueue.Attributes
-        if #available(
-            iOS 10.0, iOSApplicationExtension 10.0,
-            macOS 10.12, macOSApplicationExtension 10.12,
-            tvOS 10.0, tvOSApplicationExtension 10.0,
-            watchOS 3.0, watchOSApplicationExtension 3.0, *) {
-            attributes = [.initiallyInactive, .concurrent]
-        } else {
-            attributes = [.concurrent]
-        }
+        let attributes: DispatchQueue.Attributes = [.initiallyInactive, .concurrent]
         let queue = DispatchQueue(label: "net.ffried.GCDOperations.OperationQueue.Queue", attributes: attributes)
         if initiallySuspended {
             queue.suspend()
-        } else if #available(
-                  iOS 10.0, iOSApplicationExtension 10.0,
-                  macOS 10.12, macOSApplicationExtension 10.12,
-                  tvOS 10.0, tvOSApplicationExtension 10.0,
-                  watchOS 3.0, watchOSApplicationExtension 3.0, *) {
+        } else {
             queue.activate()
         }
         self.init(queue: queue, isSuspended: initiallySuspended)
@@ -74,13 +61,7 @@ public final class OperationQueue {
     public func resume() {
         lockQueue.sync {
             isSuspended = false
-            if #available(
-               iOS 10.0, iOSApplicationExtension 10.0,
-               macOS 10.12, macOSApplicationExtension 10.12,
-               tvOS 10.0, tvOSApplicationExtension 10.0,
-               watchOS 3.0, watchOSApplicationExtension 3.0, *) {
-                queue.activate()
-            }
+            queue.activate()
             queue.resume()
         }
     }
