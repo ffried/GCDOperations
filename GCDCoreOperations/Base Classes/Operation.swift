@@ -89,7 +89,7 @@ open class Operation {
     
     private final func run() {
         guard !isCancelled else { return }
-        assert(state == .enqueued, "Operation.run() called without the Operation being enqueued!")
+        assert(state == .enqueued, "\(#function) called without the Operation being enqueued!")
         state = .waitingForDependencies
         waitForDependencies()
 
@@ -105,7 +105,7 @@ open class Operation {
     }
     
     private final func waitForDependencies() {
-        assert(state == .waitingForDependencies, "Incorrect state for waitForDependencies!")
+        assert(state == .waitingForDependencies, "Incorrect state for \(#function)!")
         /*
          * TODO: Using notify might be better.
          * This would also allow for dependencies being added while waiting for other dependencies.
@@ -114,7 +114,7 @@ open class Operation {
     }
     
     private final func evaluateConditions(completion: @escaping () -> ()) {
-        assert(state == .evaluatingConditions, "Incorrect state for evaluateConditions!")
+        assert(state == .evaluatingConditions, "Incorrect state for \(#function)!")
 
         guard !conditions.isEmpty else { return completion() }
         

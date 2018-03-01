@@ -12,21 +12,7 @@ import XCTest
 typealias Operation = GCDCoreOperations.Operation
 typealias OperationQueue = GCDCoreOperations.OperationQueue
 
-fileprivate class BlockOperation: Operation {
-    typealias Block = (_ finish: @escaping ([Error]) -> ()) -> ()
-    
-    let block: Block
-    
-    init(block: @escaping Block) {
-        self.block = block
-    }
-    
-    override func execute() {
-        block(finish)
-    }
-}
-
-class GCDCoreOperationsTests: XCTestCase {
+final class GCDCoreOperationsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

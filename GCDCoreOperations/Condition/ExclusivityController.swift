@@ -13,7 +13,7 @@ internal struct ExclusivityController {
     private init() {}
     
     private static let serialQueue = DispatchQueue(label: "net.ffried.GCDOperations.ExclusivityController.Lock")
-    private static var operations: [String: [Operation]] = [:]
+    private static var operations: [String: ContiguousArray<Operation>] = [:]
     
     static func addOperation(_ operation: Operation, categories: [String]) {
         serialQueue.sync {
@@ -28,7 +28,7 @@ internal struct ExclusivityController {
     }
     
     private static func _unsafeAddOperation(_ operation: Operation, category: String) {
-        var operationsWithThisCategory = operations[category] ?? []
+        var operationsWithThisCategory = operations[category, default: []]
         
         if let last = operationsWithThisCategory.last {
             operation.addDependency(last)
@@ -41,7 +41,7 @@ internal struct ExclusivityController {
     
     private static func _unsafeRemoveOperation(_ operation: Operation, category: String) {
         if var operationsWithThisCategory = operations[category],
-            let index = operationsWithThisCategory.index(where: { $0 === operation}) {
+            let index = operationsWithThisCategory.index(where: { $0 === operation }) {
 
             operationsWithThisCategory.remove(at: index)
             operations[category] = operationsWithThisCategory

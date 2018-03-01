@@ -41,6 +41,7 @@ public extension ErrorInformation {
         
         fileprivate var rawKey: ErrorInformation.RawKey {
             // Allow usages of the same `rawValue` but different Types `T`.
+            // E.g. `Key<String>(rawValue: "abc")` and `Key<Int>(rawValue: "abc")`
             return "\(rawValue).\(T.self)"
         }
         
@@ -48,7 +49,7 @@ public extension ErrorInformation {
             self.rawValue = rawValue
         }
         
-        public static func ==<T>(lhs: Key<T>, rhs: Key<T>) -> Bool {
+        public static func ==(lhs: Key<T>, rhs: Key<T>) -> Bool {
             return lhs.rawValue == rhs.rawValue
         }
     }

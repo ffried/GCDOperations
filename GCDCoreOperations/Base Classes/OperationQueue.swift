@@ -34,8 +34,8 @@ public final class OperationQueue {
     public private(set) var isSuspended: Bool
     
     public convenience init(initiallySuspended: Bool = false) {
-        let attributes: DispatchQueue.Attributes = [.initiallyInactive, .concurrent]
-        let queue = DispatchQueue(label: "net.ffried.GCDOperations.OperationQueue.Queue", attributes: attributes)
+        let queue = DispatchQueue(label: "net.ffried.GCDOperations.OperationQueue.Queue",
+                                  attributes: [.initiallyInactive, .concurrent])
         if initiallySuspended {
             queue.suspend()
         } else {

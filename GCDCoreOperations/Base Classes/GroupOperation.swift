@@ -27,7 +27,7 @@ public final class GroupOperation: Operation {
     public func addOperation(_ op: Operation) {
         assert(!isFinished, "Cannot add operations after GroupOperation has finished!")
         operations.append(op)
-        if state == .running, let queue = queue {
+        if case .running = state, let queue = queue {
             includeOperation(op, on: queue)
         }
     }

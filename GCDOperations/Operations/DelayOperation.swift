@@ -26,6 +26,13 @@ public final class DelayOperation: GCDCoreOperations.Operation {
     private enum Delay {
         case interval(TimeInterval)
         case date(Date)
+
+        var internval: TimeInterval {
+            switch self {
+            case .interval(let inverval): return interval
+            case .date(let date): return date.timeIntervalSinceNow
+            }
+        }
     }
     
     private let delay: Delay
@@ -41,26 +48,14 @@ public final class DelayOperation: GCDCoreOperations.Operation {
     }
     
     override open func execute() {
-        let interval: TimeInterval
-        
-        // Figure out how long we should wait for.
-        switch delay {
-            case .interval(let theInterval):
-                interval = theInterval
-            case .date(let date):
-                interval = date.timeIntervalSinceNow
-        }
-        
+        let interval = delay.interval
         guard interval > 0 else {
             finish()
             return
         }
-
         DispatchQueue.global().asyncAfter(deadline: .now() + interval) {
-            // If we were cancelled, then finish() has already been called.
-            if !self.isCancelled {
-                self.finish()
-            }
+            guard !self.isCancelled else { return }
+            self.finish()
         }
     }
 }

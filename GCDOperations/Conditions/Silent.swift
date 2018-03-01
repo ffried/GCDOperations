@@ -31,7 +31,7 @@ public struct SilentCondition<Condition: OperationCondition>: OperationCondition
     }
     
     public func dependency(for operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
-        // Returning nil means we will never a dependency to be generated.
+        // We never generate a dependency.
         return nil
     }
     

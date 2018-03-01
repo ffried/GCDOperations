@@ -15,7 +15,7 @@ import typealias Foundation.TimeInterval
 cancel after a specified time interval.
 */
 public struct TimeoutObserver: OperationObserver {
-    fileprivate let timeout: TimeInterval
+    private let timeout: TimeInterval
 
     public init(timeout: TimeInterval) {
         self.timeout = timeout
@@ -23,10 +23,10 @@ public struct TimeoutObserver: OperationObserver {
 
     public func operationDidStart(_ operation: GCDCoreOperations.Operation) {
         // When the operation starts, queue up a block to cause it to time out.
-        DispatchQueue.global().asyncAfter(deadline: .now() + timeout) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + timeout) { [timeout] in
             // Cancel the operation if it hasn't finished and hasn't already been cancelled.
             if !operation.isFinished && !operation.isCancelled {
-                operation.cancel(with: TimeoutError(timeout: self.timeout))
+                operation.cancel(with: TimeoutError(timeout: timeout))
             }
         }
     }
