@@ -41,28 +41,39 @@ open class Operation {
     
     // MARK: - Dependency Management
     public final func addDependency(_ dep: Operation) {
-        assert(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
-        _dependencies.withValue { $0.append(dep) }
+        _dependencies.coordinated(with: &_state) { deps, state in
+            assert(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
+            deps.append(dep)
+        }
     }
     
     public final func removeDependency(_ dep: Operation) {
-        assert(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
-        _dependencies.withValue { if let idx = $0.index(where: { $0 === dep }) { $0.remove(at: idx) } }
+        _dependencies.coordinated(with: &_state) { deps, state in
+            assert(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
+            if let idx = deps.index(where: { $0 === dep }) { deps.remove(at: idx) }
+        }
     }
     
     // MARK: - Conditions
     public final func addCondition<Condition>(_ condition: Condition) where Condition: OperationCondition {
-        assert(state < .evaluatingConditions, "Can't modify conditions after evaluation has begun!")
-        conditions.append(condition)
+        _state.withValue { state in
+            assert(state < .evaluatingConditions, "Can't modify conditions after evaluation has begun!")
+            conditions.append(condition)
+        }
     }
     
     // MARK: - Observers
     public final func addObserver<Observer>(_ observer: Observer) where Observer: OperationObserver {
-        guard !state.isFinished else {
-            observer.operationDidFinish(self, wasCancelled: state.isCancelled, errors: errors)
-            return
+        let runManually: Bool = _state.withValue {
+            let isFinished = $0.isFinished
+            if !isFinished {
+                observers.append(observer)
+            }
+            return isFinished
         }
-        observers.append(observer)
+        if runManually {
+            observer.operationDidFinish(self, wasCancelled: state.isCancelled, errors: errors)
+        }
     }
     
     // MARK: - Errors
@@ -78,8 +89,10 @@ open class Operation {
     // MARK: - Lifecycle
     internal func enqueue(on queue: DispatchQueue, in group: DispatchGroup? = nil) {
         guard !isCancelled else { return }
-        assert(state < .enqueued, "Operation is already enqueued!")
-        state = .enqueued
+        _state.withValue { state in
+            assert(state < .enqueued, "Operation is already enqueued!")
+            state = .enqueued
+        }
         if let group = group {
             queue.async(group: group, execute: startItem)
         } else {
@@ -89,8 +102,10 @@ open class Operation {
     
     private final func run() {
         guard !isCancelled else { return }
-        assert(state == .enqueued, "\(#function) called without the Operation being enqueued!")
-        state = .waitingForDependencies
+        _state.withValue { state in
+            assert(state == .enqueued, "\(#function) called without the Operation being enqueued!")
+            state = .waitingForDependencies
+        }
         waitForDependencies()
 
         guard !isCancelled else { return }
@@ -185,7 +200,6 @@ open class Operation {
             startItem.cancel()
             finishItem.cancel()
         } else {
-            // TODO: This might be bad for cancelled Operations that do not regularly check `isCancelled`
             finishItem.perform()
         }
         
