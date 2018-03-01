@@ -16,13 +16,9 @@ import protocol GCDCoreOperations.OperationCondition
  do not already have it.
  */
 public struct SilentCondition<Condition: OperationCondition>: OperationCondition {
-    public static var name: String {
-        return "Silent<\(Condition.name)>"
-    }
+    public static var name: String { return "Silent<\(Condition.name)>" }
     
-    public static var isMutuallyExclusive: Bool {
-        return Condition.isMutuallyExclusive
-    }
+    public static var isMutuallyExclusive: Bool { return Condition.isMutuallyExclusive }
     
     private let condition: Condition
     

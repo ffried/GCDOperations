@@ -22,13 +22,8 @@ public extension ErrorInformation.Key {
  network is NOT reachable.
  */
 public struct NegatedCondition<Condition: OperationCondition>: OperationCondition {
-    public static var name: String {
-        return "Not<\(Condition.name)>"
-    }
-    
-    public static var isMutuallyExclusive: Bool {
-        return Condition.isMutuallyExclusive
-    }
+    public static var name: String { return "Not<\(Condition.name)>" }
+    public static var isMutuallyExclusive: Bool { return Condition.isMutuallyExclusive }
     
     private let condition: Condition
     

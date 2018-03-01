@@ -11,13 +11,8 @@ import protocol GCDCoreOperations.OperationCondition
 
 /// A generic condition for describing kinds of operations that may not execute concurrently.
 public struct MutuallyExclusive<T>: OperationCondition {
-    public static var name: String {
-        return "MutuallyExclusive<\(T.self)>"
-    }
-    
-    public static var isMutuallyExclusive: Bool {
-        return true
-    }
+    public static var name: String { return "MutuallyExclusive<\(T.self)>" }
+    public static var isMutuallyExclusive: Bool { return true }
     
     public init() {}
     
