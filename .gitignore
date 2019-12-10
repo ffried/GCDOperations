@@ -1,3 +1,12 @@
+# macOS
 .DS_Store
-*.xcuserdatad
-.idea
+
+# Swift Package Manager
+/.build
+/.swiftpm
+/Packages
+/*.xcodeproj
+
+# IDEs
+xcuserdata/
+.idea/
