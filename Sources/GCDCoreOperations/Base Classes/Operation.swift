@@ -185,7 +185,7 @@ open class Operation {
         errors.append(contentsOf: errs.lazy.map { $0 })
         _state.withValue { $0 = .finished(cancelled: cancelled) }
 
-        didFinish(wasCancelled: cancelled)
+        didFinish(wasCancelled: cancelled, errors: errors)
         observers.operationDidFinish(self, wasCancelled: cancelled, errors: errors)
 
         if cancelled {
@@ -216,11 +216,11 @@ open class Operation {
         cancel(with: errors)
     }
 
-    open func didFinish(wasCancelled: Bool) {}
+    open func didFinish(wasCancelled: Bool, errors: [Error]) {}
 }
 
 // MARK: - Nested Types
-internal extension Operation {
+extension Operation {
     enum State: Comparable, CustomStringConvertible {
         case created
         case enqueued
