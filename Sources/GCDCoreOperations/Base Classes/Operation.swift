@@ -141,7 +141,7 @@ open class Operation {
                 self.aggregate(error: AnyConditionFailed())
             }
             
-            let failures = results.compactMap { $0?.error }
+            let failures: [Error] = results.compactMap { $0?.error }
             if !failures.isEmpty {
                 // TODO: If operation was cancelled by condition, this won't do anything!
                 self.finish(with: failures)
@@ -166,7 +166,9 @@ open class Operation {
         observers.removeAll()
     }
 
-    private final func finish(cancelled: Bool, errors errs: [Error]) {
+    private final func finish<Errors>(cancelled: Bool, errors errs: Errors)
+    where Errors: Collection, Errors.Element: Error
+    {
         assert(cancelled || state > .enqueued, "Finishing Operation that was never enqueued!")
         guard !state.isFinished else { return }
 
@@ -180,10 +182,10 @@ open class Operation {
 
         guard !state.isFinished else { return }
 
-        errors.append(contentsOf: errs)
+        errors.append(contentsOf: errs.lazy.map { $0 })
         _state.withValue { $0 = .finished(cancelled: cancelled) }
 
-        didFinish()
+        didFinish(wasCancelled: cancelled)
         observers.operationDidFinish(self, wasCancelled: cancelled, errors: errors)
 
         if cancelled {
@@ -196,23 +198,25 @@ open class Operation {
         cleanup()
     }
     
-    public final func finish(with errors: [Error]) {
+    public final func finish<Errors>(with errors: Errors) where Errors: Collection, Errors.Element: Error {
         finish(cancelled: false, errors: errors)
     }
-    
+
+    @inlinable
     public final func finish(with errors: Error...) {
         finish(with: errors)
     }
-    
-    public final func cancel(with errors: [Error]) {
+
+    public final func cancel<Errors>(with errors: Errors) where Errors: Collection, Errors.Element: Error {
         finish(cancelled: true, errors: errors)
     }
-    
+
+    @inlinable
     public final func cancel(with errors: Error...) {
         cancel(with: errors)
     }
 
-    open func didFinish() {}
+    open func didFinish(wasCancelled: Bool) {}
 }
 
 // MARK: - Nested Types
