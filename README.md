@@ -1,3 +1,6 @@
+[![GitHub release](https://img.shields.io/github/release/ffried/gcdoperations.svg?style=flat)](https://github.com/ffried/GCDOperations/releases/latest)
+![Tests](https://github.com/ffried/GCDOperations/workflows/Tests/badge.svg)
+
 # GCDOperations
 Operations written in Swift based purely on GCD - no @objc dynamics, no key value observing.
 
