@@ -1,19 +1,9 @@
-//
-//  Negated.swift
-//  GCDOperations
-//
-//  Created by Florian Friedrich on 08.07.17.
-//  Copyright © 2017 Florian Friedrich. All rights reserved.
-//
-
 import class GCDCoreOperations.Operation
 import struct GCDCoreOperations.ErrorInformation
 import protocol GCDCoreOperations.OperationCondition
 
 extension ErrorInformation.Key {
-    public static var negatedCondition: ErrorInformation.Key<OperationCondition> {
-        return .init(rawValue: "NegatedCondition")
-    }
+    public static var negatedCondition: ErrorInformation.Key<OperationCondition> { .init(rawValue: "NegatedCondition") }
 }
 
 /**
@@ -32,7 +22,7 @@ public struct NegatedCondition<Condition: OperationCondition>: OperationConditio
     }
     
     public func dependency(for operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
-        return condition.dependency(for: operation)
+        condition.dependency(for: operation)
     }
     
     public func evaluate(for operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {

@@ -1,11 +1,3 @@
-//
-//  OperationObserver.swift
-//  GCDCoreOperations
-//
-//  Created by Florian Friedrich on 02.04.17.
-//  Copyright © 2017 Florian Friedrich. All rights reserved.
-//
-
 public protocol OperationObserver {
     /// Invoked immediately prior to the `Operation`'s `execute()` method.
     func operationDidStart(_ operation: Operation)
@@ -18,7 +10,7 @@ public protocol OperationObserver {
 }
 
 // MARK: - Helper Extension
-internal extension Sequence where Iterator.Element == OperationObserver {
+extension Sequence where Iterator.Element == OperationObserver {
     @inlinable
     func operationDidStart(_ operation: Operation) {
         forEach { $0.operationDidStart(operation) }

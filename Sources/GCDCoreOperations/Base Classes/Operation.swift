@@ -1,11 +1,3 @@
-//
-//  Operation.swift
-//  GCDCoreOperations
-//
-//  Created by Florian Friedrich on 02.04.17.
-//  Copyright © 2017 Florian Friedrich. All rights reserved.
-//
-
 import Dispatch
 
 open class Operation {
@@ -13,13 +5,15 @@ open class Operation {
     private final lazy var startItem: DispatchWorkItem! = DispatchWorkItem(block: self.run)
     private final let finishItem = DispatchWorkItem(block: {})
 
-    @Atomic
+    @Synchronized
     internal final var state: State = .created
+
+    internal private(set) final var queue: DispatchQueue?
     
     public private(set) final var observers: [OperationObserver] = []
     public private(set) final var conditions: [OperationCondition] = []
     
-    @Atomic
+    @Synchronized
     private final var _dependencies: ContiguousArray<Operation> = []
 
     public final var dependencies: ContiguousArray<Operation> { _dependencies }
@@ -86,6 +80,7 @@ open class Operation {
         _state.withValue { state in
             assert(state < .enqueued, "Operation is already enqueued!")
             state = .enqueued
+            self.queue = queue
         }
         if let group = group {
             queue.async(group: group, execute: startItem)
@@ -140,7 +135,7 @@ open class Operation {
             }
         }
         
-        conditionGroup.notify(queue: .global()) {
+        conditionGroup.notify(queue: queue ?? .global()) {
             if self.state.isCancelled && self.errors.isEmpty {
                 // TODO: Do we really need this? We could just assume it was cancelled for good.
                 self.aggregate(error: ConditionError(name: "AnyCondition"))
@@ -167,6 +162,7 @@ open class Operation {
     internal func cleanup() {
         // Cleanup to prevent any retain cycles
         startItem = nil
+        queue = nil
         observers.removeAll()
     }
 

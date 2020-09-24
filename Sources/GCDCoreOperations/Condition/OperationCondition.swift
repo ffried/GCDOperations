@@ -1,21 +1,12 @@
-//
-//  OperationCondition.swift
-//  GCDCoreOperations
-//
-//  Created by Florian Friedrich on 02.04.17.
-//  Copyright © 2017 Florian Friedrich. All rights reserved.
-//
-
 /// A protocol for defining conditions that must be satisfied in order for an operation to begin execution.
 public protocol OperationCondition {
-    
     /// The name of the condition. This is will be passed as `conditionName` in `ConditionError`s.
     static var name: String { get }
-    
+
     /// Specifies whether multiple instances of the conditionalized operation may
     /// be executing simultaneously.
     static var isMutuallyExclusive: Bool { get }
-    
+
     /**
         Some conditions may have the ability to satisfy the condition if another
         operation is executed first. Use this method to return an operation that
@@ -29,7 +20,7 @@ public protocol OperationCondition {
             a single `GroupOperation` that executes multiple operations internally.
     */
     func dependency(for operation: Operation) -> Operation?
-    
+
     /// Evaluate the condition, to see if it has been satisfied or not.
     func evaluate(for operation: Operation, completion: @escaping (OperationConditionResult) -> ())
 }
@@ -44,8 +35,8 @@ public struct ConditionError: Error, Equatable {
         self.information = errorInformation
     }
     
-    public static func ==(lhs: ConditionError, rhs: ConditionError) -> Bool {
-        return lhs.conditionName == rhs.conditionName
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        lhs.conditionName == rhs.conditionName
     }
 }
 
@@ -69,7 +60,7 @@ public enum OperationConditionResult {
         }
     }
     
-    public static func ==(lhs: OperationConditionResult, rhs: OperationConditionResult) -> Bool {
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
         switch (lhs, rhs) {
         case (.satisfied, .satisfied):
             return true

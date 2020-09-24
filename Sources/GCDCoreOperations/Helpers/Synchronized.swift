@@ -1,18 +1,10 @@
-//
-//  Atomic.swift
-//  GCDCoreOperations
-//
-//  Created by Florian Friedrich on 02.04.17.
-//  Copyright © 2017 Florian Friedrich. All rights reserved.
-//
-
 import class Dispatch.DispatchQueue
 import func Dispatch.dispatchPrecondition
 
-/// Atomic wrapper for a value. All access to the stored value will be synced.
+/// Synchronized wrapper for a value. All access to the stored value will be synced.
 @propertyWrapper
-internal final class Atomic<Value> {
-    private let accessQueue = DispatchQueue(label: "net.ffried.Atomic<\(Value.self)>.Lock", attributes: .concurrent)
+final class Synchronized<Value> {
+    private let accessQueue = DispatchQueue(label: "net.ffried.Synchronized<\(Value.self)>.Lock", attributes: .concurrent)
     
     private var _wrappedValue: Value
     var wrappedValue: Value {
@@ -27,7 +19,7 @@ internal final class Atomic<Value> {
         return try accessQueue.sync(flags: .barrier) { try work(&_wrappedValue) }
     }
 
-    func coordinated<OtherValue, T>(with other: Atomic<OtherValue>, do work: (inout Value, inout OtherValue) throws -> T) rethrows -> T {
+    func coordinated<OtherValue, T>(with other: Synchronized<OtherValue>, do work: (inout Value, inout OtherValue) throws -> T) rethrows -> T {
         dispatchPrecondition(condition: .notOnQueue(accessQueue))
         return try accessQueue.sync(flags: .barrier) {
             if other.accessQueue === accessQueue { // unlikely

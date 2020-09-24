@@ -1,51 +1,34 @@
-//
-//  ExclusivityController.swift
-//  GCDCoreOperations
-//
-//  Created by Florian Friedrich on 02.04.17.
-//  Copyright © 2017 Florian Friedrich. All rights reserved.
-//
-
-import class Dispatch.DispatchQueue
-
-internal enum ExclusivityController {
-    private static let serialQueue = DispatchQueue(label: "net.ffried.GCDOperations.ExclusivityController.Lock")
+@frozen
+enum ExclusivityController {
+    @Synchronized
     private static var operations: [String: ContiguousArray<Operation>] = [:]
     
     static func addOperation<Categories: Collection>(_ operation: Operation, categories: Categories)
-        where Categories.Element == String
+    where Categories.Element == String
     {
-        serialQueue.sync {
-            categories.forEach { _unsafeAddOperation(operation, category: $0) }
+        _operations.withValue { operations in
+            categories.forEach {
+                var operationsWithThisCategory = operations[$0, default: []]
+                if let last = operationsWithThisCategory.last {
+                    operation.addDependency(last)
+                }
+                operationsWithThisCategory.append(operation)
+                operations[$0] = operationsWithThisCategory
+            }
         }
     }
     
     static func removeOperation<Categories: Collection>(_ operation: Operation, categories: Categories)
-        where Categories.Element == String
+    where Categories.Element == String
     {
-        serialQueue.async {
-            categories.forEach { _unsafeRemoveOperation(operation, category: $0) }
-        }
-    }
-    
-    private static func _unsafeAddOperation(_ operation: Operation, category: String) {
-        var operationsWithThisCategory = operations[category, default: []]
-        
-        if let last = operationsWithThisCategory.last {
-            operation.addDependency(last)
-        }
-        
-        operationsWithThisCategory.append(operation)
-
-        operations[category] = operationsWithThisCategory
-    }
-    
-    private static func _unsafeRemoveOperation(_ operation: Operation, category: String) {
-        if var operationsWithThisCategory = operations[category],
-            let index = operationsWithThisCategory.firstIndex(where: { $0 === operation }) {
-
-            operationsWithThisCategory.remove(at: index)
-            operations[category] = operationsWithThisCategory
+        _operations.withValue { operations in
+            categories.forEach {
+                if var operationsWithThisCategory = operations[$0],
+                   let index = operationsWithThisCategory.firstIndex(where: { $0 === operation }) {
+                    operationsWithThisCategory.remove(at: index)
+                    operations[$0] = operationsWithThisCategory
+                }
+            }
         }
     }
 }

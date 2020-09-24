@@ -1,11 +1,3 @@
-//
-//  OperationQueue.swift
-//  GCDCoreOperations
-//
-//  Created by Florian Friedrich on 02.04.17.
-//  Copyright © 2017 Florian Friedrich. All rights reserved.
-//
-
 import Dispatch
 #if os(Linux)
     import func CoreFoundation._CFIsMainThread
@@ -49,6 +41,10 @@ public final class OperationQueue {
             queue.activate()
         }
         self.init(queue: queue, isSuspended: initiallySuspended)
+    }
+
+    deinit {
+        queue.setSpecific(key: .operationQueue, value: nil)
     }
     
     public func suspend() {
@@ -100,6 +96,26 @@ public final class OperationQueue {
     public func addOperation(_ op: Operation) {
         dispatchPrecondition(condition: .notOnQueue(lockQueue))
         lockQueue.sync { _unsafeAddOperation(op) }
+    }
+
+    public func addOperations<Operations>(_ ops: Operations)
+    where Operations: Collection, Operations.Element == Operation
+    {
+        dispatchPrecondition(condition: .notOnQueue(lockQueue))
+        lockQueue.sync { ops.forEach(_unsafeAddOperation) }
+    }
+
+    @inlinable
+    public func addOperations(_ ops: Operation...) {
+        addOperations(ops)
+    }
+
+    @inlinable
+    @discardableResult
+    public func addOperation(executing block: @escaping BlockOperation.Block) -> BlockOperation {
+        let operation = BlockOperation(block: block)
+        addOperation(operation)
+        return operation
     }
     
     private func operationFinished(_ op: Operation) {

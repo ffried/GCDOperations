@@ -1,15 +1,7 @@
-//
-//  DelayOperation.swift
-//  GCDOperations
-//
-//  Created by Florian Friedrich on 02.04.17.
-//  Copyright © 2017 Florian Friedrich. All rights reserved.
-//
-
 import Dispatch
 import struct Foundation.Date
 import typealias Foundation.TimeInterval
-import class GCDCoreOperations.Operation
+import typealias GCDCoreOperations.GCDOperation
 
 /** 
     `DelayOperation` is an `Operation` that will simply wait for a given time 
@@ -23,7 +15,7 @@ import class GCDCoreOperations.Operation
     If the interval is negative, or the `Date` is in the past, then this operation
     immediately finishes.
 */
-public final class DelayOperation: GCDCoreOperations.Operation {
+public final class DelayOperation: GCDOperation {
     private enum Delay {
         case interval(TimeInterval)
         case date(Date)

@@ -1,18 +1,10 @@
-//
-//  NoFailedDependencies.swift
-//  GCDOperations
-//
-//  Created by Florian Friedrich on 08.07.17.
-//  Copyright © 2017 Florian Friedrich. All rights reserved.
-//
-
-import class GCDCoreOperations.Operation
+import typealias GCDCoreOperations.GCDOperation
 import struct GCDCoreOperations.ErrorInformation
 import protocol GCDCoreOperations.OperationCondition
 
 extension ErrorInformation.Key {
-    public static var failedDependencies: ErrorInformation.Key<ContiguousArray<GCDCoreOperations.Operation>> {
-        return .init(rawValue: "FailedDependencies")
+    public static var failedDependencies: ErrorInformation.Key<ContiguousArray<GCDOperation>> {
+        .init(rawValue: "FailedDependencies")
     }
 }
 
@@ -26,11 +18,9 @@ public struct NoFailedDependencies: OperationCondition {
     
     public init() {}
     
-    public func dependency(for operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
-        return nil
-    }
+    public func dependency(for operation: GCDOperation) -> GCDOperation? { nil }
     
-    public func evaluate(for operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
+    public func evaluate(for operation: GCDOperation, completion: @escaping (OperationConditionResult) -> ()) {
         // Verify that all of the dependencies executed without errors.
         let failed = ContiguousArray(operation.dependencies.filter { !$0.errors.isEmpty })
         

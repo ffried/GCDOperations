@@ -26,13 +26,12 @@ final class GCDCoreOperationsTests: XCTestCase {
     
     func testOperation_WhenAddedToOperationQueue_Executes() {
         let expectation = self.expectation(description: "Waiting for Operation to execute...")
-        let operation = BlockOperation {
+        let operation = GCDBlockOperation {
+            defer { expectation.fulfill() }
             sleep(1)
-            expectation.fulfill()
             $0([])
         }
         let queue = OperationQueue()
-        
         queue.addOperation(operation)
         
         waitForExpectations(timeout: 4)
@@ -53,8 +52,8 @@ final class GCDCoreOperationsTests: XCTestCase {
         let operation2 = BlockOperation {
             sleep(1)
             op1DidExecuteFirst = op1Executed
-            expectation.fulfill()
             $0([])
+            expectation.fulfill()
         }
         operation2.addDependency(operation1)
         
@@ -75,10 +74,10 @@ final class GCDCoreOperationsTests: XCTestCase {
     func testOperationQueue_WhenAccessingCurrentQueue_ReturnsCurrentQueue() {
         let expectation = self.expectation(description: "Waiting for Operation to execute...")
         var currentOperationQueue: OperationQueue? = nil
-        let operation = BlockOperation {
+        let operation = GCDBlockOperation {
             currentOperationQueue = .current
-            expectation.fulfill()
             $0([])
+            expectation.fulfill()
         }
         let queue = OperationQueue()
         queue.addOperation(operation)
@@ -101,5 +100,20 @@ final class GCDCoreOperationsTests: XCTestCase {
         waitForExpectations(timeout: 2)
         XCTAssertNotNil(currentOperationQueue)
         XCTAssertTrue(currentOperationQueue === OperationQueue.main)
+    }
+
+    func testOperationQueue_WhenAccessingCurrentQueueAfterQueueWasDestroyed_ReturnsNil() {
+        let expectation = self.expectation(description: "Waiting for block to execute...")
+        var queue: OperationQueue? = OperationQueue()
+        var testQueue: OperationQueue?
+        let blockOperation = GCDBlockOperation {
+            testQueue = .current
+            $0([])
+            expectation.fulfill()
+        }
+        queue?.addOperation(blockOperation)
+        queue = nil // release
+        waitForExpectations(timeout: 2)
+        XCTAssertNil(testQueue)
     }
 }

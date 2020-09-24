@@ -1,5 +1,5 @@
 # GCDOperations
-Operations based purely on GCD.
+Operations written in Swift based purely on GCD - no @objc dynamics, no key value observing.
 
 ## Purpose
 This project aims to provide Operations very similar to Foundation.Operation. However, instead of heavily relying on KVO and the like, this library implements it using purerly GCD features.

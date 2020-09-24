@@ -1,20 +1,9 @@
-//
-//  GroupOperation.swift
-//  GCDCoreOperations
-//
-//  Created by Florian Friedrich on 04.04.17.
-//  Copyright (c) 2017 Florian Friedrich. All rights reserved.
-//
-
 import Dispatch
 
 public final class GroupOperation: Operation {
-
     private let group = DispatchGroup()
 
     public private(set) var operations: ContiguousArray<Operation>
-
-    private weak var queue: DispatchQueue?
 
     public init(operations: ContiguousArray<Operation>) {
         self.operations = operations
@@ -37,11 +26,6 @@ public final class GroupOperation: Operation {
         op.enqueue(on: queue, in: group)
     }
 
-    internal override func enqueue(on queue: DispatchQueue, in group: DispatchGroup?) {
-        self.queue = queue
-        super.enqueue(on: queue, in: group)
-    }
-
     public override func execute() {
         guard let queue = queue else { return finish() }
         operations.forEach { includeOperation($0, on: queue) }
@@ -55,10 +39,5 @@ public final class GroupOperation: Operation {
         // Cancel all operations that reside within us
         operations.forEach { $0.cancel() }
         super.handleCancellation()
-    }
-
-    override func cleanup() {
-        super.cleanup()
-        queue = nil
     }
 }
