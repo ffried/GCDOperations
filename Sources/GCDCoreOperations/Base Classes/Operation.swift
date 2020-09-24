@@ -196,7 +196,7 @@ open class Operation {
         cleanup()
     }
     
-    public final func finish(with errors: [Error] = []) {
+    public final func finish(with errors: [Error]) {
         finish(cancelled: false, errors: errors)
     }
     
@@ -204,7 +204,7 @@ open class Operation {
         finish(with: errors)
     }
     
-    public final func cancel(with errors: [Error] = []) {
+    public final func cancel(with errors: [Error]) {
         finish(cancelled: true, errors: errors)
     }
     
