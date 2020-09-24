@@ -46,8 +46,8 @@ public final class DelayOperation: GCDOperation {
             finish()
             return
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + interval) {
-            guard !self.isCancelled else { return }
+        DispatchQueue.global().asyncAfter(deadline: .now() + interval) { [weak self] in
+            guard let self = self, !self.isCancelled else { return }
             self.finish()
         }
     }

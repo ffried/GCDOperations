@@ -1,18 +1,17 @@
 import typealias GCDCoreOperations.GCDOperation
-import struct GCDCoreOperations.ErrorInformation
 import protocol GCDCoreOperations.OperationCondition
-
-extension ErrorInformation.Key {
-    public static var failedDependencies: ErrorInformation.Key<ContiguousArray<GCDOperation>> {
-        .init(rawValue: "FailedDependencies")
-    }
-}
 
 /**
  A condition that specifies that every dependency must have succeeded.
  If any dependency has errors, the target operation will fail as well.
  */
 public struct NoFailedDependencies: OperationCondition {
+    public struct Error: ConditionError {
+        public typealias Condition = NoFailedDependencies
+
+        public let failedDependencies: ContiguousArray<GCDOperation>
+    }
+
     public static let name = "NoFailedDependencies"
     public static let isMutuallyExclusive = false
     
@@ -26,9 +25,7 @@ public struct NoFailedDependencies: OperationCondition {
         
         if !failed.isEmpty {
             // At least one dependency was cancelled; the condition was not satisfied.
-            let info = ErrorInformation(key: .failedDependencies, value: failed)
-            let error = ConditionError(condition: self, errorInformation: info)
-            completion(.failed(error))
+            completion(.failed(Error(failedDependencies: failed)))
         } else {
             completion(.satisfied)
         }

@@ -26,18 +26,17 @@ public protocol OperationCondition {
 }
 
 /// An error representing a failed condition.
-public struct ConditionError: Error, Equatable {
-    public let conditionName: String
-    public let information: ErrorInformation?
-    
-    public init<Condition: OperationCondition>(condition: Condition, errorInformation: ErrorInformation? = nil) {
-        self.conditionName = Condition.name
-        self.information = errorInformation
-    }
-    
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        lhs.conditionName == rhs.conditionName
-    }
+public protocol AnyConditionError: Error {
+    var conditionName: String { get }
+}
+
+public protocol ConditionError: AnyConditionError {
+    associatedtype Condition: OperationCondition
+}
+
+extension ConditionError {
+    @inlinable
+    public var conditionName: String { Condition.name }
 }
 
 
@@ -49,25 +48,14 @@ public struct ConditionError: Error, Equatable {
 ///     The associated `ConditionError` describes what failure happened during evaluation.
 public enum OperationConditionResult {
     case satisfied
-    case failed(ConditionError)
+    case failed(AnyConditionError)
     
-    var error: ConditionError? {
+    var error: AnyConditionError? {
         switch self {
         case .failed(let error):
             return error
         default:
             return nil
-        }
-    }
-    
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        switch (lhs, rhs) {
-        case (.satisfied, .satisfied):
-            return true
-        case (.failed(let lError), .failed(let rError)):
-            return lError == rError
-        default:
-            return false
         }
     }
 }

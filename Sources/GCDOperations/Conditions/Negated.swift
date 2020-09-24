@@ -1,31 +1,32 @@
 import class GCDCoreOperations.Operation
-import struct GCDCoreOperations.ErrorInformation
 import protocol GCDCoreOperations.OperationCondition
-
-extension ErrorInformation.Key {
-    public static var negatedCondition: ErrorInformation.Key<OperationCondition> { .init(rawValue: "NegatedCondition") }
-}
 
 /**
  A simple condition that negates the evaluation of another condition.
  This is useful (for example) if you want to only execute an operation if the
  network is NOT reachable.
  */
-public struct NegatedCondition<Condition: OperationCondition>: OperationCondition {
-    public static var name: String { return "Not<\(Condition.name)>" }
-    public static var isMutuallyExclusive: Bool { return Condition.isMutuallyExclusive }
+public struct NegatedCondition<ConditionToNegate: OperationCondition>: OperationCondition {
+    public struct Error: ConditionError {
+        public typealias Condition = NegatedCondition<ConditionToNegate>
+
+        public let negatedCondition: ConditionToNegate
+    }
+
+    public static var name: String { "Not<\(ConditionToNegate.name)>" }
+    public static var isMutuallyExclusive: Bool { ConditionToNegate.isMutuallyExclusive }
     
-    private let condition: Condition
+    private let condition: ConditionToNegate
     
-    public init(condition: Condition) {
+    public init(condition: ConditionToNegate) {
         self.condition = condition
     }
     
-    public func dependency(for operation: GCDCoreOperations.Operation) -> GCDCoreOperations.Operation? {
+    public func dependency(for operation: GCDOperation) -> GCDOperation? {
         condition.dependency(for: operation)
     }
     
-    public func evaluate(for operation: GCDCoreOperations.Operation, completion: @escaping (OperationConditionResult) -> ()) {
+    public func evaluate(for operation: GCDOperation, completion: @escaping (OperationConditionResult) -> ()) {
         condition.evaluate(for: operation) {
             switch $0 {
             case .failed(_):
@@ -33,10 +34,7 @@ public struct NegatedCondition<Condition: OperationCondition>: OperationConditio
                 completion(.satisfied)
             case .satisfied:
                 // If the composed condition succeeded, then this one failed.
-                let info = ErrorInformation(key: .negatedCondition, value: self.condition)
-                let error = ConditionError(condition: self, errorInformation: info)
-                
-                completion(.failed(error))
+                completion(.failed(Error(negatedCondition: condition)))
             }
         }
     }

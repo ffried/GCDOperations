@@ -138,7 +138,7 @@ open class Operation {
         conditionGroup.notify(queue: queue ?? .global()) {
             if self.state.isCancelled && self.errors.isEmpty {
                 // TODO: Do we really need this? We could just assume it was cancelled for good.
-                self.aggregate(error: ConditionError(name: "AnyCondition"))
+                self.aggregate(error: AnyConditionFailed())
             }
             
             let failures = results.compactMap { $0?.error }
@@ -280,10 +280,6 @@ internal extension Operation {
     }
 }
 
-// MARK: - Extensions
-fileprivate extension ConditionError {
-    init(name: String, errorInformation: ErrorInformation? = nil) {
-        self.conditionName = name
-        self.information = errorInformation
-    }
+fileprivate struct AnyConditionFailed: AnyConditionError {
+    var conditionName: String { "AnyCondition" }
 }
