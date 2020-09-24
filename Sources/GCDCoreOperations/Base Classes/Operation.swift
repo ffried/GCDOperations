@@ -65,8 +65,18 @@ open class Operation {
     }
     
     // MARK: - Errors
+    public final func aggregate<Errors>(errors newErrors: Errors) where Errors: Collection, Errors.Element: Error {
+        errors.append(contentsOf: newErrors.lazy.map { $0 })
+    }
+
+    @inlinable
+    public final func aggregate(errors: Error...) {
+        aggregate(errors: errors)
+    }
+
+    @inlinable
     public final func aggregate(error: Error) {
-        errors.append(error)
+        aggregate(errors: error)
     }
     
     // MARK: - Produce Operation
@@ -182,7 +192,7 @@ open class Operation {
 
         guard !state.isFinished else { return }
 
-        errors.append(contentsOf: errs.lazy.map { $0 })
+        aggregate(errors: errs)
         _state.withValue { $0 = .finished(cancelled: cancelled) }
 
         didFinish(wasCancelled: cancelled, errors: errors)
