@@ -47,30 +47,32 @@ jobs:
           file: coverage.lcov
           fail_ci_if_error: true
 
-  # test-xcode:
-  #   runs-on: macos-latest
-  #   strategy:
-  #     matrix:
-  #       action: [test]
-  #       destination:
-  #         - platform=macOS
-  #         - platform=iOS Simulator,OS=latest,name=iPhone 11
-  #         - platform=iOS Simulator,OS=latest,name=iPad Pro (9.7-inch)
-  #         - platform=tvOS Simulator,OS=latest,name=Apple TV 4K
-  #       include:
-  #         - action: build
-  #           destination: platform=watchOS Simulator,OS=latest,name=Apple Watch Series 5 - 44mm
-  #   steps:
-  #     - run: sudo xcode-select -s /Applications/Xcode_12.app/Contents/Developer
-  #     - uses: actions/checkout@v2
-  #     - uses: sersoft-gmbh/xcodebuild-action@v1
-  #       with:
-  #         project: Xcode/FFFoundation.xcodeproj
-  #         scheme: FFFoundation
-  #         destination: ${{matrix.destination}}
-  #         action: ${{matrix.action}}
-  #     - uses: codecov/codecov-action@v1
-  #       with:
-  #         token: ${{secrets.CODECOV_TOKEN}}
-  #         fail_ci_if_error: true
-  #       if: matrix.action == 'test'
+  test-xcode:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        scheme: [GCDOperations-Package]
+        action: [test]
+        destination:
+          - platform=macOS
+          - platform=iOS Simulator,OS=latest,name=iPhone 11
+          - platform=iOS Simulator,OS=latest,name=iPad Pro (9.7-inch)
+          - platform=tvOS Simulator,OS=latest,name=Apple TV 4K
+        include:
+          - scheme: GCDOperations
+            action: build
+            destination: platform=watchOS Simulator,OS=latest,name=Apple Watch Series 5 - 44mm
+    steps:
+      - run: sudo xcode-select -s /Applications/Xcode_12.app/Contents/Developer
+      - uses: actions/checkout@v2
+      - uses: sersoft-gmbh/xcodebuild-action@v1
+        with:
+          spm-package: './'
+          scheme: ${{matrix.scheme}}
+          destination: ${{matrix.destination}}
+          action: ${{matrix.action}}
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          fail_ci_if_error: true
+        if: matrix.action == 'test'
