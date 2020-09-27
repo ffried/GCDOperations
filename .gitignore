@@ -3,7 +3,7 @@
 
 # Swift Package Manager
 /.build
-/.swiftpm
+# /.swiftpm
 /Packages
 /*.xcodeproj
 

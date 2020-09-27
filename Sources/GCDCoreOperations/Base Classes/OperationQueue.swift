@@ -20,6 +20,8 @@ fileprivate extension Operation {
     var _queueID: Int { unsafeBitCast(self, to: Int.self) } // pointer ought to be unique
 }
 
+/// An operation queue is used to execute `Operation`s. It is backed by a concurrent `DispatchQueue`.
+/// It takes care of enqueuing operations and also enqueues any produced operations.
 public final class OperationQueue {
     private final class QueueObserver: OperationObserver {
         private(set) var queue: OperationQueue!
@@ -46,6 +48,7 @@ public final class OperationQueue {
     private let operationsGroup = DispatchGroup()
     private var operations: Dictionary<Int, Operation> = [:]
 
+    /// Whether or not the queue is currently suspended.
     public private(set) var isSuspended: Bool
 
     fileprivate init(queue: DispatchQueue, isSuspended: Bool) {
@@ -54,7 +57,9 @@ public final class OperationQueue {
 
         queue.setSpecific(key: .operationQueue, value: .passUnretained(self))
     }
-    
+
+    /// Creates a new operation queue, optionally suspending it initially.
+    /// - Parameter initiallySuspended: Whether the new OperationQueue should be suspended. Defaults to `false`.
     public convenience init(initiallySuspended: Bool = false) {
         let queue = DispatchQueue(label: "net.ffried.GCDOperations.OperationQueue.Queue",
                                   attributes: [.initiallyInactive, .concurrent])
@@ -69,7 +74,8 @@ public final class OperationQueue {
     deinit {
         queue.setSpecific(key: .operationQueue, value: nil)
     }
-    
+
+    /// Suspnds the operation queue.
     public func suspend() {
         dispatchPrecondition(condition: .notOnQueue(lockQueue))
         lockQueue.sync {
@@ -77,7 +83,8 @@ public final class OperationQueue {
             isSuspended = true
         }
     }
-    
+
+    /// Resumes the operation queue.
     public func resume() {
         dispatchPrecondition(condition: .notOnQueue(lockQueue))
         lockQueue.sync {
@@ -117,31 +124,6 @@ public final class OperationQueue {
         op.enqueue(on: queue)
     }
 
-    public func addOperation(_ op: Operation) {
-        dispatchPrecondition(condition: .notOnQueue(lockQueue))
-        lockQueue.sync { _unsafeAddOperation(op) }
-    }
-
-    public func addOperations<Operations>(_ ops: Operations)
-    where Operations: Collection, Operations.Element == Operation
-    {
-        dispatchPrecondition(condition: .notOnQueue(lockQueue))
-        lockQueue.sync { ops.forEach(_unsafeAddOperation) }
-    }
-
-    @inlinable
-    public func addOperations(_ ops: Operation...) {
-        addOperations(ops)
-    }
-
-    @inlinable
-    @discardableResult
-    public func addOperation(executing block: @escaping BlockOperation.Block) -> BlockOperation {
-        let operation = BlockOperation(block: block)
-        addOperation(operation)
-        return operation
-    }
-    
     private func operationFinished(_ op: Operation) {
         dispatchPrecondition(condition: .notOnQueue(lockQueue))
         lockQueue.sync {
@@ -151,7 +133,56 @@ public final class OperationQueue {
             operationsGroup.leave()
         }
     }
-    
+
+    /// Adds a new operation to this queue.
+    /// - Parameter op: The operation to add.
+    public func addOperation(_ op: Operation) {
+        dispatchPrecondition(condition: .notOnQueue(lockQueue))
+        lockQueue.sync { _unsafeAddOperation(op) }
+    }
+
+    /// Adds a collection of operations to this queue.
+    /// - Parameter ops: The operations to add.
+    public func addOperations<Operations>(_ ops: Operations)
+    where Operations: Collection, Operations.Element == Operation
+    {
+        dispatchPrecondition(condition: .notOnQueue(lockQueue))
+        lockQueue.sync { ops.forEach(_unsafeAddOperation) }
+    }
+
+    /// Adds a variadic list of operations to this queue.
+    /// - Parameter ops: The variadic list of operations to add.
+    /// - SeeAlso: `OperationQueue.addOperations(_:)`
+    @inlinable
+    public func addOperations(_ ops: Operation...) {
+        addOperations(ops)
+    }
+
+    /// Adds a `BlockOperation` with a given synchronous block.
+    /// - Parameter block: The block to execute.
+    /// - Returns: The created block operation.
+    /// - SeeAlso: `BlockOperation.init(syncBlock:)`
+    @inlinable
+    @discardableResult
+    public func addOperation(executingSync block: @escaping BlockOperation.SyncBlock) -> BlockOperation {
+        let operation = BlockOperation(syncBlock: block)
+        addOperation(operation)
+        return operation
+    }
+
+    /// Adds a `BlockOperation` with a given asynchronous block.
+    /// - Parameter block: The block to execute.
+    /// - Returns: The created block operation.
+    /// - SeeAlso: `BlockOperation.init(asyncBlock:)`
+    @inlinable
+    @discardableResult
+    public func addOperation(executingAsync block: @escaping BlockOperation.AsyncBlock) -> BlockOperation {
+        let operation = BlockOperation(asyncBlock: block)
+        addOperation(operation)
+        return operation
+    }
+
+    /// Cancels all operation that are currently in the queue.
     public func cancelAllOperations() {
         dispatchPrecondition(condition: .notOnQueue(lockQueue))
         lockQueue.sync { operations.values }.forEach { $0.cancel() }

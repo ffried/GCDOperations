@@ -29,17 +29,22 @@ public final class DelayOperation: GCDOperation {
     }
     
     private let delay: Delay
-    
+
+    /// Creates a new delay operation, that delays for a given time interval.
+    /// - Parameter interval: The interval to delay
     public init(interval: TimeInterval) {
         delay = .interval(interval)
         super.init()
     }
-    
+
+    /// Creates a new delay operation that delays until a given date.
+    /// - Parameter date: The date until which to delay.
     public init(until date: Date) {
         delay = .date(date)
         super.init()
     }
-    
+
+    /// inherited
     public override func execute() {
         let interval = delay.interval
         guard interval > 0 else {

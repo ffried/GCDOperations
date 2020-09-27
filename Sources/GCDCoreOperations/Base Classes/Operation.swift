@@ -1,7 +1,24 @@
 import Dispatch
 
+/// The (abstract) base class for an operation.
+/// An operation is an "isolated" piece of work, that will be enqueued and executed on an `OperationQueue`.
+/// `Operation` is considered an abstract class and cannot be used directly. Create a subclass and override `execute` instead.
+///
+/// Each operation is in one of the following states:
+/// - created -> The operation has been created but not yet added to an `OperationQueue`.
+/// - waiting for dependencies -> The operation has been enqueued, but there are dependencies that are still executing.
+/// - evaluating conditions -> All the operation's dependencies have finished and the operation is now evaluating its conditions.
+/// - running -> The operation is performing its main task.
+/// - finished -> The operation has finished its main taks, or was cancelled.
+///
+/// Note that an operation can be cancelled in any state, but its up to the subclass to periodically check on `isCancelled`.
+///
+/// An operation can have dependencies, which will have to finish before the operation starts its work.
+/// Also, an operation can have conditions (see `OperationCondition`), which can be used to evaluate whether the operation should run or not.
+/// Finally, an operation can be observed using `OperationObserver`.
+///
+/// Be aware, that once an operation has been enqueued, it should not be modified directly in terms of adding dependencies, conditions or observers.
 open class Operation {
-    // MARK: - Stored Properties
     private final lazy var startItem: DispatchWorkItem! = DispatchWorkItem(block: self.run)
     private final let finishItem = DispatchWorkItem(block: {})
 
@@ -9,32 +26,44 @@ open class Operation {
     internal final var state: State = .created
 
     internal private(set) final var queue: DispatchQueue?
-    
+
+    /// The list of observers of this operation.
     public private(set) final var observers: [OperationObserver] = []
+    /// The list of conditions of this operation.
     public private(set) final var conditions: [OperationCondition] = []
     
     @Synchronized
     private final var _dependencies: ContiguousArray<Operation> = []
-
+    /// The list of dependencies of this operation.
     public final var dependencies: ContiguousArray<Operation> { _dependencies }
-    
+
+    /// The list of errors this operation encountered.
     public private(set) final var errors: [Error] = []
     
-    // MARK: - Convenience State Accessors
+    // MARK: - State Accessors
+    /// Whether or not this operation was cancelled.
     public final var isCancelled: Bool { state.isCancelled }
+    /// Whether or not this operation has finished. This will also return `true` if the operation has been cancelled.
     public final var isFinished: Bool { state.isFinished }
     
     // MARK: - Init
+    /// Creates a new operation.
     public init() {}
     
     // MARK: - Dependency Management
+    /// Adds a dependency to this operation.
+    /// - Parameter dep: The dependency to add.
+    /// - Precondition: This must not be called after the operation has been enqueued.
     public final func addDependency(_ dep: Operation) {
         __dependencies.coordinated(with: _state) { deps, state in
             assert(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
             deps.append(dep)
         }
     }
-    
+
+    /// Removes a dependency from this operation.
+    /// - Parameter dep: The dependency to remove.
+    /// - Precondition: This must not be called after the operation has been enqueued.
     public final func removeDependency(_ dep: Operation) {
         __dependencies.coordinated(with: _state) { deps, state in
             assert(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
@@ -43,6 +72,9 @@ open class Operation {
     }
     
     // MARK: - Conditions
+    /// Adds a condition to this operation.
+    /// - Parameter condition: The condition to add to this operation.
+    /// - Precondition: This must not be called after the operation has been enqueued.
     public final func addCondition<Condition>(_ condition: Condition) where Condition: OperationCondition {
         _state.withValue { state in
             assert(state < .evaluatingConditions, "Can't modify conditions after evaluation has begun!")
@@ -51,6 +83,11 @@ open class Operation {
     }
     
     // MARK: - Observers
+    /// Adds an observer to this operation. The observer will get all calls that remain for this operation.
+    /// If added to a running operation, the observer will only be notified of produced operations and finishing of this operation.
+    /// If "added" to a finished operation, the observer will not be added to the list of observers
+    /// and the `operationDidFinish(_:wasCancelled:errors:)` method will be called instantly on the observer.
+    /// - Parameter observer: The observer to add to this operation.
     public final func addObserver<Observer>(_ observer: Observer) where Observer: OperationObserver {
         let runManually: Bool = _state.withValue {
             let isFinished = $0.isFinished
@@ -65,21 +102,31 @@ open class Operation {
     }
     
     // MARK: - Errors
+    /// Aggregates a collection of errors into the list of errors of this operation.
+    /// - Parameter newErrors: The collections of errors to aggregate.
     public final func aggregate<Errors>(errors newErrors: Errors) where Errors: Collection, Errors.Element: Error {
         errors.append(contentsOf: newErrors.lazy.map { $0 })
     }
 
+    /// Aggregates a variadic list of errors into the list of errors of this operation.
+    /// - Parameter newErrors: The variadic list of errors to aggregate.
+    /// - SeeAlso: `aggregate(errors:)`
     @inlinable
     public final func aggregate(errors: Error...) {
         aggregate(errors: errors)
     }
 
+    /// Aggregates an error into the list of errors of this operation.
+    /// - Parameter error: The error to aggregate.
+    /// - SeeAlso: `aggregate(errors:)`
     @inlinable
     public final func aggregate(error: Error) {
         aggregate(errors: error)
     }
     
     // MARK: - Produce Operation
+    /// Produces a new operation. This notified all registered observers using the `operation(_:didProduce:)` method.
+    /// - Parameter operation: The operation to produce.
     public final func produce(_ operation: Operation) {
         observers.operation(self, didProduce: operation)
     }
@@ -160,7 +207,8 @@ open class Operation {
             }
         }
     }
-    
+
+    /// The main method of the operation. Subclasses should override this and perform their work.
     open func execute() {
         assertionFailure("Operations should always do some kind of work!")
         finish()
@@ -207,25 +255,38 @@ open class Operation {
         
         cleanup()
     }
-    
+
+    /// Finishes the operation with a list of errors (can be empty).
+    /// - Parameter errors: The errors to finish with. Can be an empty collection.
     public final func finish<Errors>(with errors: Errors) where Errors: Collection, Errors.Element: Error {
         finish(cancelled: false, errors: errors)
     }
 
+    /// Finishes the operation with a variadic list of errors (can be empty).
+    /// - Parameter errors: The variadic list of errors to finish with.
+    /// - SeeAlso: `finish(with:)`
     @inlinable
     public final func finish(with errors: Error...) {
         finish(with: errors)
     }
 
+    /// Cancels the operation with a list of errors (can be empty).
+    /// - Parameter errors: The errors to cancel with. Can be an empty collection.
     public final func cancel<Errors>(with errors: Errors) where Errors: Collection, Errors.Element: Error {
         finish(cancelled: true, errors: errors)
     }
 
+    /// Cancels the operation with a variadic list of errors (can be empty).
+    /// - Parameter errors: The variadic list of errors to cancel with.
     @inlinable
     public final func cancel(with errors: Error...) {
         cancel(with: errors)
     }
 
+    /// Method for subclasses to override to be informed when the operation finishes. This can be used to e.g. clean up some internals.
+    /// - Parameters:
+    ///   - wasCancelled: Whether or not the operation was cancelled. The value is the same as `isCancelled`. It's passed to this method to prevent the locks that need to be taken for `isCancelled` to be retrieved.
+    ///   - errors: The list of errors that the operation has aggregated. The value is the same as the `errors` property. It is passed to this method to prevent the locks that need to be taken for `errors` to be retrieved.
     open func didFinish(wasCancelled: Bool, errors: [Error]) {}
 }
 

@@ -1,3 +1,4 @@
+/// Describes a type that observers operations.
 public protocol OperationObserver {
     /// Invoked immediately prior to the `Operation`'s `execute()` method.
     func operationDidStart(_ operation: Operation)

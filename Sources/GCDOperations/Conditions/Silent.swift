@@ -8,21 +8,27 @@ import protocol GCDCoreOperations.OperationCondition
  do not already have it.
  */
 public struct SilentCondition<Condition: OperationCondition>: OperationCondition {
+    /// inherited
     public static var name: String { "Silent<\(Condition.name)>" }
-    
+
+    /// inherited
     public static var isMutuallyExclusive: Bool { Condition.isMutuallyExclusive }
     
     private let condition: Condition
-    
+
+    /// Creates a new SilentCondition that silences the given condition.
+    /// - Parameter condition: The condition to silence.
     public init(condition: Condition) {
         self.condition = condition
     }
-    
+
+    /// inherited
     public func dependency(for operation: GCDOperation) -> GCDOperation? {
         // We never generate a dependency.
         nil
     }
-    
+
+    /// inherited
     public func evaluate(for operation: GCDOperation, completion: @escaping (OperationConditionResult) -> ()) {
         condition.evaluate(for: operation, completion: completion)
     }

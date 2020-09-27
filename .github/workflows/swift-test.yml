@@ -31,7 +31,7 @@ jobs:
         uses: sersoft-gmbh/SwiftyActions@v1
         with:
           release-version: 5.3
-          platform: ubuntu-20.04
+          platform: ${{matrix.os}}
       - uses: actions/checkout@v2
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
@@ -59,7 +59,7 @@ jobs:
           - platform=iOS Simulator,OS=latest,name=iPad Pro (9.7-inch)
           - platform=tvOS Simulator,OS=latest,name=Apple TV 4K
         include:
-          - scheme: GCDOperations
+          - scheme: GCDOperations-Package
             action: build
             destination: platform=watchOS Simulator,OS=latest,name=Apple Watch Series 5 - 44mm
     steps:
@@ -74,5 +74,5 @@ jobs:
       - uses: codecov/codecov-action@v1
         with:
           token: ${{secrets.CODECOV_TOKEN}}
-          fail_ci_if_error: false
+          fail_ci_if_error: true
         if: matrix.action == 'test'

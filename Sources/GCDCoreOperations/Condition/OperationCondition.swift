@@ -25,12 +25,15 @@ public protocol OperationCondition {
     func evaluate(for operation: Operation, completion: @escaping (OperationConditionResult) -> ())
 }
 
-/// An error representing a failed condition.
+/// An error representing a failed condition. This protocol is an implementation detail and should not be used directly. Use `ConditionError` instead.
 public protocol AnyConditionError: Error {
+    /// The name of the condition that failed.
     var conditionName: String { get }
 }
 
+/// An error describing a failed condition.
 public protocol ConditionError: AnyConditionError {
+    /// The condition that has failed.
     associatedtype Condition: OperationCondition
 }
 
