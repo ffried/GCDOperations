@@ -1,7 +1,8 @@
 [![GitHub release](https://img.shields.io/github/release/ffried/gcdoperations.svg?style=flat)](https://github.com/ffried/GCDOperations/releases/latest)
 ![Tests](https://github.com/ffried/GCDOperations/workflows/Tests/badge.svg)
-<!-- [![codecov](https://codecov.io/gh/ffried/GCDOperations/branch/master/graph/badge.svg)](https://codecov.io/gh/ffried/GCDOperations) -->
 [![jazzy](https://raw.githubusercontent.com/ffried/GCDOperations/gh-pages/badge.svg?sanitize=true)](https://ffried.github.io/GCDOperations)
+
+<!-- [![codecov](https://codecov.io/gh/ffried/GCDOperations/branch/master/graph/badge.svg)](https://codecov.io/gh/ffried/GCDOperations) -->
 
 # GCDOperations
 Operations written in Swift based purely on GCD - no Objective-C dynamics, no key value observing.
