@@ -1,0 +1,14 @@
+clean: true
+
+theme: fullwidth
+
+output: docs
+source_directory: Sources
+readme: README.md
+
+module: GCDOperations
+undocumented_text: ""
+github_url: https://github.com/ffried/GCDOperations
+
+author: Florian Friedrich
+author_url: https://ffried.codes
