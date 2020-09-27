@@ -1,15 +1,7 @@
-//
-//  GCDOperationsTests.swift
-//  GCDOperationsTests
-//
-//  Created by Florian Friedrich on 02.04.17.
-//  Copyright © 2017 Florian Friedrich. All rights reserved.
-//
-
 import XCTest
 @testable import GCDOperations
 
-final class GCDOperationsTests: XCTestCase {
+final class MutuallyExclusiveTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -16,12 +16,35 @@ fileprivate extension DispatchSpecificKey {
     static var operationQueue: DispatchSpecificKey<Unmanaged<OperationQueue>> { _operationQueueKey }
 }
 
+fileprivate extension Operation {
+    var _queueID: Int { unsafeBitCast(self, to: Int.self) } // pointer ought to be unique
+}
+
 public final class OperationQueue {
+    private final class QueueObserver: OperationObserver {
+        private(set) var queue: OperationQueue!
+
+        init(queue: OperationQueue) {
+            self.queue = queue
+        }
+
+        func operationDidStart(_ operation: Operation) {}
+
+        func operation(_ operation: Operation, didProduce newOperation: Operation) {
+            queue.addOperation(newOperation)
+        }
+
+        func operationDidFinish(_ operation: Operation, wasCancelled cancelled: Bool, errors: [Error]) {
+            queue.operationFinished(operation)
+            queue = nil // Op has finished. Release the queue.
+        }
+    }
+
     private let lockQueue = DispatchQueue(label: "net.ffried.GCDOperations.OperationQueue.Lock")
 
     private let queue: DispatchQueue
     private let operationsGroup = DispatchGroup()
-    private var operations: ContiguousArray<Operation> = []
+    private var operations: Dictionary<Int, Operation> = [:]
 
     public private(set) var isSuspended: Bool
 
@@ -67,9 +90,10 @@ public final class OperationQueue {
     private func _unsafeAddOperation(_ op: Operation) {
         dispatchPrecondition(condition: .onQueue(lockQueue))
         operationsGroup.enter()
-        op.addObserver(BlockObserver(produceHandler: { [weak self] in self?.addOperation($1) },
-                                     finishHandler: { [weak self] op, _, _ in self?.operationFinished(op) }))
-        operations.append(op)
+        op.addObserver(QueueObserver(queue: self))
+        let operationIdentifier = op._queueID
+        assert(operations[operationIdentifier] == nil, "Operation \(op) has already been added to this queue!")
+        operations[operationIdentifier] = op
 
         op.conditions.lazy
             .compactMap { $0.dependency(for: op) }
@@ -121,16 +145,16 @@ public final class OperationQueue {
     private func operationFinished(_ op: Operation) {
         dispatchPrecondition(condition: .notOnQueue(lockQueue))
         lockQueue.sync {
-            _ = operations.firstIndex(where: { $0 === op }).map { operations.remove(at: $0) }
+            let opID = op._queueID
+            assert(operations[opID] != nil, "Operation \(op) is not enqueued in this queue!")
+            operations.removeValue(forKey: opID)
             operationsGroup.leave()
         }
     }
     
     public func cancelAllOperations() {
         dispatchPrecondition(condition: .notOnQueue(lockQueue))
-        lockQueue.sync {
-            operations.forEach { $0.cancel() }
-        }
+        lockQueue.sync { operations.values }.forEach { $0.cancel() }
     }
 }
 
