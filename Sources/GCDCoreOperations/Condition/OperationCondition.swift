@@ -38,19 +38,17 @@ public protocol ConditionError: AnyConditionError {
 }
 
 extension ConditionError {
+    /// inherited
     @inlinable
     public var conditionName: String { Condition.name }
 }
 
-
 /// An enum to indicate whether an `OperationCondition` was satisfied, or if it
 /// failed with an error.
-///
-/// - satisfied: The condition was satisified, continue execution.
-/// - failed: The condition failed, abort execution.
-///     The associated `ConditionError` describes what failure happened during evaluation.
 public enum OperationConditionResult {
+    /// The condition was satisified, continue execution.
     case satisfied
+    /// The condition failed, abort execution. The associated `ConditionError` describes what failure happened during evaluation.
     case failed(AnyConditionError)
     
     var error: AnyConditionError? {

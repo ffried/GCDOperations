@@ -8,6 +8,7 @@ import protocol GCDCoreOperations.OperationCondition
 public struct NoCancelledDependencies: OperationCondition {
     /// The error produced when any of the operation's dependencies was cancelled.
     public struct Error: ConditionError {
+        /// inherited
         public typealias Condition = NoCancelledDependencies
 
         /// The dependencies that were cancelled.

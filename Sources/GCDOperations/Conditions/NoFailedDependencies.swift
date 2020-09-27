@@ -8,6 +8,7 @@ import protocol GCDCoreOperations.OperationCondition
 public struct NoFailedDependencies: OperationCondition {
     /// The error produced when any of the operation's dependencies have failed.
     public struct Error: ConditionError {
+        /// inherited
         public typealias Condition = NoFailedDependencies
 
         /// The dependencies that have failed.

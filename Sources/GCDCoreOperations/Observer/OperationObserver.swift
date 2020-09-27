@@ -1,9 +1,9 @@
 /// Describes a type that observers operations.
 public protocol OperationObserver {
-    /// Invoked immediately prior to the `Operation`'s `execute()` method.
+    /// Invoked immediately prior to the `Operation.execute()` method.
     func operationDidStart(_ operation: Operation)
     
-    /// Invoked when `Operation.produceOperation(_:)` is executed.
+    /// Invoked when `Operation.produce(_:)` is executed.
     func operation(_ operation: Operation, didProduce newOperation: Operation)
     
     /// Invoked when an `Operation` finishes, along with whether it was cancelled and any errors produced during execution.

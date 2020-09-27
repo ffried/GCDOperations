@@ -9,6 +9,7 @@ import protocol GCDCoreOperations.OperationCondition
 public struct NegatedCondition<ConditionToNegate: OperationCondition>: OperationCondition {
     /// The error produced, when the negated condition succeeded.
     public struct Error: ConditionError {
+        /// inherited
         public typealias Condition = NegatedCondition<ConditionToNegate>
 
         /// The condition that was negated but succeeded.
