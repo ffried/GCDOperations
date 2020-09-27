@@ -325,7 +325,7 @@ extension Operation {
             return false
         }
 
-        public var description: String {
+        var description: String {
             switch self {
             case .created: return "Created"
             case .enqueued: return "Enqueued"

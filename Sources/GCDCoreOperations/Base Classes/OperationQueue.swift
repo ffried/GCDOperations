@@ -71,6 +71,7 @@ public final class OperationQueue {
         self.init(queue: queue, isSuspended: initiallySuspended)
     }
 
+    /// Deinitializes the OperationQueue.
     deinit {
         queue.setSpecific(key: .operationQueue, value: nil)
     }

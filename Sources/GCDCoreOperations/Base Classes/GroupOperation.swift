@@ -57,6 +57,7 @@ public final class GroupOperation: Operation {
         op.enqueue(on: queue, in: group)
     }
 
+    /// inherited
     public override func execute() {
         guard let queue = queue else { return finish() }
         operations.forEach { includeOperation($0, on: queue) }

@@ -25,7 +25,8 @@ public final class BlockOperation: Operation {
     public init(asyncBlock: @escaping AsyncBlock) {
         executionMode = .async(asyncBlock)
     }
-    
+
+    /// inherited
     public override func execute() {
         switch executionMode {
         case .sync(let block):
