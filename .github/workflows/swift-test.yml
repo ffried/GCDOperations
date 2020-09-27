@@ -59,7 +59,8 @@ jobs:
           - platform=iOS Simulator,OS=latest,name=iPad Pro (9.7-inch)
           - platform=tvOS Simulator,OS=latest,name=Apple TV 4K
         include:
-          - scheme: GCDOperations-Package
+            # The `XYZ-Package` scheme also builds the test targets, but XCTest is not available on watchOS.
+          - scheme: GCDOperations
             action: build
             destination: platform=watchOS Simulator,OS=latest,name=Apple Watch Series 5 - 44mm
     steps:
