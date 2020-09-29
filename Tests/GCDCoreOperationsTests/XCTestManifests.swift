@@ -20,6 +20,7 @@ extension OperationTests {
     static let __allTests__OperationTests = [
         ("testSimpleExecution", testSimpleExecution),
         ("testWaitingForDependencies", testWaitingForDependencies),
+        ("testWaitingForDependenciesWhichAreCancelled", testWaitingForDependenciesWhichAreCancelled),
     ]
 }
 
