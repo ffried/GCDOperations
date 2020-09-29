@@ -20,7 +20,7 @@ import Dispatch
 /// Be aware, that once an operation has been enqueued, it should not be modified directly in terms of adding dependencies, conditions or observers.
 open class Operation {
     private final lazy var startItem: DispatchWorkItem! = DispatchWorkItem(block: self.run)
-    private final let finishItem = DispatchWorkItem(block: {})
+    private final let finishSignal = DispatchSemaphore(value: 0)
 
     @Synchronized
     internal final var state: State = .created
@@ -56,7 +56,7 @@ open class Operation {
     /// - Precondition: This must not be called after the operation has been enqueued.
     public final func addDependency(_ dep: Operation) {
         __dependencies.coordinated(with: _state) { deps, state in
-            assert(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
+            assert(state.isCancelled || state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
             deps.append(dep)
         }
     }
@@ -66,7 +66,7 @@ open class Operation {
     /// - Precondition: This must not be called after the operation has been enqueued.
     public final func removeDependency(_ dep: Operation) {
         __dependencies.coordinated(with: _state) { deps, state in
-            assert(state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
+            assert(state.isCancelled || state < .waitingForDependencies, "Can't modify dependencies after execution has begun!")
             deps.removeAll { $0 === dep }
         }
     }
@@ -77,7 +77,7 @@ open class Operation {
     /// - Precondition: This must not be called after the operation has been enqueued.
     public final func addCondition<Condition>(_ condition: Condition) where Condition: OperationCondition {
         _state.withValue { state in
-            assert(state < .evaluatingConditions, "Can't modify conditions after evaluation has begun!")
+            assert(state.isCancelled || state < .evaluatingConditions, "Can't modify conditions after evaluation has begun!")
             conditions.append(condition)
         }
     }
@@ -133,12 +133,14 @@ open class Operation {
     
     // MARK: - Lifecycle
     internal func enqueue(on queue: DispatchQueue, in group: DispatchGroup? = nil) {
-        guard !isCancelled else { return }
-        _state.withValue { state in
+        let isCancelled: Bool = _state.withValue { state in
+            guard !state.isCancelled else { return true }
             assert(state < .enqueued, "Operation is already enqueued!")
             state = .enqueued
             self.queue = queue
+            return false
         }
+        guard !isCancelled else { return }
         if let group = group {
             queue.async(group: group, execute: startItem)
         } else {
@@ -147,18 +149,14 @@ open class Operation {
     }
     
     private final func run() {
-        guard !isCancelled else { return }
-        _state.withValue { state in
-            assert(state == .enqueued, "\(#function) called without the Operation being enqueued!")
-            state = .waitingForDependencies
-        }
+        guard !_state.setUnlessCancelled(to: .waitingForDependencies,
+                                         assertion: { assert($0 == .enqueued, "\(#function) called without the Operation being enqueued!") })
+        else { return }
         waitForDependencies()
 
-        guard !isCancelled else { return }
-        _state.withValue { $0 = .evaluatingConditions }
+        guard !_state.setUnlessCancelled(to: .evaluatingConditions) else { return }
         evaluateConditions {
             guard !self.isCancelled else { return }
-            // Run
             self._state.withValue { $0 = .running }
             self.observers.operationDidStart(self)
             self.execute()
@@ -166,16 +164,19 @@ open class Operation {
     }
     
     private final func waitForDependencies() {
-        assert(state == .waitingForDependencies, "Incorrect state for \(#function)!")
-        /*
-         * TODO: Using notify might be better.
-         * This would also allow for dependencies being added while waiting for other dependencies.
-         */
-        dependencies.forEach { $0.finishItem.wait() }
+        assert(_state.isCancelled(or: .waitingForDependencies), "Incorrect state for \(#function)!")
+        for dependency in dependencies {
+            while case .timedOut = dependency.finishSignal.wait(timeout: .now()), !isCancelled {
+                continue
+            }
+            if isCancelled {
+                break
+            }
+        }
     }
     
     private final func evaluateConditions(completion: @escaping () -> ()) {
-        assert(state == .evaluatingConditions, "Incorrect state for \(#function)!")
+        assert(_state.isCancelled(or: .evaluatingConditions), "Incorrect state for \(#function)!")
 
         guard !conditions.isEmpty else { return completion() }
         
@@ -248,10 +249,8 @@ open class Operation {
 
         if cancelled {
             startItem.cancel()
-            finishItem.cancel()
-        } else {
-            finishItem.perform()
         }
+        finishSignal.signal()
         
         cleanup()
     }
@@ -357,4 +356,19 @@ extension Operation {
 
 fileprivate struct AnyConditionFailed: AnyConditionError {
     var conditionName: String { "AnyCondition" }
+}
+
+fileprivate extension Synchronized where Value == Operation.State {
+    func setUnlessCancelled(to newState: Value, assertion: ((Value) -> ())? = nil) -> Bool {
+        withValue {
+            guard !$0.isCancelled else { return true }
+            assertion?($0)
+            $0 = newState
+            return false
+        }
+    }
+
+    func isCancelled(or state: Value) -> Bool {
+        withValue { $0.isCancelled || $0 == state }
+    }
 }
