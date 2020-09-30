@@ -48,16 +48,16 @@ final class OperationTests: XCTestCase {
         let operation1 = GCDBlockOperation {
             sleep(1)
             op1Executed = true
-            $0([])
         }
         var op1DidExecuteFirst = false
         let operation2 = GCDBlockOperation {
             sleep(1)
             op1DidExecuteFirst = op1Executed
-            $0([])
-            expectation.fulfill()
         }
         operation2.addDependency(operation1)
+        operation2.addObserver(BlockObserver(finishHandler: { _, _, _ in
+            expectation.fulfill()
+        }))
         
         let queue = GCDOperationQueue()
         queue.addOperation(operation2)
@@ -79,16 +79,16 @@ final class OperationTests: XCTestCase {
         let operation1 = GCDBlockOperation {
             sleep(1)
             op1Executed = true
-            $0([])
         }
         var op1DidExecuteFirst = false
         let operation2 = GCDBlockOperation {
             sleep(1)
             op1DidExecuteFirst = op1Executed
-            $0([])
-            expectation.fulfill()
         }
         operation2.addDependency(operation1)
+        operation2.addObserver(BlockObserver(finishHandler: { _, _, _ in
+            expectation.fulfill()
+        }))
 
         let queue = GCDOperationQueue()
         queue.addOperation(operation2)
