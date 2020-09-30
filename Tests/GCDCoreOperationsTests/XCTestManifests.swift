@@ -18,6 +18,7 @@ extension OperationTests {
     //   `swift test --generate-linuxmain`
     // to regenerate.
     static let __allTests__OperationTests = [
+        ("testDescription", testDescription),
         ("testSimpleExecution", testSimpleExecution),
         ("testWaitingForDependencies", testWaitingForDependencies),
         ("testWaitingForDependenciesWhichAreCancelled", testWaitingForDependenciesWhichAreCancelled),
