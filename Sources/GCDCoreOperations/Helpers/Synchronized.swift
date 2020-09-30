@@ -19,6 +19,14 @@ final class Synchronized<Value> {
         return try accessQueue.sync(flags: .barrier) { try work(&_wrappedValue) }
     }
 
+    @discardableResult
+    func exchange(with newValue: Value) -> Value {
+        withValue { currentVal in
+            defer { currentVal = newValue }
+            return currentVal
+        }
+    }
+
     func coordinated<OtherValue, T>(with other: Synchronized<OtherValue>, do work: (inout Value, inout OtherValue) throws -> T) rethrows -> T {
         dispatchPrecondition(condition: .notOnQueue(accessQueue))
         return try accessQueue.sync(flags: .barrier) {

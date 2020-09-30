@@ -12,6 +12,19 @@ final class OperationTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+
+    func testDescription() {
+        final class TestOp: GCDOperation {}
+
+        let op1 = GCDOperation()
+        let op2 = TestOp()
+        op1.addDependency(op2)
+
+        XCTAssertEqual(String(describing: op1), "\(GCDOperation.self)(state: \(op1.state))")
+        XCTAssertEqual(String(describing: op2), "\(TestOp.self)(state: \(op2.state))")
+        XCTAssertEqual(String(reflecting: op1), "\(GCDOperation.self)(state: \(op1.state), no. dependencies: 1, no. waiters: 0)")
+        XCTAssertEqual(String(reflecting: op2), "\(TestOp.self)(state: \(op2.state), no. dependencies: 0, no. waiters: 0)")
+    }
     
     func testSimpleExecution() {
         let expectation = self.expectation(description: "Waiting for Operation to execute...")
