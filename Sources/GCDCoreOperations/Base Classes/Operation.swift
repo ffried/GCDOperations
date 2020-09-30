@@ -258,8 +258,14 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible {
     {
         assert(cancelled || state > .enqueued, "Finishing Operation that was never enqueued!")
         guard !state.isFinished else { return }
+        let (isAlreadyFinishing, wasWaitingForDependencies): (Bool, Bool) = _state.withValue { state in
+            guard !state.isFinishing && !state.isFinished else { return (true, false) }
+            defer { state = .finishing(cancelled: cancelled) }
+            return (false, state == .waitingForDependencies)
+        }
+        guard !isAlreadyFinishing else { return }
 
-        if _state.exchange(with: .finishing(cancelled: cancelled)) == .waitingForDependencies {
+        if wasWaitingForDependencies {
             __dependencies.withValue {
                 $0.forEach { $0.removeWaiter(dependenciesGroup) }
             }
@@ -271,12 +277,11 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible {
         }
         aggregate(errors: errs)
 
-        guard !state.isFinished else { return }
+        guard !_state.exchange(with: .finished(cancelled: cancelled)).isFinished else { return }
 
-        _state.exchange(with:.finished(cancelled: cancelled))
-
-        didFinish(wasCancelled: cancelled, errors: errors)
-        observers.operationDidFinish(self, wasCancelled: cancelled, errors: errors)
+        let allErrors = errors
+        didFinish(wasCancelled: cancelled, errors: allErrors)
+        observers.operationDidFinish(self, wasCancelled: cancelled, errors: allErrors)
 
         waiters.forEach { $0.leave() }
         

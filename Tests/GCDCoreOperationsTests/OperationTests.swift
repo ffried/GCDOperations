@@ -28,11 +28,10 @@ final class OperationTests: XCTestCase {
     
     func testSimpleExecution() {
         let expectation = self.expectation(description: "Waiting for Operation to execute...")
-        let operation = GCDBlockOperation {
-            defer { expectation.fulfill() }
-            sleep(1)
-            $0([])
-        }
+        let operation = GCDBlockOperation { sleep(1) }
+        operation.addObserver(BlockObserver(finishHandler: { _, _, _ in
+            expectation.fulfill()
+        }))
 
         let queue = GCDOperationQueue()
         queue.addOperation(operation)
