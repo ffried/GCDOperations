@@ -33,7 +33,7 @@ jobs:
       - name: Generate Coverage Files
         if: runner.os == 'Linux'
         run: llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
-      - uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@v1.5.0
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           file: coverage.lcov
@@ -66,7 +66,7 @@ jobs:
           scheme: ${{matrix.scheme}}
           destination: ${{matrix.destination}}
           action: ${{matrix.action}}
-      - uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@v1.5.0
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           fail_ci_if_error: true
