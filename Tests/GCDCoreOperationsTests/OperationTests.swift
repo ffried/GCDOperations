@@ -85,12 +85,15 @@ final class OperationTests: XCTestCase {
             sleep(1)
             op1DidExecuteFirst = op1Executed
         }
+        let operation3 = GCDBlockOperation {}
         operation2.addDependency(operation1)
-        operation2.addObserver(BlockObserver(finishHandler: { _, _, _ in
+        operation3.addDependency(operation2)
+        operation3.addObserver(BlockObserver(finishHandler: { _, _, _ in
             expectation.fulfill()
         }))
 
         let queue = GCDOperationQueue()
+        queue.addOperation(operation3)
         queue.addOperation(operation2)
         queue.addOperation(operation1)
 
