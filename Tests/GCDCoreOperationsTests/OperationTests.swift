@@ -73,23 +73,25 @@ final class OperationTests: XCTestCase {
     }
 
     func testWaitingForDependenciesWhichAreCancelled() {
-        let expectation = self.expectation(description: "Waiting for Operation to execute...")
+        let op1StartExpectation = expectation(description: "Waiting for op1 to start...")
+        let finishExpectation = expectation(description: "Waiting for operations to execute...")
 
+        let sema = DispatchSemaphore(value: 0)
         var op1Executed = false
-        let operation1 = GCDBlockOperation {
-            sleep(1)
+        let operation1 = GCDBlockOperation { _ in // use async version
             op1Executed = true
+            op1StartExpectation.fulfill()
+            sema.wait()
         }
         var op1DidExecuteFirst = false
         let operation2 = GCDBlockOperation {
-            sleep(1)
             op1DidExecuteFirst = op1Executed
         }
         let operation3 = GCDBlockOperation {}
         operation2.addDependency(operation1)
         operation3.addDependency(operation2)
         operation3.addObserver(BlockObserver(finishHandler: { _, _, _ in
-            expectation.fulfill()
+            finishExpectation.fulfill()
         }))
 
         let queue = GCDOperationQueue()
@@ -97,14 +99,16 @@ final class OperationTests: XCTestCase {
         queue.addOperation(operation2)
         queue.addOperation(operation1)
 
+        wait(for: [op1StartExpectation], timeout: 2)
         operation1.cancel()
+        sema.signal()
 
-        waitForExpectations(timeout: 4)
+        wait(for: [finishExpectation], timeout: 2)
         XCTAssertTrue(operation1.isFinished)
         XCTAssertTrue(operation2.isFinished)
         XCTAssertTrue(operation1.isCancelled)
         XCTAssertFalse(operation2.isCancelled)
-        XCTAssertFalse(op1Executed)
-        XCTAssertFalse(op1DidExecuteFirst)
+        XCTAssertTrue(op1Executed)
+        XCTAssertTrue(op1DidExecuteFirst)
     }
 }
