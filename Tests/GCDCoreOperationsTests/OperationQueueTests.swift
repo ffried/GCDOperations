@@ -66,23 +66,25 @@ final class OperationQueueTests: XCTestCase {
     func testDeinitializationWhenAllOperationsHaveCompleted() {
         final class _BlockOp: GCDOperation {
             let block: (_BlockOp) -> ()
+            let deinitBlock: () -> ()
 
-            init(block: @escaping (_BlockOp) -> ()) {
+            init(block: @escaping (_BlockOp) -> (), deinitBlock: @escaping () -> ()) {
                 self.block = block
+                self.deinitBlock = deinitBlock
             }
+
+            deinit { deinitBlock() }
 
             override func execute() {
                 block(self)
                 finish()
             }
         }
-        let opExpectation = expectation(description: "Waiting for block to execute...")
+
+        let opExpectation = expectation(description: "Waiting for block op do vanish...")
         var queue: GCDOperationQueue? = GCDOperationQueue()
         var underlyingQueue: DispatchQueue?
-        queue?.addOperation(_BlockOp {
-            underlyingQueue = $0.queue
-            opExpectation.fulfill()
-        })
+        queue?.addOperation(_BlockOp { underlyingQueue = $0.queue } deinitBlock: { opExpectation.fulfill() })
         queue = nil // release
         wait(for: [opExpectation], timeout: 2)
         XCTAssertNotNil(underlyingQueue)
