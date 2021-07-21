@@ -78,8 +78,12 @@ jobs:
           scheme: ${{matrix.scheme}}
           destination: ${{matrix.destination}}
           action: ${{matrix.action}}
-      - uses: codecov/codecov-action@v1.5.2
+      - uses: sersoft-gmbh/xcode-coverage-action@v1.0.0
+        id: xcode-cov
+        if: matrix.action == 'test'
+      - uses: codecov/codecov-action@v2.0.1
         with:
           token: ${{secrets.CODECOV_TOKEN}}
+          files: ${{join(fromJSON(steps.xcode-cov.outputs.files), ',')}}
           fail_ci_if_error: true
         if: matrix.action == 'test'
