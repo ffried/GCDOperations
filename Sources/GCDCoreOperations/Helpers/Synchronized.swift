@@ -11,7 +11,7 @@ final class Synchronized<Value> {
         dispatchPrecondition(condition: .notOnQueue(accessQueue))
         return accessQueue.sync { _wrappedValue }
     }
-    
+
     init(wrappedValue: Value) { _wrappedValue = wrappedValue }
     
     func withValue<T>(do work: (inout Value) throws -> T) rethrows -> T {
@@ -38,3 +38,7 @@ final class Synchronized<Value> {
         }
     }
 }
+
+#if compiler(>=5.5) && canImport(_Concurrency)
+extension Synchronized: @unchecked Sendable {}
+#endif

@@ -1,7 +1,7 @@
 @frozen
 enum ExclusivityController {
     @Synchronized
-    private static var operations: [String: ContiguousArray<Operation>] = [:]
+    private static var operations = Dictionary<String, ContiguousArray<Operation>>()
     
     static func addOperation<Categories: Collection>(_ operation: Operation, categories: Categories)
     where Categories.Element == String

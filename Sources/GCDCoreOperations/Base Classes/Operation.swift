@@ -22,15 +22,16 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible {
     @Synchronized
     internal final var state: State = .created
 
+    // queue, observers and conditions are write-protected using `state`.
     internal private(set) final var queue: DispatchQueue?
 
     /// The list of observers of this operation.
-    public private(set) final var observers: [OperationObserver] = []
+    public private(set) final var observers = Array<OperationObserver>()
     /// The list of conditions of this operation.
-    public private(set) final var conditions: [OperationCondition] = []
+    public private(set) final var conditions = Array<OperationCondition>()
     
     @Synchronized
-    private final var _dependencies: ContiguousArray<Operation> = []
+    private final var _dependencies = ContiguousArray<Operation>()
     /// The list of dependencies of this operation.
     public final var dependencies: ContiguousArray<Operation> { _dependencies }
 
@@ -39,7 +40,9 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible {
     private let dependenciesGroup = DispatchGroup()
 
     /// The list of errors this operation encountered.
-    public private(set) final var errors: [Error] = []
+    @Synchronized
+    private final var _errors = Array<Error>()
+    public final var errors: Array<Error> { _errors }
     
     // MARK: - State Accessors
     /// Whether or not this operation was cancelled.
@@ -117,7 +120,7 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible {
     /// Aggregates a collection of errors into the list of errors of this operation.
     /// - Parameter newErrors: The collections of errors to aggregate.
     public final func aggregate<Errors>(errors newErrors: Errors) where Errors: Collection, Errors.Element: Error {
-        errors.append(contentsOf: newErrors.lazy.map { $0 })
+        __errors.withValue { $0.append(contentsOf: newErrors.lazy.map { $0 }) }
     }
 
     /// Aggregates a variadic list of errors into the list of errors of this operation.
@@ -153,11 +156,7 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible {
             return false
         }
         guard !isCancelled else { return }
-        if let group = group {
-            queue.async(group: group, execute: run)
-        } else {
-            queue.async(execute: run)
-        }
+        queue.async(group: group, execute: run)
     }
     
     private final func run() {

@@ -4,19 +4,29 @@ import Dispatch
 public final class GroupOperation: Operation {
     private let group = DispatchGroup()
 
+    @Synchronized
+    private var _operations: ContiguousArray<Operation>
     /// The operations grouped inside this operation.
-    public private(set) var operations: ContiguousArray<Operation>
+    public var operations: ContiguousArray<Operation> { _operations }
 
     /// Creates a new GroupOperation with the given list of operations.
     /// - Parameter operations: The operations to execute grouped in this operation.
     public init(operations: ContiguousArray<Operation>) {
-        self.operations = operations
+        __operations = .init(wrappedValue: operations)
+    }
+
+    /// Creates a new GroupOperation with the given list of operations.
+    /// - Parameter operations: The operations to execute grouped in this
+    @inlinable
+    public convenience init<C: Collection>(operations: C) where C.Element == Operation {
+        self.init(operations: .init(operations))
     }
 
     /// Creates a new GroupOperation with the given variadic list of operations.
     /// - Parameter operations: The variadic list of operations to execute grouped in this operation.
+    @inlinable
     public convenience init(operations: Operation...) {
-        self.init(operations: ContiguousArray(operations))
+        self.init(operations: operations)
     }
 
     /// Adds a new operation to this GroupOperation.
@@ -24,7 +34,7 @@ public final class GroupOperation: Operation {
     /// - Precondition: This GroupOperation must not have finished yet!
     public func addOperation(_ op: Operation) {
         assert(!isFinished, "Cannot add operations after GroupOperation has finished!")
-        operations.append(op)
+        __operations.withValue { $0.append(op) }
         if case .running = state, let queue = queue {
             includeOperation(op, on: queue)
         }
@@ -37,7 +47,7 @@ public final class GroupOperation: Operation {
     where Operations: Collection, Operations.Element == Operation
     {
         assert(!isFinished, "Cannot add operations after GroupOperation has finished!")
-        operations.append(contentsOf: ops)
+        __operations.withValue { $0.append(contentsOf: ops) }
         if case .running = state, let queue = queue {
             ops.forEach { includeOperation($0, on: queue) }
         }

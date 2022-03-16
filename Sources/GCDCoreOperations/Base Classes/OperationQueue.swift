@@ -1,14 +1,14 @@
 import Dispatch
 #if os(Linux)
-    import func CoreFoundation._CFIsMainThread
+import func CoreFoundation._CFIsMainThread
 #endif
 
 private func isMainThread() -> Bool {
-    #if os(Linux)
-        return _CFIsMainThread()
-    #else
-        return pthread_main_np() != 0
-    #endif
+#if os(Linux)
+    return _CFIsMainThread()
+#else
+    return pthread_main_np() != 0
+#endif
 }
 
 private let _operationQueueKey = DispatchSpecificKey<Unmanaged<OperationQueue>>()
@@ -46,7 +46,7 @@ public final class OperationQueue {
 
     private let queue: DispatchQueue
     private let operationsGroup = DispatchGroup()
-    private var operations: Dictionary<Int, Operation> = [:]
+    private var operations = Dictionary<Int, Operation>()
 
     /// Whether or not the queue is currently suspended.
     public private(set) var isSuspended: Bool
@@ -100,7 +100,7 @@ public final class OperationQueue {
         operationsGroup.enter()
         op.addObserver(QueueObserver(queue: self))
         let operationIdentifier = op._queueID
-        assert(operations[operationIdentifier] == nil, "Operation \(op) has already been added to this queue!")
+        assert(!operations.keys.contains(operationIdentifier), "Operation \(op) has already been added to this queue!")
         operations[operationIdentifier] = op
 
         op.conditions.lazy
@@ -129,7 +129,7 @@ public final class OperationQueue {
         dispatchPrecondition(condition: .notOnQueue(lockQueue))
         lockQueue.sync {
             let opID = op._queueID
-            assert(operations[opID] != nil, "Operation \(op) is not enqueued in this queue!")
+            assert(operations.keys.contains(opID), "Operation \(op) is not enqueued in this queue!")
             operations.removeValue(forKey: opID)
             operationsGroup.leave()
         }
