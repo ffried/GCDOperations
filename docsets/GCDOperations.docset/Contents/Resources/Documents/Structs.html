@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Structures  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Section/Structures" class="dashAnchor"></a>
+
+    <a title="Structures  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          GCDOperations 0.5.0 Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/ffried/GCDOperations">
+            <img class="header-icon" src="img/gh.png" alt="GitHub"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">GCDOperations Reference</a>
+      <img class="carat" src="img/carat.png" alt=""/>
+      Structures  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/BlockOperation.html">BlockOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/DelayOperation.html">DelayOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/GroupOperation.html">GroupOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Operation.html">Operation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/OperationQueue.html">OperationQueue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/OperationConditionResult.html">OperationConditionResult</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions.html#/s:17GCDCoreOperations12SynchronizedC">Synchronized</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/AnyConditionError.html">AnyConditionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/ConditionError.html">ConditionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/OperationCondition.html">OperationCondition</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/OperationObserver.html">OperationObserver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/BlockObserver.html">BlockObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/MutuallyExclusive.html">MutuallyExclusive</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/NegatedCondition.html">NegatedCondition</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/NegatedCondition/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/NoCancelledDependencies.html">NoCancelledDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/NoCancelledDependencies/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/NoFailedDependencies.html">NoFailedDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/NoFailedDependencies/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/SilentCondition.html">SilentCondition</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/TimeoutObserver.html">TimeoutObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/TimeoutObserver/TimeoutError.html">– TimeoutError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:17GCDCoreOperations17GCDBlockOperationa">GCDBlockOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:17GCDCoreOperations17GCDGroupOperationa">GCDGroupOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:17GCDCoreOperations12GCDOperationa">GCDOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:17GCDCoreOperations17GCDOperationQueuea">GCDOperationQueue</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>Structures</h1>
+            <p>The following structures are available globally.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations13BlockObserverV"></a>
+                    <a name="//apple_ref/swift/Struct/BlockObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations13BlockObserverV">BlockObserver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A simple <code><a href="Protocols/OperationObserver.html">OperationObserver</a></code> implementation that executes blocks for each of the methods.</p>
+
+                        <a href="Structs/BlockObserver.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BlockObserver</span> <span class="p">:</span> <span class="kt"><a href="Protocols/OperationObserver.html">OperationObserver</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13GCDOperations17MutuallyExclusiveV"></a>
+                    <a name="//apple_ref/swift/Struct/MutuallyExclusive" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13GCDOperations17MutuallyExclusiveV">MutuallyExclusive</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A generic condition for describing kinds of operations that may not execute concurrently.</p>
+
+                        <a href="Structs/MutuallyExclusive.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MutuallyExclusive</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/OperationCondition.html">OperationCondition</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13GCDOperations16NegatedConditionV"></a>
+                    <a name="//apple_ref/swift/Struct/NegatedCondition" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13GCDOperations16NegatedConditionV">NegatedCondition</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A simple condition that negates the evaluation of another condition.
+This is useful (for example) if you want to only execute an operation if the
+network is NOT reachable.</p>
+
+                        <a href="Structs/NegatedCondition.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">NegatedCondition</span><span class="o">&lt;</span><span class="kt">ConditionToNegate</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/OperationCondition.html">OperationCondition</a></span> <span class="k">where</span> <span class="kt">ConditionToNegate</span> <span class="p">:</span> <span class="kt"><a href="Protocols/OperationCondition.html">OperationCondition</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13GCDOperations23NoCancelledDependenciesV"></a>
+                    <a name="//apple_ref/swift/Struct/NoCancelledDependencies" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13GCDOperations23NoCancelledDependenciesV">NoCancelledDependencies</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A condition that specifies that every dependency must have run.
+If any dependency was cancelled, the target operation will fail.</p>
+
+                        <a href="Structs/NoCancelledDependencies.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">NoCancelledDependencies</span> <span class="p">:</span> <span class="kt"><a href="Protocols/OperationCondition.html">OperationCondition</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13GCDOperations20NoFailedDependenciesV"></a>
+                    <a name="//apple_ref/swift/Struct/NoFailedDependencies" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13GCDOperations20NoFailedDependenciesV">NoFailedDependencies</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A condition that specifies that every dependency must have succeeded.
+If any dependency has errors, the target operation will fail as well.</p>
+
+                        <a href="Structs/NoFailedDependencies.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">NoFailedDependencies</span> <span class="p">:</span> <span class="kt"><a href="Protocols/OperationCondition.html">OperationCondition</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13GCDOperations15SilentConditionV"></a>
+                    <a name="//apple_ref/swift/Struct/SilentCondition" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13GCDOperations15SilentConditionV">SilentCondition</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A simple condition that causes another condition to not enqueue its dependency.
+This is useful (for example) when you want to verify that you have access to
+the user&rsquo;s location, but you do not want to prompt them for permission if you
+do not already have it.</p>
+
+                        <a href="Structs/SilentCondition.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SilentCondition</span><span class="o">&lt;</span><span class="kt">Condition</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/OperationCondition.html">OperationCondition</a></span> <span class="k">where</span> <span class="kt">Condition</span> <span class="p">:</span> <span class="kt"><a href="Protocols/OperationCondition.html">OperationCondition</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13GCDOperations15TimeoutObserverV"></a>
+                    <a name="//apple_ref/swift/Struct/TimeoutObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13GCDOperations15TimeoutObserverV">TimeoutObserver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>TimeoutObserver</code> is a way to make an <code><a href="Classes/Operation.html">Operation</a></code> automatically time out and cancel after a specified time interval.</p>
+
+                        <a href="Structs/TimeoutObserver.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">TimeoutObserver</span> <span class="p">:</span> <span class="kt"><a href="Protocols/OperationObserver.html">OperationObserver</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2022 <a class="link" href="https://ffried.codes" target="_blank" rel="external noopener">Florian Friedrich</a>. All rights reserved. (Last updated: 2022-03-16)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>

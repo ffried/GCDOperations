@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Operation Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/Operation" class="dashAnchor"></a>
+
+    <a title="Operation Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          GCDOperations 0.5.0 Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/ffried/GCDOperations">
+            <img class="header-icon" src="../img/gh.png" alt="GitHub"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">GCDOperations Reference</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      Operation Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/BlockOperation.html">BlockOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DelayOperation.html">DelayOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GroupOperation.html">GroupOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Operation.html">Operation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/OperationQueue.html">OperationQueue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/OperationConditionResult.html">OperationConditionResult</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:17GCDCoreOperations12SynchronizedC">Synchronized</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/AnyConditionError.html">AnyConditionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ConditionError.html">ConditionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/OperationCondition.html">OperationCondition</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/OperationObserver.html">OperationObserver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/BlockObserver.html">BlockObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MutuallyExclusive.html">MutuallyExclusive</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NegatedCondition.html">NegatedCondition</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NegatedCondition/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NoCancelledDependencies.html">NoCancelledDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NoCancelledDependencies/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NoFailedDependencies.html">NoFailedDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NoFailedDependencies/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/SilentCondition.html">SilentCondition</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TimeoutObserver.html">TimeoutObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TimeoutObserver/TimeoutError.html">– TimeoutError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:17GCDCoreOperations17GCDBlockOperationa">GCDBlockOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:17GCDCoreOperations17GCDGroupOperationa">GCDGroupOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:17GCDCoreOperations12GCDOperationa">GCDOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:17GCDCoreOperations17GCDOperationQueuea">GCDOperationQueue</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>Operation</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">Operation</span> <span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
+
+                </div>
+              </div>
+            <p>The (abstract) base class for an operation.
+An operation is an &ldquo;isolated&rdquo; piece of work, that will be enqueued and executed on an <code><a href="../Classes/OperationQueue.html">OperationQueue</a></code>.
+<code>Operation</code> is considered an abstract class and cannot be used directly. Create a subclass and override <code>execute</code> instead.</p>
+
+<p>Each operation is in one of the following states:</p>
+
+<ul>
+<li>created -&gt; The operation has been created but not yet added to an <code><a href="../Classes/OperationQueue.html">OperationQueue</a></code>.</li>
+<li>waiting for dependencies -&gt; The operation has been enqueued, but there are dependencies that are still executing.</li>
+<li>evaluating conditions -&gt; All the operation&rsquo;s dependencies have finished and the operation is now evaluating its conditions.</li>
+<li>running -&gt; The operation is performing its main task.</li>
+<li>finished -&gt; The operation has finished its main taks, or was cancelled.</li>
+</ul>
+
+<p>Note that an operation can be cancelled in any state, but its up to the subclass to periodically check on <code>isCancelled</code>.</p>
+
+<p>An operation can have dependencies, which will have to finish before the operation starts its work.
+Also, an operation can have conditions (see <code><a href="../Protocols/OperationCondition.html">OperationCondition</a></code>), which can be used to evaluate whether the operation should run or not.
+Finally, an operation can be observed using <code><a href="../Protocols/OperationObserver.html">OperationObserver</a></code>.</p>
+
+<p>Be aware, that once an operation has been enqueued, it should not be modified directly in terms of adding dependencies, conditions or observers.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC9observersSayAA0C8Observer_pGvp"></a>
+                    <a name="//apple_ref/swift/Property/observers" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC9observersSayAA0C8Observer_pGvp">observers</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The list of observers of this operation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="kd">final</span> <span class="k">var</span> <span class="nv">observers</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/OperationObserver.html">OperationObserver</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC10conditionsSayAA0C9Condition_pGvp"></a>
+                    <a name="//apple_ref/swift/Property/conditions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC10conditionsSayAA0C9Condition_pGvp">conditions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The list of conditions of this operation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="kd">final</span> <span class="k">var</span> <span class="nv">conditions</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/OperationCondition.html">OperationCondition</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC12dependenciess15ContiguousArrayVyACGvp"></a>
+                    <a name="//apple_ref/swift/Property/dependencies" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC12dependenciess15ContiguousArrayVyACGvp">dependencies</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The list of dependencies of this operation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="k">var</span> <span class="nv">dependencies</span><span class="p">:</span> <span class="kt">ContiguousArray</span><span class="o">&lt;</span><span class="kt">Operation</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC6errorsSays5Error_pGvp"></a>
+                    <a name="//apple_ref/swift/Property/errors" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC6errorsSays5Error_pGvp">errors</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="k">var</span> <span class="nv">errors</span><span class="p">:</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">Error</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/State%20Accessors"></a>
+                <a name="//apple_ref/swift/Section/State Accessors" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/State%20Accessors"></a>
+                  <h3 class="section-name"><span>State Accessors</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC11isCancelledSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isCancelled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC11isCancelledSbvp">isCancelled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not this operation was cancelled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="k">var</span> <span class="nv">isCancelled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC10isFinishedSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isFinished" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC10isFinishedSbvp">isFinished</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not this operation has finished. This will also return <code>true</code> if the operation has been cancelled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="k">var</span> <span class="nv">isFinished</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC11descriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC11descriptionSSvp">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>inherited</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC16debugDescriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/debugDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC16debugDescriptionSSvp">debugDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>inherited</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Init"></a>
+                <a name="//apple_ref/swift/Section/Init" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Init"></a>
+                  <h3 class="section-name"><span>Init</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationCACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new operation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Dependency%20Management"></a>
+                <a name="//apple_ref/swift/Section/Dependency Management" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Dependency%20Management"></a>
+                  <h3 class="section-name"><span>Dependency Management</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC13addDependencyyyACF"></a>
+                    <a name="//apple_ref/swift/Method/addDependency(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC13addDependencyyyACF">addDependency(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a dependency to this operation.</p>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    This must not be called after the operation has been enqueued.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">addDependency</span><span class="p">(</span><span class="n">_</span> <span class="nv">dep</span><span class="p">:</span> <span class="kt">Operation</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dep</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The dependency to add.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC16removeDependencyyyACF"></a>
+                    <a name="//apple_ref/swift/Method/removeDependency(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC16removeDependencyyyACF">removeDependency(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes a dependency from this operation.</p>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    This must not be called after the operation has been enqueued.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">removeDependency</span><span class="p">(</span><span class="n">_</span> <span class="nv">dep</span><span class="p">:</span> <span class="kt">Operation</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dep</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The dependency to remove.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Conditions"></a>
+                <a name="//apple_ref/swift/Section/Conditions" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Conditions"></a>
+                  <h3 class="section-name"><span>Conditions</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC12addConditionyyxAA0cE0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/addCondition(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC12addConditionyyxAA0cE0RzlF">addCondition(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a condition to this operation.</p>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    This must not be called after the operation has been enqueued.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="n">addCondition</span><span class="o">&lt;</span><span class="kt">Condition</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">condition</span><span class="p">:</span> <span class="kt">Condition</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Condition</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/OperationCondition.html">OperationCondition</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The condition to add to this operation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Observers"></a>
+                <a name="//apple_ref/swift/Section/Observers" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Observers"></a>
+                  <h3 class="section-name"><span>Observers</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC11addObserveryyxAA0cE0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/addObserver(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC11addObserveryyxAA0cE0RzlF">addObserver(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds an observer to this operation. The observer will get all calls that remain for this operation.
+If added to a running operation, the observer will only be notified of produced operations and finishing of this operation.
+If &ldquo;added&rdquo; to a finished operation, the observer will not be added to the list of observers
+and the <code>operationDidFinish(_:wasCancelled:errors:)</code> method will be called instantly on the observer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="n">addObserver</span><span class="o">&lt;</span><span class="kt">Observer</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kt">Observer</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Observer</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/OperationObserver.html">OperationObserver</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>observer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The observer to add to this operation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Errors"></a>
+                <a name="//apple_ref/swift/Section/Errors" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Errors"></a>
+                  <h3 class="section-name"><span>Errors</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC9aggregate6errorsyx_tSlRzs5Error7ElementRpzlF"></a>
+                    <a name="//apple_ref/swift/Method/aggregate(errors:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC9aggregate6errorsyx_tSlRzs5Error7ElementRpzlF">aggregate(errors:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Aggregates a collection of errors into the list of errors of this operation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="n">aggregate</span><span class="o">&lt;</span><span class="kt">Errors</span><span class="o">&gt;</span><span class="p">(</span><span class="n"><a href="../Classes/Operation.html#/s:17GCDCoreOperations9OperationC6errorsSays5Error_pGvp">errors</a></span> <span class="nv">newErrors</span><span class="p">:</span> <span class="kt">Errors</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Errors</span> <span class="p">:</span> <span class="kt">Collection</span><span class="p">,</span> <span class="kt">Errors</span><span class="o">.</span><span class="kt">Element</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>newErrors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The collections of errors to aggregate.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC9aggregate6errorsys5Error_pd_tF"></a>
+                    <a name="//apple_ref/swift/Method/aggregate(errors:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC9aggregate6errorsys5Error_pd_tF">aggregate(errors:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Aggregates a variadic list of errors into the list of errors of this operation.</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <code><a href="../Classes/Operation.html#/s:17GCDCoreOperations9OperationC9aggregate6errorsyx_tSlRzs5Error7ElementRpzlF">aggregate(errors:)</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">aggregate</span><span class="p">(</span><span class="nv">errors</span><span class="p">:</span> <span class="kt">Error</span><span class="o">...</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>newErrors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The variadic list of errors to aggregate.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC9aggregate5errorys5Error_p_tF"></a>
+                    <a name="//apple_ref/swift/Method/aggregate(error:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC9aggregate5errorys5Error_p_tF">aggregate(error:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Aggregates an error into the list of errors of this operation.</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <code><a href="../Classes/Operation.html#/s:17GCDCoreOperations9OperationC9aggregate6errorsyx_tSlRzs5Error7ElementRpzlF">aggregate(errors:)</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">aggregate</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The error to aggregate.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Produce%20Operation"></a>
+                <a name="//apple_ref/swift/Section/Produce Operation" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Produce%20Operation"></a>
+                  <h3 class="section-name"><span>Produce Operation</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC7produceyyACF"></a>
+                    <a name="//apple_ref/swift/Method/produce(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC7produceyyACF">produce(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Produces a new operation. This notified all registered observers using the <code>operation(_:didProduce:)</code> method.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">produce</span><span class="p">(</span><span class="n">_</span> <span class="nv">operation</span><span class="p">:</span> <span class="kt">Operation</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>operation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The operation to produce.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Lifecycle"></a>
+                <a name="//apple_ref/swift/Section/Lifecycle" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Lifecycle"></a>
+                  <h3 class="section-name"><span>Lifecycle</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC7executeyyF"></a>
+                    <a name="//apple_ref/swift/Method/execute()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC7executeyyF">execute()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The main method of the operation. Subclasses should override this and perform their work.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">execute</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC6finish4withyx_tSlRzs5Error7ElementRpzlF"></a>
+                    <a name="//apple_ref/swift/Method/finish(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC6finish4withyx_tSlRzs5Error7ElementRpzlF">finish(with:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Finishes the operation with a list of errors (can be empty).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="n">finish</span><span class="o">&lt;</span><span class="kt">Errors</span><span class="o">&gt;</span><span class="p">(</span><span class="n">with</span> <span class="nv">errors</span><span class="p">:</span> <span class="kt">Errors</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Errors</span> <span class="p">:</span> <span class="kt">Collection</span><span class="p">,</span> <span class="kt">Errors</span><span class="o">.</span><span class="kt">Element</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>errors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The errors to finish with. Can be an empty collection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC6finish4withys5Error_pd_tF"></a>
+                    <a name="//apple_ref/swift/Method/finish(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC6finish4withys5Error_pd_tF">finish(with:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Finishes the operation with a variadic list of errors (can be empty).</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <code><a href="../Classes/Operation.html#/s:17GCDCoreOperations9OperationC6finish4withyx_tSlRzs5Error7ElementRpzlF">finish(with:)</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">finish</span><span class="p">(</span><span class="n">with</span> <span class="nv">errors</span><span class="p">:</span> <span class="kt">Error</span><span class="o">...</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>errors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The variadic list of errors to finish with.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC6cancel4withyx_tSlRzs5Error7ElementRpzlF"></a>
+                    <a name="//apple_ref/swift/Method/cancel(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC6cancel4withyx_tSlRzs5Error7ElementRpzlF">cancel(with:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Cancels the operation with a list of errors (can be empty).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="n">cancel</span><span class="o">&lt;</span><span class="kt">Errors</span><span class="o">&gt;</span><span class="p">(</span><span class="n">with</span> <span class="nv">errors</span><span class="p">:</span> <span class="kt">Errors</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Errors</span> <span class="p">:</span> <span class="kt">Collection</span><span class="p">,</span> <span class="kt">Errors</span><span class="o">.</span><span class="kt">Element</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>errors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The errors to cancel with. Can be an empty collection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC6cancel4withys5Error_pd_tF"></a>
+                    <a name="//apple_ref/swift/Method/cancel(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC6cancel4withys5Error_pd_tF">cancel(with:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Cancels the operation with a variadic list of errors (can be empty).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">cancel</span><span class="p">(</span><span class="n">with</span> <span class="nv">errors</span><span class="p">:</span> <span class="kt">Error</span><span class="o">...</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>errors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The variadic list of errors to cancel with.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17GCDCoreOperations9OperationC9didFinish12wasCancelled6errorsySb_Says5Error_pGtF"></a>
+                    <a name="//apple_ref/swift/Method/didFinish(wasCancelled:errors:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17GCDCoreOperations9OperationC9didFinish12wasCancelled6errorsySb_Says5Error_pGtF">didFinish(wasCancelled:<wbr>errors:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method for subclasses to override to be informed when the operation finishes. This can be used to e.g. clean up some internals.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">didFinish</span><span class="p">(</span><span class="nv">wasCancelled</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">errors</span><span class="p">:</span> <span class="p">[</span><span class="kt">Error</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>wasCancelled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether or not the operation was cancelled. The value is the same as <code><a href="../Classes/Operation.html#/s:17GCDCoreOperations9OperationC11isCancelledSbvp">isCancelled</a></code>. It&rsquo;s passed to this method to prevent the locks that need to be taken for <code><a href="../Classes/Operation.html#/s:17GCDCoreOperations9OperationC11isCancelledSbvp">isCancelled</a></code> to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>errors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The list of errors that the operation has aggregated. The value is the same as the <code><a href="../Classes/Operation.html#/s:17GCDCoreOperations9OperationC6errorsSays5Error_pGvp">errors</a></code> property. It is passed to this method to prevent the locks that need to be taken for <code><a href="../Classes/Operation.html#/s:17GCDCoreOperations9OperationC6errorsSays5Error_pGvp">errors</a></code> to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2022 <a class="link" href="https://ffried.codes" target="_blank" rel="external noopener">Florian Friedrich</a>. All rights reserved. (Last updated: 2022-03-16)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>
