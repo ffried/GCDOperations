@@ -1,0 +1,419 @@
+{
+  "abstract" : [
+    {
+      "text" : "",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDOperations\/documentation\/GCDOperations"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "GCDOperations",
+    "modules" : [
+      {
+        "name" : "GCDOperations"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "GCDOperations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/DelayOperation"
+      ],
+      "title" : "Classes"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NegatedCondition",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoCancelledDependencies",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/SilentCondition",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver"
+      ],
+      "title" : "Structures"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdoperations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDOperations/documentation/GCDOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations"
+},
+"doc://GCDOperations/documentation/GCDOperations/DelayOperation": {
+  "abstract" : [
+    {
+      "code" : "DelayOperation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is an ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that will simply wait for a given time",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "interval, or until a specific ",
+      "type" : "text"
+    },
+    {
+      "code" : "Date",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DelayOperation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/DelayOperation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DelayOperation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DelayOperation",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/delayoperation"
+},
+"doc://GCDOperations/documentation/GCDOperations/MutuallyExclusive": {
+  "abstract" : [
+    {
+      "text" : "A generic condition for describing kinds of operations that may not execute concurrently.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MutuallyExclusive"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MutuallyExclusive"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MutuallyExclusive",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/mutuallyexclusive"
+},
+"doc://GCDOperations/documentation/GCDOperations/NegatedCondition": {
+  "abstract" : [
+    {
+      "text" : "A simple condition that negates the evaluation of another condition.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This is useful (for example) if you want to only execute an operation if the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "network is NOT reachable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NegatedCondition"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NegatedCondition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NegatedCondition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NegatedCondition",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/negatedcondition"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoCancelledDependencies": {
+  "abstract" : [
+    {
+      "text" : "A condition that specifies that every dependency must have run.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "If any dependency was cancelled, the target operation will fail.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NoCancelledDependencies"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoCancelledDependencies",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NoCancelledDependencies"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NoCancelledDependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nocancelleddependencies"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies": {
+  "abstract" : [
+    {
+      "text" : "A condition that specifies that every dependency must have succeeded.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "If any dependency has errors, the target operation will fail as well.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NoFailedDependencies"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NoFailedDependencies"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NoFailedDependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies"
+},
+"doc://GCDOperations/documentation/GCDOperations/SilentCondition": {
+  "abstract" : [
+    {
+      "text" : "A simple condition that causes another condition to not enqueue its dependency.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This is useful (for example) when you want to verify that you have access to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the user’s location, but you do not want to prompt them for permission if you",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "do not already have it.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SilentCondition"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/SilentCondition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SilentCondition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SilentCondition",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/silentcondition"
+},
+"doc://GCDOperations/documentation/GCDOperations/TimeoutObserver": {
+  "abstract" : [
+    {
+      "code" : "TimeoutObserver",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a way to make an ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " automatically time out and cancel after a specified time interval.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TimeoutObserver"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TimeoutObserver"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TimeoutObserver",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/timeoutobserver"
+}
+}
+}

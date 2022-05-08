@@ -1,0 +1,267 @@
+{
+  "abstract" : [
+    {
+      "text" : "An enum to indicate whether an ",
+      "type" : "text"
+    },
+    {
+      "code" : "OperationCondition",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " was satisfied, or if it",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "failed with an error.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:17GCDCoreOperations24OperationConditionResultO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "OperationConditionResult"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDCoreOperations"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "OperationConditionResult"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "OperationConditionResult"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "OperationConditionResult"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult\/failed(_:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult\/satisfied"
+      ],
+      "title" : "Enumeration Cases"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdcoreoperations\/operationconditionresult"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDCoreOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationConditionResult": {
+  "abstract" : [
+    {
+      "text" : "An enum to indicate whether an ",
+      "type" : "text"
+    },
+    {
+      "code" : "OperationCondition",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " was satisfied, or if it",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "failed with an error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OperationConditionResult"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OperationConditionResult"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OperationConditionResult",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationconditionresult"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationConditionResult/failed(_:)": {
+  "abstract" : [
+    {
+      "text" : "The condition failed, abort execution. The associated ",
+      "type" : "text"
+    },
+    {
+      "code" : "ConditionError",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " describes what failure happened during evaluation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "failed"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations17AnyConditionErrorP",
+      "text" : "AnyConditionError"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult\/failed(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OperationConditionResult.failed(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationconditionresult\/failed(_:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationConditionResult/satisfied": {
+  "abstract" : [
+    {
+      "text" : "The condition was satisified, continue execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "satisfied"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult\/satisfied",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OperationConditionResult.satisfied",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationconditionresult\/satisfied"
+}
+}
+}
