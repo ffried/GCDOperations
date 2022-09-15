@@ -74,7 +74,15 @@
             },
             {
               "kind" : "text",
-              "text" : " : "
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Condition"
+            },
+            {
+              "kind" : "text",
+              "text" : "> : "
             },
             {
               "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
@@ -102,7 +110,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [

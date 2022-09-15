@@ -131,7 +131,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -140,7 +140,6 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation\/init()",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation\/init(asyncBlock:)",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation\/init(syncBlock:)"
       ],
@@ -358,27 +357,6 @@
   "title" : "execute()",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/blockoperation\/execute()"
-},
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockOperation/init()": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "()"
-    }
-  ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation\/init()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init()",
-  "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/blockoperation\/init()"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockOperation/init(asyncBlock:)": {
   "abstract" : [

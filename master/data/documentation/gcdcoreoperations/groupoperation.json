@@ -107,7 +107,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -116,7 +116,6 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init()",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init(operations:)-4ggrs",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init(operations:)-5etvw",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init(operations:)-sek3"
@@ -359,27 +358,6 @@
   "title" : "execute()",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/groupoperation\/execute()"
-},
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/init()": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "()"
-    }
-  ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init()",
-  "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/groupoperation\/init()"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/init(operations:)-4ggrs": {
   "abstract" : [

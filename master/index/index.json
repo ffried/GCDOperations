@@ -1,0 +1,550 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Classes",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockoperation\/init(asyncblock:)",
+                "title" : "init(asyncBlock: BlockOperation.AsyncBlock)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockoperation\/init(syncblock:)",
+                "title" : "init(syncBlock: BlockOperation.SyncBlock)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockoperation\/execute()",
+                "title" : "func execute()",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockoperation\/asyncblock",
+                "title" : "BlockOperation.AsyncBlock",
+                "type" : "typealias"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockoperation\/syncblock",
+                "title" : "BlockOperation.SyncBlock",
+                "type" : "typealias"
+              }
+            ],
+            "path" : "\/documentation\/gcdcoreoperations\/blockoperation",
+            "title" : "BlockOperation",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/groupoperation\/init(operations:)-4ggrs",
+                "title" : "convenience init(operations: Operation...)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/groupoperation\/init(operations:)-5etvw",
+                "title" : "init(operations: ContiguousArray<Operation>)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/groupoperation\/init(operations:)-sek3",
+                "title" : "convenience init<C>(operations: C)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/groupoperation\/operations",
+                "title" : "var operations: ContiguousArray<Operation>",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/groupoperation\/addoperation(_:)",
+                "title" : "func addOperation(Operation)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/groupoperation\/addoperations(_:)-1a1ze",
+                "title" : "func addOperations(Operation...)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/groupoperation\/addoperations(_:)-soqj",
+                "title" : "func addOperations<Operations>(Operations)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/groupoperation\/execute()",
+                "title" : "func execute()",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/gcdcoreoperations\/groupoperation",
+            "title" : "GroupOperation",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/conditions",
+                "title" : "var conditions: [OperationCondition]",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/debugdescription",
+                "title" : "var debugDescription: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/dependencies",
+                "title" : "var dependencies: ContiguousArray<Operation>",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/errors",
+                "title" : "var errors: Array<Error>",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/iscancelled",
+                "title" : "var isCancelled: Bool",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/isfinished",
+                "title" : "var isFinished: Bool",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/observers",
+                "title" : "var observers: [OperationObserver]",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/addcondition(_:)",
+                "title" : "func addCondition<Condition>(Condition)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/adddependency(_:)",
+                "title" : "func addDependency(Operation)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/addobserver(_:)",
+                "title" : "func addObserver<Observer>(Observer)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(error:)",
+                "title" : "func aggregate(error: Error)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-8md39",
+                "title" : "func aggregate(errors: Error...)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-xrif",
+                "title" : "func aggregate<Errors>(errors: Errors)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/cancel(with:)-sadv",
+                "title" : "func cancel<Errors>(with: Errors)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/cancel(with:)-zk5m",
+                "title" : "func cancel(with: Error...)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/didfinish(wascancelled:errors:)",
+                "title" : "func didFinish(wasCancelled: Bool, errors: [Error])",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/execute()",
+                "title" : "func execute()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/finish(with:)-1uh3t",
+                "title" : "func finish(with: Error...)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/finish(with:)-3vmzx",
+                "title" : "func finish<Errors>(with: Errors)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/produce(_:)",
+                "title" : "func produce(Operation)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/removedependency(_:)",
+                "title" : "func removeDependency(Operation)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/gcdcoreoperations\/operation",
+            "title" : "Operation",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/init(initiallysuspended:)",
+                "title" : "convenience init(initiallySuspended: Bool)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/issuspended",
+                "title" : "var isSuspended: Bool",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperation(_:)",
+                "title" : "func addOperation(Operation)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperation(executingasync:)",
+                "title" : "func addOperation(executingAsync: BlockOperation.AsyncBlock) -> BlockOperation",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperation(executingsync:)",
+                "title" : "func addOperation(executingSync: BlockOperation.SyncBlock) -> BlockOperation",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperations(_:)-2odva",
+                "title" : "func addOperations<Operations>(Operations)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperations(_:)-8nouu",
+                "title" : "func addOperations(Operation...)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/cancelalloperations()",
+                "title" : "func cancelAllOperations()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/resume()",
+                "title" : "func resume()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/suspend()",
+                "title" : "func suspend()",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/current",
+                "title" : "static var current: OperationQueue?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationqueue\/main",
+                "title" : "static var main: OperationQueue",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/gcdcoreoperations\/operationqueue",
+            "title" : "OperationQueue",
+            "type" : "class"
+          },
+          {
+            "title" : "Protocols",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "path" : "\/documentation\/gcdcoreoperations\/conditionerror\/conditionname",
+                        "title" : "var conditionName: String",
+                        "type" : "property"
+                      }
+                    ],
+                    "title" : "ConditionError Implementations",
+                    "type" : "groupMarker"
+                  }
+                ],
+                "path" : "\/documentation\/gcdcoreoperations\/anyconditionerror\/conditionname",
+                "title" : "var conditionName: String",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/gcdcoreoperations\/anyconditionerror",
+            "title" : "AnyConditionError",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Associated Types",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/conditionerror\/condition",
+                "title" : "Condition",
+                "type" : "associatedtype"
+              }
+            ],
+            "path" : "\/documentation\/gcdcoreoperations\/conditionerror",
+            "title" : "ConditionError",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationcondition\/dependency(for:)",
+                "title" : "func dependency(for: Operation) -> Operation?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationcondition\/evaluate(for:completion:)",
+                "title" : "func evaluate(for: Operation, completion: (OperationConditionResult) -> ())",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationcondition\/ismutuallyexclusive",
+                "title" : "static var isMutuallyExclusive: Bool",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationcondition\/name",
+                "title" : "static var name: String",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/gcdcoreoperations\/operationcondition",
+            "title" : "OperationCondition",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationobserver\/operation(_:didproduce:)",
+                "title" : "func operation(Operation, didProduce: Operation)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationobserver\/operationdidfinish(_:wascancelled:errors:)",
+                "title" : "func operationDidFinish(Operation, wasCancelled: Bool, errors: [Error])",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationobserver\/operationdidstart(_:)",
+                "title" : "func operationDidStart(Operation)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/gcdcoreoperations\/operationobserver",
+            "title" : "OperationObserver",
+            "type" : "protocol"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockobserver\/init(starthandler:)",
+                "title" : "init(startHandler: ((Operation) -> Void)?)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockobserver\/init(starthandler:producehandler:)",
+                "title" : "init(startHandler: ((Operation) -> Void)?, produceHandler: ((Operation, Operation) -> Void)?)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockobserver\/init(starthandler:producehandler:finishhandler:)",
+                "title" : "init(startHandler: ((Operation) -> Void)?, produceHandler: ((Operation, Operation) -> Void)?, finishHandler: ((Operation, Bool, [Error]) -> Void)?)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockobserver\/operation(_:didproduce:)",
+                "title" : "func operation(Operation, didProduce: Operation)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockobserver\/operationdidfinish(_:wascancelled:errors:)",
+                "title" : "func operationDidFinish(Operation, wasCancelled: Bool, errors: [Error])",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/blockobserver\/operationdidstart(_:)",
+                "title" : "func operationDidStart(Operation)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/gcdcoreoperations\/blockobserver",
+            "title" : "BlockObserver",
+            "type" : "struct"
+          },
+          {
+            "title" : "Type Aliases",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/gcdcoreoperations\/gcdblockoperation",
+            "title" : "GCDBlockOperation",
+            "type" : "typealias"
+          },
+          {
+            "path" : "\/documentation\/gcdcoreoperations\/gcdgroupoperation",
+            "title" : "GCDGroupOperation",
+            "type" : "typealias"
+          },
+          {
+            "path" : "\/documentation\/gcdcoreoperations\/gcdoperation",
+            "title" : "GCDOperation",
+            "type" : "typealias"
+          },
+          {
+            "path" : "\/documentation\/gcdcoreoperations\/gcdoperationqueue",
+            "title" : "GCDOperationQueue",
+            "type" : "typealias"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationconditionresult\/failed(_:)",
+                "title" : "case failed(AnyConditionError)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operationconditionresult\/satisfied",
+                "title" : "case satisfied",
+                "type" : "case"
+              }
+            ],
+            "path" : "\/documentation\/gcdcoreoperations\/operationconditionresult",
+            "title" : "OperationConditionResult",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/gcdcoreoperations",
+        "title" : "GCDCoreOperations",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 0
+  }
+}

@@ -211,7 +211,7 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-
+        "doc:\/\/GCDOperations\/17GCDCoreOperations9OperationC"
       ],
       "kind" : "relationships",
       "title" : "Inherits From",
@@ -229,7 +229,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -238,7 +238,6 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/DelayOperation\/init()",
         "doc:\/\/GCDOperations\/documentation\/GCDOperations\/DelayOperation\/init(interval:)",
         "doc:\/\/GCDOperations\/documentation\/GCDOperations\/DelayOperation\/init(until:)"
       ],
@@ -265,6 +264,11 @@
   ]
 , 
 "references": {
+"doc://GCDOperations/17GCDCoreOperations9OperationC": {
+  "identifier" : "doc:\/\/GCDOperations\/17GCDCoreOperations9OperationC",
+  "title" : "GCDCoreOperations.Operation",
+  "type" : "unresolvable"
+},
 "doc://GCDOperations/documentation/GCDOperations": {
   "abstract" : [
 
@@ -369,27 +373,6 @@
   "title" : "execute()",
   "type" : "topic",
   "url" : "\/documentation\/gcdoperations\/delayoperation\/execute()"
-},
-"doc://GCDOperations/documentation/GCDOperations/DelayOperation/init()": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "()"
-    }
-  ],
-  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/DelayOperation\/init()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init()",
-  "type" : "topic",
-  "url" : "\/documentation\/gcdoperations\/delayoperation\/init()"
 },
 "doc://GCDOperations/documentation/GCDOperations/DelayOperation/init(interval:)": {
   "abstract" : [
