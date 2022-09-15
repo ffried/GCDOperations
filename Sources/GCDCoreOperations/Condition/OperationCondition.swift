@@ -31,11 +31,19 @@ public protocol AnyConditionError: Error {
     var conditionName: String { get }
 }
 
+#if compiler(>=5.7)
+/// An error describing a failed condition.
+public protocol ConditionError<Condition>: AnyConditionError {
+    /// The condition that has failed.
+    associatedtype Condition: OperationCondition
+}
+#else
 /// An error describing a failed condition.
 public protocol ConditionError: AnyConditionError {
     /// The condition that has failed.
     associatedtype Condition: OperationCondition
 }
+#endif
 
 extension ConditionError {
     /// inherited
@@ -60,3 +68,7 @@ public enum OperationConditionResult {
         }
     }
 }
+
+#if compiler(>=5.5.2) && canImport(_Concurrency)
+extension OperationConditionResult: Sendable {}
+#endif
