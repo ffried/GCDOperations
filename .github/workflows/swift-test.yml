@@ -89,7 +89,7 @@ jobs:
       - name: Read Swift Version
         uses: sersoft-gmbh/swift-version-action@v2.0.1
         id: swift-version
-      - uses: sersoft-gmbh/xcodebuild-action@v2.0.0
+      - uses: sersoft-gmbh/xcodebuild-action@v2.0.1
         with:
           spm-package: './'
           action: test
