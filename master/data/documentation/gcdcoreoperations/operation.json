@@ -292,7 +292,8 @@
     {
       "identifiers" : [
         "doc:\/\/GCDCoreOperations\/s28CustomDebugStringConvertibleP",
-        "doc:\/\/GCDCoreOperations\/s23CustomStringConvertibleP"
+        "doc:\/\/GCDCoreOperations\/s23CustomStringConvertibleP",
+        "doc:\/\/GCDCoreOperations\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -1174,7 +1175,16 @@
     },
     {
       "kind" : "text",
-      "text" : ": ["
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
     },
     {
       "kind" : "typeIdentifier",
@@ -1183,7 +1193,7 @@
     },
     {
       "kind" : "text",
-      "text" : "])"
+      "text" : ">)"
     }
   ],
   "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/didFinish(wasCancelled:errors:)",
@@ -1622,6 +1632,11 @@
 "doc://GCDCoreOperations/s28CustomDebugStringConvertibleP": {
   "identifier" : "doc:\/\/GCDCoreOperations\/s28CustomDebugStringConvertibleP",
   "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://GCDCoreOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDCoreOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
   "type" : "unresolvable"
 }
 }

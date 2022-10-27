@@ -110,6 +110,16 @@
       "kind" : "declarations"
     }
   ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -806,6 +816,11 @@
   "title" : "suspend()",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/suspend()"
+},
+"doc://GCDCoreOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDCoreOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

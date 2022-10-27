@@ -138,7 +138,8 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/GCDOperations\/17GCDCoreOperations18OperationConditionP"
+        "doc:\/\/GCDOperations\/17GCDCoreOperations18OperationConditionP",
+        "doc:\/\/GCDOperations\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -516,6 +517,11 @@
   "title" : "name",
   "type" : "topic",
   "url" : "\/documentation\/gcdoperations\/silentcondition\/name"
+},
+"doc://GCDOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

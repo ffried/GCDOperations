@@ -220,7 +220,8 @@
     {
       "identifiers" : [
         "doc:\/\/GCDOperations\/s28CustomDebugStringConvertibleP",
-        "doc:\/\/GCDOperations\/s23CustomStringConvertibleP"
+        "doc:\/\/GCDOperations\/s23CustomStringConvertibleP",
+        "doc:\/\/GCDOperations\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -464,6 +465,11 @@
 "doc://GCDOperations/s28CustomDebugStringConvertibleP": {
   "identifier" : "doc:\/\/GCDOperations\/s28CustomDebugStringConvertibleP",
   "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://GCDOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
   "type" : "unresolvable"
 }
 }

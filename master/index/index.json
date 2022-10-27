@@ -211,7 +211,7 @@
               },
               {
                 "path" : "\/documentation\/gcdcoreoperations\/operation\/didfinish(wascancelled:errors:)",
-                "title" : "func didFinish(wasCancelled: Bool, errors: [Error])",
+                "title" : "func didFinish(wasCancelled: Bool, errors: Array<Error>)",
                 "type" : "method"
               },
               {
@@ -424,7 +424,7 @@
               },
               {
                 "path" : "\/documentation\/gcdcoreoperations\/operationobserver\/operationdidfinish(_:wascancelled:errors:)",
-                "title" : "func operationDidFinish(Operation, wasCancelled: Bool, errors: [Error])",
+                "title" : "func operationDidFinish(Operation, wasCancelled: Bool, errors: Array<Error>)",
                 "type" : "method"
               },
               {
@@ -459,7 +459,7 @@
               },
               {
                 "path" : "\/documentation\/gcdcoreoperations\/blockobserver\/init(starthandler:producehandler:finishhandler:)",
-                "title" : "init(startHandler: ((Operation) -> Void)?, produceHandler: ((Operation, Operation) -> Void)?, finishHandler: ((Operation, Bool, [Error]) -> Void)?)",
+                "title" : "init(startHandler: ((Operation) -> Void)?, produceHandler: ((Operation, Operation) -> Void)?, finishHandler: ((Operation, Bool, Array<Error>) -> Void)?)",
                 "type" : "init"
               },
               {
@@ -473,7 +473,7 @@
               },
               {
                 "path" : "\/documentation\/gcdcoreoperations\/blockobserver\/operationdidfinish(_:wascancelled:errors:)",
-                "title" : "func operationDidFinish(Operation, wasCancelled: Bool, errors: [Error])",
+                "title" : "func operationDidFinish(Operation, wasCancelled: Bool, errors: Array<Error>)",
                 "type" : "method"
               },
               {

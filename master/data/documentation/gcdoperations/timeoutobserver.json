@@ -93,7 +93,8 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/GCDOperations\/17GCDCoreOperations17OperationObserverP"
+        "doc:\/\/GCDOperations\/17GCDCoreOperations17OperationObserverP",
+        "doc:\/\/GCDOperations\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -454,6 +455,11 @@
   "title" : "operationDidStart(_:)",
   "type" : "topic",
   "url" : "\/documentation\/gcdoperations\/timeoutobserver\/operationdidstart(_:)"
+},
+"doc://GCDOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }
