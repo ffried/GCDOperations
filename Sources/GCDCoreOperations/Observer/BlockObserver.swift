@@ -2,12 +2,12 @@
 public struct BlockObserver: OperationObserver {
     private let startHandler: ((Operation) -> Void)?
     private let produceHandler: ((Operation, Operation) -> Void)?
-    private let finishHandler: ((Operation, Bool, [Error]) -> Void)?
+    private let finishHandler: ((Operation, Bool, Array<Error>) -> Void)?
 
     @usableFromInline
     init(_startHandler: ((Operation) -> Void)?,
          _produceHandler: ((Operation, Operation) -> Void)?,
-         _finishHandler: ((Operation, Bool, [Error]) -> Void)?) {
+         _finishHandler: ((Operation, Bool, Array<Error>) -> Void)?) {
         startHandler = _startHandler
         produceHandler = _produceHandler
         finishHandler = _finishHandler
@@ -21,7 +21,7 @@ public struct BlockObserver: OperationObserver {
     @inlinable
     public init(startHandler: ((Operation) -> Void)? = nil,
                 produceHandler: ((Operation, Operation) -> Void)? = nil,
-                finishHandler: ((Operation, Bool, [Error]) -> Void)?) {
+                finishHandler: ((Operation, Bool, Array<Error>) -> Void)?) {
         self.init(_startHandler: startHandler,
                   _produceHandler: produceHandler,
                   _finishHandler: finishHandler)
@@ -59,7 +59,7 @@ public struct BlockObserver: OperationObserver {
     }
 
     /// inherited
-    public func operationDidFinish(_ operation: Operation, wasCancelled cancelled: Bool, errors: [Error]) {
+    public func operationDidFinish(_ operation: Operation, wasCancelled cancelled: Bool, errors: Array<Error>) {
         finishHandler?(operation, cancelled, errors)
     }
 }

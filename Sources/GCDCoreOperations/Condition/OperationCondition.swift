@@ -1,5 +1,6 @@
 /// A protocol for defining conditions that must be satisfied in order for an operation to begin execution.
-public protocol OperationCondition {
+@preconcurrency
+public protocol OperationCondition: Sendable {
     /// The name of the condition. This is will be passed as `conditionName` in `ConditionError`s.
     static var name: String { get }
 
@@ -53,7 +54,7 @@ extension ConditionError {
 
 /// An enum to indicate whether an `OperationCondition` was satisfied, or if it
 /// failed with an error.
-public enum OperationConditionResult {
+public enum OperationConditionResult: Sendable {
     /// The condition was satisified, continue execution.
     case satisfied
     /// The condition failed, abort execution. The associated `ConditionError` describes what failure happened during evaluation.
@@ -68,7 +69,3 @@ public enum OperationConditionResult {
         }
     }
 }
-
-#if compiler(>=5.5.2) && canImport(_Concurrency)
-extension OperationConditionResult: Sendable {}
-#endif

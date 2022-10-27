@@ -18,7 +18,7 @@ import Dispatch
 /// Finally, an operation can be observed using `OperationObserver`.
 ///
 /// Be aware, that once an operation has been enqueued, it should not be modified directly in terms of adding dependencies, conditions or observers.
-open class Operation: CustomStringConvertible, CustomDebugStringConvertible {
+open class Operation: CustomStringConvertible, CustomDebugStringConvertible, @unchecked Sendable {
     @Synchronized
     internal final var state: State = .created
 
@@ -36,7 +36,7 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible {
     public final var dependencies: ContiguousArray<Operation> { _dependencies }
 
     @Synchronized
-    private final var waiters: Array<DispatchGroup> = []
+    private final var waiters = Array<DispatchGroup>()
     private let dependenciesGroup = DispatchGroup()
 
     /// The list of errors this operation encountered.
@@ -318,7 +318,7 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible {
     /// - Parameters:
     ///   - wasCancelled: Whether or not the operation was cancelled. The value is the same as `isCancelled`. It's passed to this method to prevent the locks that need to be taken for `isCancelled` to be retrieved.
     ///   - errors: The list of errors that the operation has aggregated. The value is the same as the `errors` property. It is passed to this method to prevent the locks that need to be taken for `errors` to be retrieved.
-    open func didFinish(wasCancelled: Bool, errors: [Error]) {}
+    open func didFinish(wasCancelled: Bool, errors: Array<Error>) {}
 }
 
 // MARK: - Nested Types

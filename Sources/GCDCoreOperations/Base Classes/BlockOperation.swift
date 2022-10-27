@@ -5,7 +5,7 @@ public final class BlockOperation: Operation {
     /// A block that runs synchronously.
     public typealias SyncBlock = () throws -> ()
     /// A block that runs asynchronously. `finish` is the reference to the `Operation.finish(with:)` method of the operation.
-    public typealias AsyncBlock = (_ finish: @escaping ([Error]) -> ()) -> ()
+    public typealias AsyncBlock = (_ finish: @escaping @Sendable (Array<Error>) -> ()) -> ()
 
     private enum ExecutionMode {
         case sync(SyncBlock)
@@ -37,7 +37,7 @@ public final class BlockOperation: Operation {
                 finish(with: error)
             }
         case .async(let block):
-            block(finish)
+            block { self.finish(with: $0) }
         }
     }
 }

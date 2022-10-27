@@ -22,7 +22,7 @@ fileprivate extension Operation {
 
 /// An operation queue is used to execute `Operation`s. It is backed by a concurrent `DispatchQueue`.
 /// It takes care of enqueuing operations and also enqueues any produced operations.
-public final class OperationQueue {
+public final class OperationQueue: @unchecked Sendable {
     private final class QueueObserver: OperationObserver {
         private(set) var queue: OperationQueue!
 

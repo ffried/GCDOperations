@@ -3,7 +3,7 @@ import func Dispatch.dispatchPrecondition
 
 /// Synchronized wrapper for a value. All access to the stored value will be synced.
 @propertyWrapper
-final class Synchronized<Value> {
+final class Synchronized<Value>: @unchecked Sendable {
     private let accessQueue = DispatchQueue(label: "net.ffried.Synchronized<\(Value.self)>.Lock", attributes: .concurrent)
     
     private var _wrappedValue: Value
@@ -38,7 +38,3 @@ final class Synchronized<Value> {
         }
     }
 }
-
-#if compiler(>=5.5.2) && canImport(_Concurrency)
-extension Synchronized: @unchecked Sendable {}
-#endif
