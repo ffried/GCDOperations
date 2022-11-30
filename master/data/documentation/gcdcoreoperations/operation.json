@@ -346,6 +346,13 @@
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/removeDependency(_:)"
       ],
       "title" : "Instance Methods"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/CustomStringConvertible-Implementations"
+      ],
+      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -534,6 +541,17 @@
   "title" : "Operation",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operation"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/CustomStringConvertible-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/CustomStringConvertible-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "CustomStringConvertible Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/customstringconvertible-implementations"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/addCondition(_:)": {
   "abstract" : [

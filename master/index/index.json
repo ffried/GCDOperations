@@ -238,6 +238,26 @@
                 "path" : "\/documentation\/gcdcoreoperations\/operation\/removedependency(_:)",
                 "title" : "func removeDependency(Operation)",
                 "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/gcdcoreoperations\/operation\/halfwidthcornerquoted",
+                    "title" : "var halfWidthCornerQuoted: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/customstringconvertible-implementations",
+                "title" : "CustomStringConvertible Implementations",
+                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/gcdcoreoperations\/operation",
