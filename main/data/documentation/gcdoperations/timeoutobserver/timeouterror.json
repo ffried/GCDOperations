@@ -1,0 +1,299 @@
+{
+  "abstract" : [
+    {
+      "text" : "The error that a timed out operation is cancelled with.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver\/TimeoutError"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "GCDOperations",
+    "externalID" : "s:13GCDOperations15TimeoutObserverV0B5ErrorV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "TimeoutError"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDOperations"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "TimeoutError"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "TimeoutObserver.TimeoutError"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "TimeoutError"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/SQ",
+        "doc:\/\/GCDOperations\/s5ErrorP",
+        "doc:\/\/GCDOperations\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver\/TimeoutError\/timeout"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver\/TimeoutError\/Equatable-Implementations",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver\/TimeoutError\/Error-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdoperations\/timeoutobserver\/timeouterror"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDOperations/SQ": {
+  "identifier" : "doc:\/\/GCDOperations\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://GCDOperations/documentation/GCDOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations"
+},
+"doc://GCDOperations/documentation/GCDOperations/TimeoutObserver": {
+  "abstract" : [
+    {
+      "code" : "TimeoutObserver",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a way to make an ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " automatically time out and cancel after a specified time interval.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TimeoutObserver"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TimeoutObserver"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TimeoutObserver",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/timeoutobserver"
+},
+"doc://GCDOperations/documentation/GCDOperations/TimeoutObserver/TimeoutError": {
+  "abstract" : [
+    {
+      "text" : "The error that a timed out operation is cancelled with.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TimeoutError"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver\/TimeoutError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TimeoutError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TimeoutObserver.TimeoutError",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/timeoutobserver\/timeouterror"
+},
+"doc://GCDOperations/documentation/GCDOperations/TimeoutObserver/TimeoutError/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver\/TimeoutError\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/timeoutobserver\/timeouterror\/equatable-implementations"
+},
+"doc://GCDOperations/documentation/GCDOperations/TimeoutObserver/TimeoutError/Error-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver\/TimeoutError\/Error-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Error Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/timeoutobserver\/timeouterror\/error-implementations"
+},
+"doc://GCDOperations/documentation/GCDOperations/TimeoutObserver/TimeoutError/timeout": {
+  "abstract" : [
+    {
+      "text" : "The timeout that occurred.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "timeout"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
+      "text" : "TimeInterval"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver\/TimeoutError\/timeout",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "timeout",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/timeoutobserver\/timeouterror\/timeout"
+},
+"doc://GCDOperations/s5ErrorP": {
+  "identifier" : "doc:\/\/GCDOperations\/s5ErrorP",
+  "title" : "Swift.Error",
+  "type" : "unresolvable"
+},
+"doc://GCDOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

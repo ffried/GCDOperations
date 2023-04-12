@@ -1,0 +1,826 @@
+{
+  "abstract" : [
+    {
+      "text" : "An operation queue is used to execute ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s. It is backed by a concurrent ",
+      "type" : "text"
+    },
+    {
+      "code" : "DispatchQueue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "It takes care of enqueuing operations and also enqueues any produced operations.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:17GCDCoreOperations14OperationQueueC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "OperationQueue"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDCoreOperations"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "OperationQueue"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "OperationQueue"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "OperationQueue"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/init(initiallySuspended:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/isSuspended"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperation(_:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperation(executingAsync:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperation(executingSync:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperations(_:)-2odva",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperations(_:)-8nouu",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/cancelAllOperations()",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/resume()",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/suspend()"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/current",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/main"
+      ],
+      "title" : "Type Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdcoreoperations\/operationqueue"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDCoreOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue": {
+  "abstract" : [
+    {
+      "text" : "An operation queue is used to execute ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s. It is backed by a concurrent ",
+      "type" : "text"
+    },
+    {
+      "code" : "DispatchQueue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "It takes care of enqueuing operations and also enqueues any produced operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OperationQueue"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OperationQueue"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OperationQueue",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/addOperation(_:)": {
+  "abstract" : [
+    {
+      "text" : "Adds a new operation to this queue.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperation(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addOperation(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperation(_:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/addOperation(executingAsync:)": {
+  "abstract" : [
+    {
+      "text" : "Adds a ",
+      "type" : "text"
+    },
+    {
+      "code" : "BlockOperation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a given asynchronous block.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "executingAsync"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+      "text" : "BlockOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC05AsyncC0a",
+      "text" : "AsyncBlock"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+      "text" : "BlockOperation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperation(executingAsync:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addOperation(executingAsync:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperation(executingasync:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/addOperation(executingSync:)": {
+  "abstract" : [
+    {
+      "text" : "Adds a ",
+      "type" : "text"
+    },
+    {
+      "code" : "BlockOperation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a given synchronous block.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "executingSync"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+      "text" : "BlockOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC04SyncC0a",
+      "text" : "SyncBlock"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+      "text" : "BlockOperation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperation(executingSync:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addOperation(executingSync:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperation(executingsync:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/addOperations(_:)-2odva": {
+  "abstract" : [
+    {
+      "text" : "Adds a collection of operations to this queue.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addOperations"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Operations"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Operations"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperations(_:)-2odva",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addOperations(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperations(_:)-2odva"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/addOperations(_:)-8nouu": {
+  "abstract" : [
+    {
+      "text" : "Adds a variadic list of operations to this queue.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addOperations"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperations(_:)-8nouu",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addOperations(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperations(_:)-8nouu"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/cancelAllOperations()": {
+  "abstract" : [
+    {
+      "text" : "Cancels all operation that are currently in the queue.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cancelAllOperations"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/cancelAllOperations()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "cancelAllOperations()",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/cancelalloperations()"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/current": {
+  "abstract" : [
+    {
+      "text" : "If the current queue belongs to an ",
+      "type" : "text"
+    },
+    {
+      "code" : "OperationQueue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " it will be returned here. ",
+      "type" : "text"
+    },
+    {
+      "code" : "nil",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " otherwise.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "current"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14OperationQueueC",
+      "text" : "OperationQueue"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/current",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "current",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/current"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/init(initiallySuspended:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new operation queue, optionally suspending it initially.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "initiallySuspended"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/init(initiallySuspended:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(initiallySuspended:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/init(initiallysuspended:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/isSuspended": {
+  "abstract" : [
+    {
+      "text" : "Whether or not the queue is currently suspended.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isSuspended"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/isSuspended",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isSuspended",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/issuspended"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/main": {
+  "abstract" : [
+    {
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "code" : "OperationQueue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " associated to the main queue.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "main"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14OperationQueueC",
+      "text" : "OperationQueue"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/main",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "main",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/main"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/resume()": {
+  "abstract" : [
+    {
+      "text" : "Resumes the operation queue.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "resume"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/resume()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "resume()",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/resume()"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/suspend()": {
+  "abstract" : [
+    {
+      "text" : "Suspnds the operation queue.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "suspend"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/suspend()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "suspend()",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/suspend()"
+},
+"doc://GCDCoreOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDCoreOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}
