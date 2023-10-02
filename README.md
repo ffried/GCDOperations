@@ -4,7 +4,7 @@
 ![Tests](https://github.com/ffried/GCDOperations/workflows/Tests/badge.svg)
 [![Docs](https://img.shields.io/badge/-documentation-informational)](https://ffried.github.io/GCDOperations)
 
-<!-- [![codecov](https://codecov.io/gh/ffried/GCDOperations/branch/master/graph/badge.svg)](https://codecov.io/gh/ffried/GCDOperations) -->
+<!-- [![codecov](https://codecov.io/gh/ffried/GCDOperations/branch/main/graph/badge.svg)](https://codecov.io/gh/ffried/GCDOperations) -->
 
 Operations written in Swift based purely on GCD - no Objective-C dynamics, no key value observing.
 
@@ -17,8 +17,8 @@ On top of that, this library embraces what Apple initially showed in in the ["Ad
 
 You can find the online documentation of this project here:
 
--   [GCDCoreOperations](https://ffried.github.io/GCDOperations/master/documentation/gcdcoreoperations)
--   [GCDOperations](https://ffried.github.io/GCDOperations/master/documentation/gcdoperations).
+-   [GCDCoreOperations](https://ffried.github.io/GCDOperations/main/documentation/gcdcoreoperations)
+-   [GCDOperations](https://ffried.github.io/GCDOperations/main/documentation/gcdoperations).
 
 ## Credits
 

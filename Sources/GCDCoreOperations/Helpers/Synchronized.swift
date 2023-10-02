@@ -27,7 +27,8 @@ final class Synchronized<Value>: @unchecked Sendable {
         }
     }
 
-    func coordinated<OtherValue, T>(with other: Synchronized<OtherValue>, do work: (inout Value, inout OtherValue) throws -> T) rethrows -> T {
+    func coordinated<OtherValue, T>(with other: Synchronized<OtherValue>, 
+                                    do work: (inout Value, inout OtherValue) throws -> T) rethrows -> T {
         dispatchPrecondition(condition: .notOnQueue(accessQueue))
         return try accessQueue.sync(flags: .barrier) {
             if other.accessQueue === accessQueue { // unlikely

@@ -26,46 +26,31 @@ public protocol OperationCondition: Sendable {
     func evaluate(for operation: Operation, completion: @escaping (OperationConditionResult) -> ())
 }
 
-/// An error representing a failed condition. This protocol is an implementation detail and should not be used directly. Use `ConditionError` instead.
-public protocol AnyConditionError: Error {
-    /// The name of the condition that failed.
-    var conditionName: String { get }
-}
-
-#if compiler(>=5.7)
 /// An error describing a failed condition.
-public protocol ConditionError<Condition>: AnyConditionError {
+public protocol ConditionError<Condition>: Error {
     /// The condition that has failed.
     associatedtype Condition: OperationCondition
 }
-#else
-/// An error describing a failed condition.
-public protocol ConditionError: AnyConditionError {
-    /// The condition that has failed.
-    associatedtype Condition: OperationCondition
-}
-#endif
 
 extension ConditionError {
-    /// inherited
     @inlinable
     public var conditionName: String { Condition.name }
 }
 
-/// An enum to indicate whether an `OperationCondition` was satisfied, or if it
-/// failed with an error.
+@available(*, deprecated, message: "Use any ConditionError instead")
+public typealias AnyConditionError = any ConditionError
+
+/// An enum to indicate whether an ``OperationCondition`` was satisfied, or if it failed with an error.
 public enum OperationConditionResult: Sendable {
     /// The condition was satisified, continue execution.
     case satisfied
-    /// The condition failed, abort execution. The associated `ConditionError` describes what failure happened during evaluation.
-    case failed(AnyConditionError)
-    
-    var error: AnyConditionError? {
+    /// The condition failed, abort execution. The associated ``ConditionError`` describes what failure happened during evaluation.
+    case failed(any ConditionError)
+
+    var error: (any ConditionError)? {
         switch self {
-        case .failed(let error):
-            return error
-        default:
-            return nil
+        case .satisfied: nil
+        case .failed(let error): error
         }
     }
 }

@@ -36,7 +36,7 @@ public final class OperationQueue: @unchecked Sendable {
             queue.addOperation(newOperation)
         }
 
-        func operationDidFinish(_ operation: Operation, wasCancelled cancelled: Bool, errors: [Error]) {
+        func operationDidFinish(_ operation: Operation, wasCancelled cancelled: Bool, errors: Array<some Error>) {
             queue.operationFinished(operation)
             queue = nil // Op has finished. Release the queue.
         }

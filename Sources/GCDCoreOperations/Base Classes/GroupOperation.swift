@@ -43,9 +43,7 @@ public final class GroupOperation: Operation {
     /// Adds a collection of operations to this GroupOperation.
     /// - Parameter ops: The operations to add.
     /// - Precondition: The GroupOperation must not have finished yet!
-    public func addOperations<Operations>(_ ops: Operations)
-    where Operations: Collection, Operations.Element == Operation
-    {
+    public func addOperations(_ ops: some Collection<Operation>) {
         assert(!isFinished, "Cannot add operations after GroupOperation has finished!")
         __operations.withValue { $0.append(contentsOf: ops) }
         if case .running = state, let queue = queue {
@@ -56,7 +54,7 @@ public final class GroupOperation: Operation {
     /// Adds a variadic list of operations to this GroupOperation.
     /// - Parameter ops: The variadic list of operations to add.
     /// - Precondition: The GroupOperation must not have finished yet!
-    /// - SeeAlso: `GroupOperation.addOperations(_:)`
+    /// - SeeAlso: ``GroupOperation/addOperations(_:)``
     @inlinable
     public func addOperations(_ ops: Operation...) {
         addOperations(ops)
@@ -67,7 +65,6 @@ public final class GroupOperation: Operation {
         op.enqueue(on: queue, in: group)
     }
 
-    /// inherited
     public override func execute() {
         guard let queue = queue else { return finish() }
         operations.forEach { includeOperation($0, on: queue) }

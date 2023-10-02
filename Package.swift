@@ -1,8 +1,17 @@
-// swift-tools-version:5.7
+// swift-tools-version:5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
-import Foundation
+
+let swiftSettings: Array<SwiftSetting> = [
+    .enableUpcomingFeature("ConciseMagicFile"),
+    .enableUpcomingFeature("ExistentialAny"),
+    .enableUpcomingFeature("BareSlashRegexLiterals"),
+    .enableUpcomingFeature("DisableOutwardActorInference"),
+//    .enableExperimentalFeature("AccessLevelOnImport"),
+//    .enableExperimentalFeature("VariadicGenerics"),
+//    .unsafeFlags(["-warn-concurrency"], .when(configuration: .debug)),
+]
 
 let package = Package(
     name: "GCDOperations",
@@ -21,23 +30,26 @@ let package = Package(
             name: "GCDOperations",
             targets: ["GCDOperations"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0")
+    ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "GCDCoreOperations"),
+            name: "GCDCoreOperations",
+            swiftSettings: swiftSettings),
         .target(
             name: "GCDOperations",
-            dependencies: ["GCDCoreOperations"]),
+            dependencies: ["GCDCoreOperations"],
+            swiftSettings: swiftSettings),
         .testTarget(
             name: "GCDCoreOperationsTests",
-            dependencies: ["GCDCoreOperations"]),
+            dependencies: ["GCDCoreOperations"],
+            swiftSettings: swiftSettings),
         .testTarget(
             name: "GCDOperationsTests",
-            dependencies: ["GCDOperations"]),
+            dependencies: ["GCDOperations"],
+            swiftSettings: swiftSettings),
     ]
 )
-
-if ProcessInfo.processInfo.environment["ENABLE_DOCC_SUPPORT"] == "1" {
-    package.dependencies.append(.package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"))
-}

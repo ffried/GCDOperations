@@ -3,7 +3,7 @@ import typealias Foundation.TimeInterval
 import typealias GCDCoreOperations.GCDOperation
 import protocol GCDCoreOperations.OperationObserver
 
-/// `TimeoutObserver` is a way to make an `Operation` automatically time out and cancel after a specified time interval.
+/// `TimeoutObserver` is a way to make an ``GCDOperation`` automatically time out and cancel after a specified time interval.
 public struct TimeoutObserver: OperationObserver {
     private let timeout: TimeInterval
 
@@ -13,7 +13,6 @@ public struct TimeoutObserver: OperationObserver {
         self.timeout = timeout
     }
 
-    /// inherited
     public func operationDidStart(_ operation: GCDOperation) {
         // When the operation starts, queue up a block to cause it to time out.
         DispatchQueue.global().asyncAfter(deadline: .now() + timeout) { [timeout] in
@@ -24,10 +23,8 @@ public struct TimeoutObserver: OperationObserver {
         }
     }
 
-    /// inherited
     public func operation(_ operation: GCDOperation, didProduce newOperation: GCDOperation) {}
-    /// inherited
-    public func operationDidFinish(_ operation: GCDOperation, wasCancelled cancelled: Bool, errors: [Error]) {}
+    public func operationDidFinish(_ operation: GCDOperation, wasCancelled cancelled: Bool, errors: Array<some Error>) {}
 }
 
 extension TimeoutObserver {

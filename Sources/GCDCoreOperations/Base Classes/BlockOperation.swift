@@ -1,11 +1,11 @@
 /// A simple operation that runs a given block.
 /// This operation can either execute a synchronous block and finish immediately afterwards,
-/// or run an an asynchrounous block that is passed a reference to the `Operation.finish(with:)` method.
+/// or run an an asynchrounous block that is passed a reference to the ``Operation/finish(with:)`` method.
 public final class BlockOperation: Operation {
     /// A block that runs synchronously.
     public typealias SyncBlock = () throws -> ()
-    /// A block that runs asynchronously. `finish` is the reference to the `Operation.finish(with:)` method of the operation.
-    public typealias AsyncBlock = (_ finish: @escaping @Sendable (Array<Error>) -> ()) -> ()
+    /// A block that runs asynchronously. `finish` is the reference to the ``Operation/finish(with:)`` method of the operation.
+    public typealias AsyncBlock = (_ finish: @escaping @Sendable (Array<any Error>) -> ()) -> ()
 
     private enum ExecutionMode {
         case sync(SyncBlock)
@@ -26,7 +26,6 @@ public final class BlockOperation: Operation {
         executionMode = .async(asyncBlock)
     }
 
-    /// inherited
     public override func execute() {
         switch executionMode {
         case .sync(let block):

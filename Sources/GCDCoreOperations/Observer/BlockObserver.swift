@@ -1,13 +1,13 @@
-/// A simple `OperationObserver` implementation that executes blocks for each of the methods.
+/// A simple ``OperationObserver`` implementation that executes blocks for each of the methods.
 public struct BlockObserver: OperationObserver {
     private let startHandler: ((Operation) -> Void)?
     private let produceHandler: ((Operation, Operation) -> Void)?
-    private let finishHandler: ((Operation, Bool, Array<Error>) -> Void)?
+    private let finishHandler: ((Operation, Bool, Array<any Error>) -> Void)?
 
     @usableFromInline
     init(_startHandler: ((Operation) -> Void)?,
          _produceHandler: ((Operation, Operation) -> Void)?,
-         _finishHandler: ((Operation, Bool, Array<Error>) -> Void)?) {
+         _finishHandler: ((Operation, Bool, Array<any Error>) -> Void)?) {
         startHandler = _startHandler
         produceHandler = _produceHandler
         finishHandler = _finishHandler
@@ -21,7 +21,7 @@ public struct BlockObserver: OperationObserver {
     @inlinable
     public init(startHandler: ((Operation) -> Void)? = nil,
                 produceHandler: ((Operation, Operation) -> Void)? = nil,
-                finishHandler: ((Operation, Bool, Array<Error>) -> Void)?) {
+                finishHandler: ((Operation, Bool, Array<any Error>) -> Void)?) {
         self.init(_startHandler: startHandler,
                   _produceHandler: produceHandler,
                   _finishHandler: finishHandler)
@@ -48,18 +48,15 @@ public struct BlockObserver: OperationObserver {
                   _finishHandler: nil)
     }
 
-    /// inherited
     public func operationDidStart(_ operation: Operation) {
         startHandler?(operation)
     }
 
-    /// inherited
     public func operation(_ operation: Operation, didProduce newOperation: Operation) {
         produceHandler?(operation, newOperation)
     }
 
-    /// inherited
-    public func operationDidFinish(_ operation: Operation, wasCancelled cancelled: Bool, errors: Array<Error>) {
+    public func operationDidFinish(_ operation: Operation, wasCancelled cancelled: Bool, errors: Array<some Error>) {
         finishHandler?(operation, cancelled, errors)
     }
 }

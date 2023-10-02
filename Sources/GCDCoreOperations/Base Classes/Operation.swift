@@ -26,10 +26,10 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible, @un
     internal private(set) final var queue: DispatchQueue?
 
     /// The list of observers of this operation.
-    public private(set) final var observers = Array<OperationObserver>()
+    public private(set) final var observers = Array<any OperationObserver>()
     /// The list of conditions of this operation.
-    public private(set) final var conditions = Array<OperationCondition>()
-    
+    public private(set) final var conditions = Array<any OperationCondition>()
+
     @Synchronized
     private final var _dependencies = ContiguousArray<Operation>()
     /// The list of dependencies of this operation.
@@ -41,9 +41,9 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible, @un
 
     /// The list of errors this operation encountered.
     @Synchronized
-    private final var _errors = Array<Error>()
-    public final var errors: Array<Error> { _errors }
-    
+    private final var _errors = Array<any Error>()
+    public final var errors: Array<any Error> { _errors }
+
     // MARK: - State Accessors
     /// Whether or not this operation was cancelled.
     public final var isCancelled: Bool { state.isCancelled }
@@ -119,23 +119,23 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible, @un
     // MARK: - Errors
     /// Aggregates a collection of errors into the list of errors of this operation.
     /// - Parameter newErrors: The collections of errors to aggregate.
-    public final func aggregate<Errors>(errors newErrors: Errors) where Errors: Collection, Errors.Element: Error {
+    public final func aggregate(errors newErrors: some Collection<some Error>) {
         __errors.withValue { $0.append(contentsOf: newErrors.lazy.map { $0 }) }
     }
 
     /// Aggregates a variadic list of errors into the list of errors of this operation.
     /// - Parameter newErrors: The variadic list of errors to aggregate.
-    /// - SeeAlso: `aggregate(errors:)`
+    /// - SeeAlso: ``Operation/aggregate(errors:)``
     @inlinable
-    public final func aggregate(errors: Error...) {
+    public final func aggregate(errors: any Error...) {
         aggregate(errors: errors)
     }
 
     /// Aggregates an error into the list of errors of this operation.
     /// - Parameter error: The error to aggregate.
-    /// - SeeAlso: `aggregate(errors:)`
+    /// - SeeAlso: ``Operation/aggregate(errors:)``
     @inlinable
-    public final func aggregate(error: Error) {
+    public final func aggregate(error: some Error) {
         aggregate(errors: CollectionOfOne(error))
     }
     
@@ -209,7 +209,7 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible, @un
         
         let conditionGroup = DispatchGroup()
         
-        var results = [OperationConditionResult?](repeating: nil, count: conditions.count)
+        var results = Array<OperationConditionResult?>(repeating: nil, count: conditions.count)
         for (index, condition) in conditions.enumerated() {
             conditionGroup.enter()
             condition.evaluate(for: self) { result in
@@ -226,7 +226,7 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible, @un
                 self.aggregate(error: AnyConditionFailed())
             }
             
-            let failures: [Error] = results.compactMap { $0?.error }
+            let failures: Array<any Error> = results.compactMap { $0?.error }
             if !failures.isEmpty {
                 // TODO: If operation was cancelled by condition, this won't do anything!
                 self.finish(with: failures)
@@ -252,9 +252,7 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible, @un
         _waiters.withValue { $0.removeAll() }
     }
 
-    private final func finish<Errors>(cancelled: Bool, errors errs: Errors)
-    where Errors: Collection, Errors.Element: Error
-    {
+    private final func finish(cancelled: Bool, errors errs: some Collection<some Error>) {
         assert(cancelled || state > .enqueued, "Finishing Operation that was never enqueued!")
         guard !state.isFinished else { return }
         let (isAlreadyFinishing, wasWaitingForDependencies): (Bool, Bool) = _state.withValue { state in
@@ -289,7 +287,7 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible, @un
 
     /// Finishes the operation with a list of errors (can be empty).
     /// - Parameter errors: The errors to finish with. Can be an empty collection.
-    public final func finish<Errors>(with errors: Errors) where Errors: Collection, Errors.Element: Error {
+    public final func finish(with errors: some Collection<some Error>) {
         finish(cancelled: false, errors: errors)
     }
 
@@ -297,20 +295,20 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible, @un
     /// - Parameter errors: The variadic list of errors to finish with.
     /// - SeeAlso: `finish(with:)`
     @inlinable
-    public final func finish(with errors: Error...) {
+    public final func finish(with errors: any Error...) {
         finish(with: errors)
     }
 
     /// Cancels the operation with a list of errors (can be empty).
     /// - Parameter errors: The errors to cancel with. Can be an empty collection.
-    public final func cancel<Errors>(with errors: Errors) where Errors: Collection, Errors.Element: Error {
+    public final func cancel(with errors: some Collection<some Error>) {
         finish(cancelled: true, errors: errors)
     }
 
     /// Cancels the operation with a variadic list of errors (can be empty).
     /// - Parameter errors: The variadic list of errors to cancel with.
     @inlinable
-    public final func cancel(with errors: Error...) {
+    public final func cancel(with errors: any Error...) {
         cancel(with: errors)
     }
 
@@ -318,12 +316,12 @@ open class Operation: CustomStringConvertible, CustomDebugStringConvertible, @un
     /// - Parameters:
     ///   - wasCancelled: Whether or not the operation was cancelled. The value is the same as `isCancelled`. It's passed to this method to prevent the locks that need to be taken for `isCancelled` to be retrieved.
     ///   - errors: The list of errors that the operation has aggregated. The value is the same as the `errors` property. It is passed to this method to prevent the locks that need to be taken for `errors` to be retrieved.
-    open func didFinish(wasCancelled: Bool, errors: Array<Error>) {}
+    open func didFinish(wasCancelled: Bool, errors: Array<some Error>) {}
 }
 
 // MARK: - Nested Types
 extension Operation {
-    enum State: Comparable, CustomStringConvertible {
+    enum State: Sendable, Comparable, CustomStringConvertible {
         case created
         case enqueued
         case waitingForDependencies
@@ -386,8 +384,17 @@ extension Operation {
     }
 }
 
-fileprivate struct AnyConditionFailed: AnyConditionError {
-    var conditionName: String { "AnyCondition" }
+fileprivate struct AnyConditionFailed: ConditionError {
+    struct Condition: OperationCondition {
+        static let name = "AnyCondition"
+        static var isMutuallyExclusive: Bool { false }
+
+        func dependency(for operation: Operation) -> Operation? { nil }
+        
+        func evaluate(for operation: Operation, completion: @escaping (OperationConditionResult) -> ()) {
+            completion(.failed(AnyConditionFailed()))
+        }
+    }
 }
 
 fileprivate extension Synchronized where Value == Operation.State {

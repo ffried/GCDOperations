@@ -9,16 +9,13 @@ import protocol GCDCoreOperations.OperationCondition
 public struct NegatedCondition<ConditionToNegate: OperationCondition>: OperationCondition {
     /// The error produced, when the negated condition succeeded.
     public struct Error: ConditionError {
-        /// inherited
         public typealias Condition = NegatedCondition<ConditionToNegate>
 
         /// The condition that was negated but succeeded.
         public let negatedCondition: ConditionToNegate
     }
 
-    /// inherited
     public static var name: String { "Not<\(ConditionToNegate.name)>" }
-    /// inherited
     public static var isMutuallyExclusive: Bool { ConditionToNegate.isMutuallyExclusive }
     
     private let condition: ConditionToNegate
@@ -29,12 +26,10 @@ public struct NegatedCondition<ConditionToNegate: OperationCondition>: Operation
         self.condition = condition
     }
 
-    /// inherited
     public func dependency(for operation: GCDOperation) -> GCDOperation? {
         condition.dependency(for: operation)
     }
 
-    /// inherited
     public func evaluate(for operation: GCDOperation, completion: @escaping (OperationConditionResult) -> ()) {
         condition.evaluate(for: operation) {
             switch $0 {

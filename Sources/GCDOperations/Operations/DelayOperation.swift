@@ -4,7 +4,7 @@ import typealias Foundation.TimeInterval
 import typealias GCDCoreOperations.GCDOperation
 
 /** 
- `DelayOperation` is an `Operation` that will simply wait for a given time 
+ `DelayOperation` is an ``Operation`` that will simply wait for a given time
  interval, or until a specific `Date`.
  
  It is important to note that this operation does **not** use the `sleep()`
@@ -44,7 +44,6 @@ public final class DelayOperation: GCDOperation {
         super.init()
     }
 
-    /// inherited
     public override func execute() {
         let interval = delay.interval
         guard interval > 0 else {
