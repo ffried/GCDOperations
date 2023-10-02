@@ -1,0 +1,653 @@
+{
+  "abstract" : [
+    {
+      "text" : "An operation that groups several operations under it.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:17GCDCoreOperations14GroupOperationC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "GroupOperation"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDCoreOperations"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "GroupOperation"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "GroupOperation"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "GroupOperation"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherits From",
+      "type" : "inheritsFrom"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/s28CustomDebugStringConvertibleP",
+        "doc:\/\/GCDCoreOperations\/s23CustomStringConvertibleP",
+        "doc:\/\/GCDCoreOperations\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init(operations:)-4ggrs",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init(operations:)-5etvw",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init(operations:)-sek3"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/operations"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/addOperation(_:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/addOperations(_:)-1a1ze",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/addOperations(_:)-soqj",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/execute()"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdcoreoperations\/groupoperation"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDCoreOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation": {
+  "abstract" : [
+    {
+      "text" : "An operation that groups several operations under it.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GroupOperation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "GroupOperation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "GroupOperation",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/groupoperation"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/addOperation(_:)": {
+  "abstract" : [
+    {
+      "text" : "Adds a new operation to this GroupOperation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/addOperation(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addOperation(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/groupoperation\/addoperation(_:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/addOperations(_:)-1a1ze": {
+  "abstract" : [
+    {
+      "text" : "Adds a variadic list of operations to this GroupOperation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addOperations"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/addOperations(_:)-1a1ze",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addOperations(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/groupoperation\/addoperations(_:)-1a1ze"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/addOperations(_:)-soqj": {
+  "abstract" : [
+    {
+      "text" : "Adds a collection of operations to this GroupOperation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addOperations"
+    },
+    {
+      "kind" : "text",
+      "text" : "(some "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/addOperations(_:)-soqj",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addOperations(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/groupoperation\/addoperations(_:)-soqj"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/execute()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "execute"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/execute()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "execute()",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/groupoperation\/execute()"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/init(operations:)-4ggrs": {
+  "abstract" : [
+    {
+      "text" : "Creates a new GroupOperation with the given variadic list of operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "operations"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init(operations:)-4ggrs",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(operations:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/groupoperation\/init(operations:)-4ggrs"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/init(operations:)-5etvw": {
+  "abstract" : [
+    {
+      "text" : "Creates a new GroupOperation with the given list of operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "operations"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s15ContiguousArrayV",
+      "text" : "ContiguousArray"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init(operations:)-5etvw",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(operations:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/groupoperation\/init(operations:)-5etvw"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/init(operations:)-sek3": {
+  "abstract" : [
+    {
+      "text" : "Creates a new GroupOperation with the given list of operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "C"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "operations"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "C"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/init(operations:)-sek3",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(operations:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/groupoperation\/init(operations:)-sek3"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/operations": {
+  "abstract" : [
+    {
+      "text" : "The operations grouped inside this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "operations"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s15ContiguousArrayV",
+      "text" : "ContiguousArray"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/operations",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "operations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/groupoperation\/operations"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation": {
+  "abstract" : [
+    {
+      "text" : "The (abstract) base class for an operation.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "An operation is an “isolated” piece of work, that will be enqueued and executed on an ",
+      "type" : "text"
+    },
+    {
+      "code" : "OperationQueue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is considered an abstract class and cannot be used directly. Create a subclass and override ",
+      "type" : "text"
+    },
+    {
+      "code" : "execute",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " instead.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Operation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Operation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Operation",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation"
+},
+"doc://GCDCoreOperations/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/GCDCoreOperations\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://GCDCoreOperations/s28CustomDebugStringConvertibleP": {
+  "identifier" : "doc:\/\/GCDCoreOperations\/s28CustomDebugStringConvertibleP",
+  "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://GCDCoreOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDCoreOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

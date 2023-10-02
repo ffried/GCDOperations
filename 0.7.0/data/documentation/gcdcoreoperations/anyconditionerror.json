@@ -1,0 +1,199 @@
+{
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Use any ConditionError instead",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:17GCDCoreOperations17AnyConditionErrora",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "typealias"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "AnyConditionError"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDCoreOperations"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "AnyConditionError"
+      }
+    ],
+    "platforms" : [
+
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Alias",
+    "symbolKind" : "typealias",
+    "title" : "AnyConditionError"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "typealias"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "AnyConditionError"
+            },
+            {
+              "kind" : "text",
+              "text" : " = "
+            },
+            {
+              "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:17GCDCoreOperations14ConditionErrorP",
+              "text" : "ConditionError"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdcoreoperations\/anyconditionerror"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDCoreOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/AnyConditionError": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AnyConditionError"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AnyConditionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AnyConditionError",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/anyconditionerror"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/ConditionError": {
+  "abstract" : [
+    {
+      "text" : "An error describing a failed condition.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConditionError"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConditionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ConditionError",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/conditionerror"
+}
+}
+}

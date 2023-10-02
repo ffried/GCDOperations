@@ -1,0 +1,225 @@
+{
+  "abstract" : [
+    {
+      "text" : "A typealias to ",
+      "type" : "text"
+    },
+    {
+      "code" : "GCDCoreOperations.BlockOperation",
+      "type" : "codeVoice"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GCDBlockOperation"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:17GCDCoreOperations17GCDBlockOperationa",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "typealias"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "GCDBlockOperation"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDCoreOperations"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "GCDBlockOperation"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Alias",
+    "symbolKind" : "typealias",
+    "title" : "GCDBlockOperation"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "typealias"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "GCDBlockOperation"
+            },
+            {
+              "kind" : "text",
+              "text" : " = "
+            },
+            {
+              "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+              "text" : "BlockOperation"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdcoreoperations\/gcdblockoperation"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDCoreOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockOperation": {
+  "abstract" : [
+    {
+      "text" : "A simple operation that runs a given block.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This operation can either execute a synchronous block and finish immediately afterwards,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "or run an an asynchrounous block that is passed a reference to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation\/finish(with:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " method.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BlockOperation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BlockOperation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BlockOperation",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/blockoperation"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GCDBlockOperation": {
+  "abstract" : [
+    {
+      "text" : "A typealias to ",
+      "type" : "text"
+    },
+    {
+      "code" : "GCDCoreOperations.BlockOperation",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GCDBlockOperation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GCDBlockOperation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "GCDBlockOperation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "GCDBlockOperation",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/gcdblockoperation"
+}
+}
+}

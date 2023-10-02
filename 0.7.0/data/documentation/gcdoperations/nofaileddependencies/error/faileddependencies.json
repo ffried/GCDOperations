@@ -1,0 +1,281 @@
+{
+  "abstract" : [
+    {
+      "text" : "The dependencies that have failed.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/Error"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/Error\/failedDependencies"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13GCDOperations20NoFailedDependenciesV5ErrorV06failedD0s15ContiguousArrayVy17GCDCoreOperations9OperationCGvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "failedDependencies"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s15ContiguousArrayV",
+        "text" : "ContiguousArray"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:17GCDCoreOperations12GCDOperationa",
+        "text" : "GCDOperation"
+      },
+      {
+        "kind" : "text",
+        "text" : ">"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDOperations"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "failedDependencies"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "failedDependencies"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s15ContiguousArrayV",
+              "text" : "ContiguousArray"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:17GCDCoreOperations12GCDOperationa",
+              "text" : "GCDOperation"
+            },
+            {
+              "kind" : "text",
+              "text" : ">"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdoperations\/nofaileddependencies\/error\/faileddependencies"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDOperations/documentation/GCDOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies": {
+  "abstract" : [
+    {
+      "text" : "A condition that specifies that every dependency must have succeeded.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "If any dependency has errors, the target operation will fail as well.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NoFailedDependencies"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NoFailedDependencies"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NoFailedDependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies/Error": {
+  "abstract" : [
+    {
+      "text" : "The error produced when any of the operation’s dependencies have failed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Error"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/Error",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Error"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NoFailedDependencies.Error",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies\/error"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies/Error/failedDependencies": {
+  "abstract" : [
+    {
+      "text" : "The dependencies that have failed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "failedDependencies"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s15ContiguousArrayV",
+      "text" : "ContiguousArray"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations12GCDOperationa",
+      "text" : "GCDOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/Error\/failedDependencies",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "failedDependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies\/error\/faileddependencies"
+}
+}
+}

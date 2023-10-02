@@ -1,0 +1,337 @@
+{
+  "abstract" : [
+    {
+      "text" : "An enum to indicate whether an ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationCondition",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " was satisfied, or if it failed with an error.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:17GCDCoreOperations24OperationConditionResultO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "OperationConditionResult"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDCoreOperations"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "OperationConditionResult"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "OperationConditionResult"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "OperationConditionResult"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult\/failed(_:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult\/satisfied"
+      ],
+      "title" : "Enumeration Cases"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdcoreoperations\/operationconditionresult"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDCoreOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/ConditionError": {
+  "abstract" : [
+    {
+      "text" : "An error describing a failed condition.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConditionError"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConditionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ConditionError",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/conditionerror"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationCondition": {
+  "abstract" : [
+    {
+      "text" : "A protocol for defining conditions that must be satisfied in order for an operation to begin execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OperationCondition"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationCondition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OperationCondition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OperationCondition",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationcondition"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationConditionResult": {
+  "abstract" : [
+    {
+      "text" : "An enum to indicate whether an ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationCondition",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " was satisfied, or if it failed with an error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OperationConditionResult"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OperationConditionResult"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OperationConditionResult",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationconditionresult"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationConditionResult/failed(_:)": {
+  "abstract" : [
+    {
+      "text" : "The condition failed, abort execution. The associated ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " describes what failure happened during evaluation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "failed"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14ConditionErrorP",
+      "text" : "ConditionError"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult\/failed(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OperationConditionResult.failed(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationconditionresult\/failed(_:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationConditionResult/satisfied": {
+  "abstract" : [
+    {
+      "text" : "The condition was satisified, continue execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "satisfied"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationConditionResult\/satisfied",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OperationConditionResult.satisfied",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationconditionresult\/satisfied"
+},
+"doc://GCDCoreOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDCoreOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

@@ -1,0 +1,430 @@
+{
+  "abstract" : [
+    {
+      "text" : "A generic condition for describing kinds of operations that may not execute concurrently.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13GCDOperations17MutuallyExclusiveV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "MutuallyExclusive"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDOperations"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "MutuallyExclusive"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "MutuallyExclusive"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "MutuallyExclusive"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "T"
+            },
+            {
+              "kind" : "text",
+              "text" : ">"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/17GCDCoreOperations18OperationConditionP",
+        "doc:\/\/GCDOperations\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive\/init()"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive\/dependency(for:)",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive\/evaluate(for:completion:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive\/isMutuallyExclusive",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive\/name"
+      ],
+      "title" : "Type Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdoperations\/mutuallyexclusive"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDOperations/17GCDCoreOperations18OperationConditionP": {
+  "identifier" : "doc:\/\/GCDOperations\/17GCDCoreOperations18OperationConditionP",
+  "title" : "GCDCoreOperations.OperationCondition",
+  "type" : "unresolvable"
+},
+"doc://GCDOperations/documentation/GCDOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations"
+},
+"doc://GCDOperations/documentation/GCDOperations/MutuallyExclusive": {
+  "abstract" : [
+    {
+      "text" : "A generic condition for describing kinds of operations that may not execute concurrently.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MutuallyExclusive"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MutuallyExclusive"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MutuallyExclusive",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/mutuallyexclusive"
+},
+"doc://GCDOperations/documentation/GCDOperations/MutuallyExclusive/dependency(for:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "for"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive\/dependency(for:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dependency(for:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/mutuallyexclusive\/dependency(for:)"
+},
+"doc://GCDOperations/documentation/GCDOperations/MutuallyExclusive/evaluate(for:completion:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "evaluate"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "for"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "completion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations24OperationConditionResultO",
+      "text" : "OperationConditionResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ())"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive\/evaluate(for:completion:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "evaluate(for:completion:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/mutuallyexclusive\/evaluate(for:completion:)"
+},
+"doc://GCDOperations/documentation/GCDOperations/MutuallyExclusive/init()": {
+  "abstract" : [
+    {
+      "text" : "Creates a new MutuallyExclusive condition.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive\/init()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/mutuallyexclusive\/init()"
+},
+"doc://GCDOperations/documentation/GCDOperations/MutuallyExclusive/isMutuallyExclusive": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isMutuallyExclusive"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive\/isMutuallyExclusive",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isMutuallyExclusive",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/mutuallyexclusive\/ismutuallyexclusive"
+},
+"doc://GCDOperations/documentation/GCDOperations/MutuallyExclusive/name": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/MutuallyExclusive\/name",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "name",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/mutuallyexclusive\/name"
+},
+"doc://GCDOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

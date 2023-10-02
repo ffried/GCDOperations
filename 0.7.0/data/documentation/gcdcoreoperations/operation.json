@@ -1,0 +1,1622 @@
+{
+  "abstract" : [
+    {
+      "text" : "The (abstract) base class for an operation.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "An operation is an “isolated” piece of work, that will be enqueued and executed on an ",
+      "type" : "text"
+    },
+    {
+      "code" : "OperationQueue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is considered an abstract class and cannot be used directly. Create a subclass and override ",
+      "type" : "text"
+    },
+    {
+      "code" : "execute",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " instead.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:17GCDCoreOperations9OperationC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Operation"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDCoreOperations"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Operation"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "Operation"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Operation"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Each operation is in one of the following states:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "created -> The operation has been created but not yet added to an ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "OperationQueue",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "waiting for dependencies -> The operation has been enqueued, but there are dependencies that are still executing.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "evaluating conditions -> All the operation’s dependencies have finished and the operation is now evaluating its conditions.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "running -> The operation is performing its main task.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "finished -> The operation has finished its main taks, or was cancelled.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note that an operation can be cancelled in any state, but its up to the subclass to periodically check on ",
+              "type" : "text"
+            },
+            {
+              "code" : "isCancelled",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An operation can have dependencies, which will have to finish before the operation starts its work.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Also, an operation can have conditions (see ",
+              "type" : "text"
+            },
+            {
+              "code" : "OperationCondition",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "), which can be used to evaluate whether the operation should run or not.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Finally, an operation can be observed using ",
+              "type" : "text"
+            },
+            {
+              "code" : "OperationObserver",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Be aware, that once an operation has been enqueued, it should not be modified directly in terms of adding dependencies, conditions or observers.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherited By",
+      "type" : "inheritedBy"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/s28CustomDebugStringConvertibleP",
+        "doc:\/\/GCDCoreOperations\/s23CustomStringConvertibleP",
+        "doc:\/\/GCDCoreOperations\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/init()"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/conditions",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/debugDescription",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/dependencies",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/description",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/errors",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/isCancelled",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/isFinished",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/observers"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/addCondition(_:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/addDependency(_:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/addObserver(_:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(error:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-23wy6",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-8md39",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-7asfv",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-zk5m",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/didFinish(wasCancelled:errors:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/execute()",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/finish(with:)-1uh3t",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/finish(with:)-64rt8",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/produce(_:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/removeDependency(_:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdcoreoperations\/operation"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDCoreOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockOperation": {
+  "abstract" : [
+    {
+      "text" : "A simple operation that runs a given block.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This operation can either execute a synchronous block and finish immediately afterwards,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "or run an an asynchrounous block that is passed a reference to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation\/finish(with:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " method.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BlockOperation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BlockOperation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BlockOperation",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/blockoperation"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation": {
+  "abstract" : [
+    {
+      "text" : "An operation that groups several operations under it.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GroupOperation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "GroupOperation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "GroupOperation",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/groupoperation"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation": {
+  "abstract" : [
+    {
+      "text" : "The (abstract) base class for an operation.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "An operation is an “isolated” piece of work, that will be enqueued and executed on an ",
+      "type" : "text"
+    },
+    {
+      "code" : "OperationQueue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is considered an abstract class and cannot be used directly. Create a subclass and override ",
+      "type" : "text"
+    },
+    {
+      "code" : "execute",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " instead.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Operation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Operation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Operation",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/addCondition(_:)": {
+  "abstract" : [
+    {
+      "text" : "Adds a condition to this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Condition"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Condition"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/addCondition(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addCondition(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/addcondition(_:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/addDependency(_:)": {
+  "abstract" : [
+    {
+      "text" : "Adds a dependency to this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addDependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/addDependency(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addDependency(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/adddependency(_:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/addObserver(_:)": {
+  "abstract" : [
+    {
+      "text" : "Adds an observer to this operation. The observer will get all calls that remain for this operation.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "If added to a running operation, the observer will only be notified of produced operations and finishing of this operation.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "If “added” to a finished operation, the observer will not be added to the list of observers",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and the ",
+      "type" : "text"
+    },
+    {
+      "code" : "operationDidFinish(_:wasCancelled:errors:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " method will be called instantly on the observer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addObserver"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Observer"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Observer"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/addObserver(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addObserver(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/addobserver(_:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/aggregate(error:)": {
+  "abstract" : [
+    {
+      "text" : "Aggregates an error into the list of errors of this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "aggregate"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "error"
+    },
+    {
+      "kind" : "text",
+      "text" : ": some "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(error:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "aggregate(error:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(error:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/aggregate(errors:)-23wy6": {
+  "abstract" : [
+    {
+      "text" : "Aggregates a collection of errors into the list of errors of this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "aggregate"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "errors"
+    },
+    {
+      "kind" : "text",
+      "text" : ": some "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-23wy6",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "aggregate(errors:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-23wy6"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/aggregate(errors:)-8md39": {
+  "abstract" : [
+    {
+      "text" : "Aggregates a variadic list of errors into the list of errors of this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "aggregate"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "errors"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-8md39",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "aggregate(errors:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-8md39"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/cancel(with:)-7asfv": {
+  "abstract" : [
+    {
+      "text" : "Cancels the operation with a list of errors (can be empty).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cancel"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": some "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-7asfv",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "cancel(with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/cancel(with:)-7asfv"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/cancel(with:)-zk5m": {
+  "abstract" : [
+    {
+      "text" : "Cancels the operation with a variadic list of errors (can be empty).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cancel"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-zk5m",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "cancel(with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/cancel(with:)-zk5m"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/conditions": {
+  "abstract" : [
+    {
+      "text" : "The list of conditions of this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "conditions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations18OperationConditionP",
+      "text" : "OperationCondition"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/conditions",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "conditions",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/conditions"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/debugDescription": {
+  "abstract" : [
+    {
+      "text" : "inherited",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "debugDescription"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/debugDescription",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "debugDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/debugdescription"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/dependencies": {
+  "abstract" : [
+    {
+      "text" : "The list of dependencies of this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dependencies"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s15ContiguousArrayV",
+      "text" : "ContiguousArray"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/dependencies",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/dependencies"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/description": {
+  "abstract" : [
+    {
+      "text" : "inherited",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "description"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/description",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "description",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/description"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/didFinish(wasCancelled:errors:)": {
+  "abstract" : [
+    {
+      "text" : "Method for subclasses to override to be informed when the operation finishes. This can be used to e.g. clean up some internals.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "didFinish"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "wasCancelled"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "errors"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<some "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/didFinish(wasCancelled:errors:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "didFinish(wasCancelled:errors:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/didfinish(wascancelled:errors:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/errors": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "errors"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/errors",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "errors",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/errors"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/execute()": {
+  "abstract" : [
+    {
+      "text" : "The main method of the operation. Subclasses should override this and perform their work.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "execute"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/execute()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "execute()",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/execute()"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/finish(with:)-1uh3t": {
+  "abstract" : [
+    {
+      "text" : "Finishes the operation with a variadic list of errors (can be empty).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "finish"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/finish(with:)-1uh3t",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "finish(with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/finish(with:)-1uh3t"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/finish(with:)-64rt8": {
+  "abstract" : [
+    {
+      "text" : "Finishes the operation with a list of errors (can be empty).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "finish"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": some "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/finish(with:)-64rt8",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "finish(with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/finish(with:)-64rt8"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/init()": {
+  "abstract" : [
+    {
+      "text" : "Creates a new operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/init()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/init()"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/isCancelled": {
+  "abstract" : [
+    {
+      "text" : "Whether or not this operation was cancelled.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isCancelled"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/isCancelled",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isCancelled",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/iscancelled"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/isFinished": {
+  "abstract" : [
+    {
+      "text" : "Whether or not this operation has finished. This will also return ",
+      "type" : "text"
+    },
+    {
+      "code" : "true",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if the operation has been cancelled.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isFinished"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/isFinished",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isFinished",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/isfinished"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/observers": {
+  "abstract" : [
+    {
+      "text" : "The list of observers of this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "observers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations17OperationObserverP",
+      "text" : "OperationObserver"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/observers",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "observers",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/observers"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/produce(_:)": {
+  "abstract" : [
+    {
+      "text" : "Produces a new operation. This notified all registered observers using the ",
+      "type" : "text"
+    },
+    {
+      "code" : "operation(_:didProduce:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " method.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "produce"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/produce(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "produce(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/produce(_:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/removeDependency(_:)": {
+  "abstract" : [
+    {
+      "text" : "Removes a dependency from this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeDependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/removeDependency(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeDependency(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/removedependency(_:)"
+},
+"doc://GCDCoreOperations/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/GCDCoreOperations\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://GCDCoreOperations/s28CustomDebugStringConvertibleP": {
+  "identifier" : "doc:\/\/GCDCoreOperations\/s28CustomDebugStringConvertibleP",
+  "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://GCDCoreOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDCoreOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

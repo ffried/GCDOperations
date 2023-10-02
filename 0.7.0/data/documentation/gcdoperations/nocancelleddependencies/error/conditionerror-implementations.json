@@ -1,0 +1,178 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoCancelledDependencies",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoCancelledDependencies\/Error"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoCancelledDependencies\/Error\/ConditionError-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "GCDOperations"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "ConditionError Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoCancelledDependencies\/Error\/conditionName"
+      ],
+      "title" : "Instance Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdoperations\/nocancelleddependencies\/error\/conditionerror-implementations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDOperations/documentation/GCDOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoCancelledDependencies": {
+  "abstract" : [
+    {
+      "text" : "A condition that specifies that every dependency must have run.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "If any dependency was cancelled, the target operation will fail.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NoCancelledDependencies"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoCancelledDependencies",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NoCancelledDependencies"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NoCancelledDependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nocancelleddependencies"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoCancelledDependencies/Error": {
+  "abstract" : [
+    {
+      "text" : "The error produced when any of the operation’s dependencies was cancelled.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Error"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoCancelledDependencies\/Error",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Error"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NoCancelledDependencies.Error",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nocancelleddependencies\/error"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoCancelledDependencies/Error/conditionName": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "conditionName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoCancelledDependencies\/Error\/conditionName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "conditionName",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nocancelleddependencies\/error\/conditionname"
+}
+}
+}

@@ -1,0 +1,242 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NegatedCondition"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NegatedCondition\/isMutuallyExclusive"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13GCDOperations16NegatedConditionV19isMutuallyExclusiveSbvpZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "isMutuallyExclusive"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sb",
+        "text" : "Bool"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDOperations"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Property",
+    "symbolKind" : "property",
+    "title" : "isMutuallyExclusive"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "isMutuallyExclusive"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sb",
+              "text" : "Bool"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdoperations\/negatedcondition\/ismutuallyexclusive"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDOperations/documentation/GCDOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations"
+},
+"doc://GCDOperations/documentation/GCDOperations/NegatedCondition": {
+  "abstract" : [
+    {
+      "text" : "A simple condition that negates the evaluation of another condition.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This is useful (for example) if you want to only execute an operation if the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "network is NOT reachable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NegatedCondition"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NegatedCondition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NegatedCondition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NegatedCondition",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/negatedcondition"
+},
+"doc://GCDOperations/documentation/GCDOperations/NegatedCondition/isMutuallyExclusive": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isMutuallyExclusive"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NegatedCondition\/isMutuallyExclusive",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isMutuallyExclusive",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/negatedcondition\/ismutuallyexclusive"
+}
+}
+}

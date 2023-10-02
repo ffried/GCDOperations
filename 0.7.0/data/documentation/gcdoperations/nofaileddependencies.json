@@ -1,0 +1,474 @@
+{
+  "abstract" : [
+    {
+      "text" : "A condition that specifies that every dependency must have succeeded.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "If any dependency has errors, the target operation will fail as well.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13GCDOperations20NoFailedDependenciesV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "NoFailedDependencies"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDOperations"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "NoFailedDependencies"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "NoFailedDependencies"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "NoFailedDependencies"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/17GCDCoreOperations18OperationConditionP",
+        "doc:\/\/GCDOperations\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/Error"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/init()"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/dependency(for:)",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/evaluate(for:completion:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/isMutuallyExclusive",
+        "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/name"
+      ],
+      "title" : "Type Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdoperations\/nofaileddependencies"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDOperations/17GCDCoreOperations18OperationConditionP": {
+  "identifier" : "doc:\/\/GCDOperations\/17GCDCoreOperations18OperationConditionP",
+  "title" : "GCDCoreOperations.OperationCondition",
+  "type" : "unresolvable"
+},
+"doc://GCDOperations/documentation/GCDOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies": {
+  "abstract" : [
+    {
+      "text" : "A condition that specifies that every dependency must have succeeded.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "If any dependency has errors, the target operation will fail as well.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NoFailedDependencies"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NoFailedDependencies"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NoFailedDependencies",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies/Error": {
+  "abstract" : [
+    {
+      "text" : "The error produced when any of the operation’s dependencies have failed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Error"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/Error",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Error"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NoFailedDependencies.Error",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies\/error"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies/dependency(for:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dependency"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "for"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations12GCDOperationa",
+      "text" : "GCDOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations12GCDOperationa",
+      "text" : "GCDOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/dependency(for:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dependency(for:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies\/dependency(for:)"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies/evaluate(for:completion:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "evaluate"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "for"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations12GCDOperationa",
+      "text" : "GCDOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "completion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations24OperationConditionResultO",
+      "text" : "OperationConditionResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ())"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/evaluate(for:completion:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "evaluate(for:completion:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies\/evaluate(for:completion:)"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies/init()": {
+  "abstract" : [
+    {
+      "text" : "Creates a new NoFailedDependencies condition.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/init()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies\/init()"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies/isMutuallyExclusive": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isMutuallyExclusive"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/isMutuallyExclusive",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isMutuallyExclusive",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies\/ismutuallyexclusive"
+},
+"doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies/name": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/NoFailedDependencies\/name",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "name",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdoperations\/nofaileddependencies\/name"
+},
+"doc://GCDOperations/s8SendableP": {
+  "identifier" : "doc:\/\/GCDOperations\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

@@ -1,0 +1,506 @@
+{
+  "abstract" : [
+    {
+      "text" : "Adds a ",
+      "type" : "text"
+    },
+    {
+      "code" : "BlockOperation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a given synchronous block.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperation(executingSync:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:17GCDCoreOperations14OperationQueueC03addC013executingSyncAA05BlockC0CyyKc_tF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "addOperation"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "executingSync"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+        "text" : "BlockOperation"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC04SyncC0a",
+        "text" : "SyncBlock"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+        "text" : "BlockOperation"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "GCDCoreOperations"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "addOperation(executingSync:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@discardableResult"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "addOperation"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "executingSync"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "block"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "@escaping"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+              "text" : "BlockOperation"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation\/SyncBlock",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC04SyncC0a",
+              "text" : "SyncBlock"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+              "text" : "BlockOperation"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The block to execute.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "block"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The created block operation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "code" : "BlockOperation.init(syncBlock:)",
+                  "type" : "codeVoice"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "See Also",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/gcdcoreoperations\/operationqueue\/addoperation(executingsync:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "GCDCoreOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockOperation": {
+  "abstract" : [
+    {
+      "text" : "A simple operation that runs a given block.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This operation can either execute a synchronous block and finish immediately afterwards,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "or run an an asynchrounous block that is passed a reference to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation\/finish(with:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " method.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BlockOperation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BlockOperation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BlockOperation",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/blockoperation"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockOperation/SyncBlock": {
+  "abstract" : [
+    {
+      "text" : "A block that runs synchronously.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SyncBlock"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/BlockOperation\/SyncBlock",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SyncBlock"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BlockOperation.SyncBlock",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/blockoperation\/syncblock"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue": {
+  "abstract" : [
+    {
+      "text" : "An operation queue is used to execute ",
+      "type" : "text"
+    },
+    {
+      "code" : "Operation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s. It is backed by a concurrent ",
+      "type" : "text"
+    },
+    {
+      "code" : "DispatchQueue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "It takes care of enqueuing operations and also enqueues any produced operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OperationQueue"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OperationQueue"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OperationQueue",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationQueue/addOperation(executingSync:)": {
+  "abstract" : [
+    {
+      "text" : "Adds a ",
+      "type" : "text"
+    },
+    {
+      "code" : "BlockOperation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a given synchronous block.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "executingSync"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+      "text" : "BlockOperation"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC04SyncC0a",
+      "text" : "SyncBlock"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations14BlockOperationC",
+      "text" : "BlockOperation"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationQueue\/addOperation(executingSync:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addOperation(executingSync:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationqueue\/addoperation(executingsync:)"
+}
+}
+}
