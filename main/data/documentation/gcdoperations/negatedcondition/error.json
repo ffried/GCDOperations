@@ -82,7 +82,6 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/GCDOperations\/17GCDCoreOperations17AnyConditionErrorP",
         "doc:\/\/GCDOperations\/17GCDCoreOperations14ConditionErrorP",
         "doc:\/\/GCDOperations\/s5ErrorP",
         "doc:\/\/GCDOperations\/s8SendableP"
@@ -139,11 +138,6 @@
 "doc://GCDOperations/17GCDCoreOperations14ConditionErrorP": {
   "identifier" : "doc:\/\/GCDOperations\/17GCDCoreOperations14ConditionErrorP",
   "title" : "GCDCoreOperations.ConditionError",
-  "type" : "unresolvable"
-},
-"doc://GCDOperations/17GCDCoreOperations17AnyConditionErrorP": {
-  "identifier" : "doc:\/\/GCDOperations\/17GCDCoreOperations17AnyConditionErrorP",
-  "title" : "GCDCoreOperations.AnyConditionError",
   "type" : "unresolvable"
 },
 "doc://GCDOperations/documentation/GCDOperations": {
@@ -243,10 +237,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/NegatedCondition/Error/Condition": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

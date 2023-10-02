@@ -70,7 +70,10 @@
     ],
     "modules" : [
       {
-        "name" : "GCDOperations"
+        "name" : "GCDOperations",
+        "relatedModules" : [
+          "Swift"
+        ]
       }
     ],
     "role" : "symbol",
@@ -204,7 +207,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation",
+      "code" : "GCDOperation",
       "type" : "codeVoice"
     },
     {

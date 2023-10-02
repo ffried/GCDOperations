@@ -43,7 +43,6 @@
     },
     {
       "identifiers" : [
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationCondition",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationObserver"
@@ -58,6 +57,7 @@
     },
     {
       "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GCDBlockOperation",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GCDGroupOperation",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GCDOperation",
@@ -99,23 +99,13 @@
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/AnyConditionError": {
   "abstract" : [
-    {
-      "text" : "An error representing a failed condition. This protocol is an implementation detail and should not be used directly. Use ",
-      "type" : "text"
-    },
-    {
-      "code" : "ConditionError",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " instead.",
-      "type" : "text"
-    }
+
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "protocol"
+      "text" : "typealias"
     },
     {
       "kind" : "text",
@@ -146,8 +136,9 @@
       "type" : "text"
     },
     {
-      "code" : "OperationObserver",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationObserver",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " implementation that executes blocks for each of the methods.",
@@ -204,7 +195,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.finish(with:)",
+      "code" : "Operation\/finish(with:)",
       "type" : "codeVoice"
     },
     {
@@ -570,19 +561,12 @@
       "type" : "text"
     },
     {
-      "code" : "OperationCondition",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationCondition",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
-      "text" : " was satisfied, or if it",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "failed with an error.",
+      "text" : " was satisfied, or if it failed with an error.",
       "type" : "text"
     }
   ],

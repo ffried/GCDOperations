@@ -5,8 +5,9 @@
       "type" : "text"
     },
     {
-      "code" : "ConditionError",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " describes what failure happened during evaluation.",
@@ -27,7 +28,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:17GCDCoreOperations24OperationConditionResultO6failedyAcA03AnyD5Error_pcACmF",
+    "externalID" : "s:17GCDCoreOperations24OperationConditionResultO6failedyAcA0D5Error_pcACmF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -47,8 +48,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:17GCDCoreOperations17AnyConditionErrorP",
-        "text" : "AnyConditionError"
+        "preciseIdentifier" : "s:17GCDCoreOperations14ConditionErrorP",
+        "text" : "ConditionError"
       },
       {
         "kind" : "text",
@@ -93,10 +94,10 @@
               "text" : "("
             },
             {
-              "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
+              "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:17GCDCoreOperations17AnyConditionErrorP",
-              "text" : "AnyConditionError"
+              "preciseIdentifier" : "s:17GCDCoreOperations14ConditionErrorP",
+              "text" : "ConditionError"
             },
             {
               "kind" : "text",
@@ -141,18 +142,10 @@
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations"
 },
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/AnyConditionError": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/ConditionError": {
   "abstract" : [
     {
-      "text" : "An error representing a failed condition. This protocol is an implementation detail and should not be used directly. Use ",
-      "type" : "text"
-    },
-    {
-      "code" : "ConditionError",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " instead.",
+      "text" : "An error describing a failed condition.",
       "type" : "text"
     }
   ],
@@ -167,21 +160,55 @@
     },
     {
       "kind" : "identifier",
-      "text" : "AnyConditionError"
+      "text" : "ConditionError"
     }
   ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "AnyConditionError"
+      "text" : "ConditionError"
     }
   ],
   "role" : "symbol",
-  "title" : "AnyConditionError",
+  "title" : "ConditionError",
   "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/anyconditionerror"
+  "url" : "\/documentation\/gcdcoreoperations\/conditionerror"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationCondition": {
+  "abstract" : [
+    {
+      "text" : "A protocol for defining conditions that must be satisfied in order for an operation to begin execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OperationCondition"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationCondition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OperationCondition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OperationCondition",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationcondition"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationConditionResult": {
   "abstract" : [
@@ -190,19 +217,12 @@
       "type" : "text"
     },
     {
-      "code" : "OperationCondition",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationCondition",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
-      "text" : " was satisfied, or if it",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "failed with an error.",
+      "text" : " was satisfied, or if it failed with an error.",
       "type" : "text"
     }
   ],
@@ -240,8 +260,9 @@
       "type" : "text"
     },
     {
-      "code" : "ConditionError",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " describes what failure happened during evaluation.",
@@ -267,8 +288,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:17GCDCoreOperations17AnyConditionErrorP",
-      "text" : "AnyConditionError"
+      "preciseIdentifier" : "s:17GCDCoreOperations14ConditionErrorP",
+      "text" : "ConditionError"
     },
     {
       "kind" : "text",

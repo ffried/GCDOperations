@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Aggregates a collection of errors into the list of errors of this operation.",
+      "text" : "Cancels the operation with a list of errors (can be empty).",
       "type" : "text"
     }
   ],
@@ -15,11 +15,11 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-xrif"
+    "url" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-7asfv"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:17GCDCoreOperations9OperationC9aggregate6errorsyx_tSlRzs5Error7ElementRpzlF",
+    "externalID" : "s:17GCDCoreOperations9OperationC6cancel4withyx_tSlRzs5ErrorR_7ElementQzRs_r0_lF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -31,31 +31,24 @@
       },
       {
         "kind" : "identifier",
-        "text" : "aggregate"
+        "text" : "cancel"
       },
       {
         "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "genericParameter",
-        "text" : "Errors"
-      },
-      {
-        "kind" : "text",
-        "text" : ">("
+        "text" : "("
       },
       {
         "kind" : "externalParam",
-        "text" : "errors"
+        "text" : "with"
       },
       {
         "kind" : "text",
-        "text" : ": "
+        "text" : ": some "
       },
       {
         "kind" : "typeIdentifier",
-        "text" : "Errors"
+        "preciseIdentifier" : "s:Sl",
+        "text" : "Collection"
       },
       {
         "kind" : "text",
@@ -70,7 +63,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
-    "title" : "aggregate(errors:)"
+    "title" : "cancel(with:)"
   },
   "primaryContentSections" : [
     {
@@ -101,23 +94,15 @@
             },
             {
               "kind" : "identifier",
-              "text" : "aggregate"
+              "text" : "cancel"
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Errors"
-            },
-            {
-              "kind" : "text",
-              "text" : ">("
+              "text" : "("
             },
             {
               "kind" : "externalParam",
-              "text" : "errors"
+              "text" : "with"
             },
             {
               "kind" : "text",
@@ -125,35 +110,11 @@
             },
             {
               "kind" : "internalParam",
-              "text" : "newErrors"
+              "text" : "errors"
             },
             {
               "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Errors"
-            },
-            {
-              "kind" : "text",
-              "text" : ") "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "where"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Errors"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
+              "text" : ": some "
             },
             {
               "kind" : "typeIdentifier",
@@ -162,28 +123,7 @@
             },
             {
               "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Errors"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Element"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s5ErrorP",
-              "text" : "Error"
+              "text" : ")"
             }
           ]
         }
@@ -198,14 +138,14 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The collections of errors to aggregate.",
+                  "text" : "The errors to cancel with. Can be an empty collection.",
                   "type" : "text"
                 }
               ],
               "type" : "paragraph"
             }
           ],
-          "name" : "newErrors"
+          "name" : "errors"
         }
       ]
     }
@@ -221,7 +161,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-xrif"
+        "\/documentation\/gcdcoreoperations\/operation\/cancel(with:)-7asfv"
       ],
       "traits" : [
         {
@@ -313,10 +253,10 @@
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operation"
 },
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/aggregate(errors:)-xrif": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/cancel(with:)-7asfv": {
   "abstract" : [
     {
-      "text" : "Aggregates a collection of errors into the list of errors of this operation.",
+      "text" : "Cancels the operation with a list of errors (can be empty).",
       "type" : "text"
     }
   ],
@@ -331,43 +271,36 @@
     },
     {
       "kind" : "identifier",
-      "text" : "aggregate"
+      "text" : "cancel"
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Errors"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "("
     },
     {
       "kind" : "externalParam",
-      "text" : "errors"
+      "text" : "with"
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": some "
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Errors"
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
     },
     {
       "kind" : "text",
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-xrif",
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-7asfv",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "aggregate(errors:)",
+  "title" : "cancel(with:)",
   "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-xrif"
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/cancel(with:)-7asfv"
 }
 }
 }

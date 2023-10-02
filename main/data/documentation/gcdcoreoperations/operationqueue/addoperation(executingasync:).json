@@ -178,6 +178,25 @@
       "kind" : "declarations"
     },
     {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The block to execute.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "block"
+        }
+      ]
+    },
+    {
       "content" : [
         {
           "anchor" : "return-value",
@@ -198,23 +217,35 @@
       "kind" : "content"
     },
     {
-      "kind" : "parameters",
-      "parameters" : [
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
         {
           "content" : [
             {
               "inlineContent" : [
                 {
-                  "text" : "The block to execute.",
+                  "text" : "",
                   "type" : "text"
+                },
+                {
+                  "code" : "BlockOperation.init(asyncBlock:)",
+                  "type" : "codeVoice"
                 }
               ],
               "type" : "paragraph"
             }
           ],
-          "name" : "block"
+          "name" : "See Also",
+          "style" : "note",
+          "type" : "aside"
         }
-      ]
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -273,7 +304,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.finish(with:)",
+      "code" : "Operation\/finish(with:)",
       "type" : "codeVoice"
     },
     {
@@ -323,7 +354,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.finish(with:)",
+      "code" : "Operation\/finish(with:)",
       "type" : "codeVoice"
     },
     {

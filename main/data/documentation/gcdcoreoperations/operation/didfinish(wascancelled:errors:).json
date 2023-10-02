@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:17GCDCoreOperations9OperationC9didFinish12wasCancelled6errorsySb_Says5Error_pGtF",
+    "externalID" : "s:17GCDCoreOperations9OperationC9didFinish12wasCancelled6errorsySb_SayxGts5ErrorRzlF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -69,7 +69,7 @@
       },
       {
         "kind" : "text",
-        "text" : "<"
+        "text" : "<some "
       },
       {
         "kind" : "typeIdentifier",
@@ -150,7 +150,7 @@
             },
             {
               "kind" : "text",
-              "text" : "<"
+              "text" : "<some "
             },
             {
               "kind" : "typeIdentifier",
@@ -391,7 +391,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<some "
     },
     {
       "kind" : "typeIdentifier",

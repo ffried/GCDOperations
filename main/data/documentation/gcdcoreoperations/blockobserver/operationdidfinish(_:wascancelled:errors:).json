@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -19,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:17GCDCoreOperations13BlockObserverV18operationDidFinish_12wasCancelled6errorsyAA9OperationC_SbSays5Error_pGtF",
+    "externalID" : "s:17GCDCoreOperations13BlockObserverV18operationDidFinish_12wasCancelled6errorsyAA9OperationC_SbSayxGts5ErrorRzlF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -78,7 +72,7 @@
       },
       {
         "kind" : "text",
-        "text" : "<"
+        "text" : "<some "
       },
       {
         "kind" : "typeIdentifier",
@@ -193,7 +187,7 @@
             },
             {
               "kind" : "text",
-              "text" : "<"
+              "text" : "<some "
             },
             {
               "kind" : "typeIdentifier",
@@ -250,8 +244,9 @@
       "type" : "text"
     },
     {
-      "code" : "OperationObserver",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationObserver",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " implementation that executes blocks for each of the methods.",
@@ -287,10 +282,7 @@
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockObserver/operationDidFinish(_:wasCancelled:errors:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -350,7 +342,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<some "
     },
     {
       "kind" : "typeIdentifier",
@@ -438,6 +430,40 @@
   "title" : "Operation",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operation"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationObserver": {
+  "abstract" : [
+    {
+      "text" : "Describes a type that observers operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OperationObserver"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationObserver",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OperationObserver"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OperationObserver",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationobserver"
 }
 }
 }

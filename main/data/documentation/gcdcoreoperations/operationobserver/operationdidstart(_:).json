@@ -5,8 +5,9 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.execute()",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/execute()",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " method.",
@@ -228,6 +229,38 @@
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operation"
 },
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/execute()": {
+  "abstract" : [
+    {
+      "text" : "The main method of the operation. Subclasses should override this and perform their work.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "execute"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/execute()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "execute()",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/execute()"
+},
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationObserver": {
   "abstract" : [
     {
@@ -269,8 +302,9 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.execute()",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/execute()",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " method.",

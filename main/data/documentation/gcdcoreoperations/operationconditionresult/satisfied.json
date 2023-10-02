@@ -106,6 +106,40 @@
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations"
 },
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationCondition": {
+  "abstract" : [
+    {
+      "text" : "A protocol for defining conditions that must be satisfied in order for an operation to begin execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OperationCondition"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationCondition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OperationCondition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OperationCondition",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationcondition"
+},
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationConditionResult": {
   "abstract" : [
     {
@@ -113,19 +147,12 @@
       "type" : "text"
     },
     {
-      "code" : "OperationCondition",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationCondition",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
-      "text" : " was satisfied, or if it",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "failed with an error.",
+      "text" : " was satisfied, or if it failed with an error.",
       "type" : "text"
     }
   ],

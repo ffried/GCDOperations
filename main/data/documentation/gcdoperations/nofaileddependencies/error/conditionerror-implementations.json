@@ -142,10 +142,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies/Error/conditionName": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

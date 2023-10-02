@@ -5,8 +5,9 @@
       "type" : "text"
     },
     {
-      "code" : "Operation",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " finishes, along with whether it was cancelled and any errors produced during execution.",
@@ -27,7 +28,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:17GCDCoreOperations17OperationObserverP18operationDidFinish_12wasCancelled6errorsyAA0C0C_SbSays5Error_pGtF",
+    "externalID" : "s:17GCDCoreOperations17OperationObserverP18operationDidFinish_12wasCancelled6errorsyAA0C0C_SbSayqd__Gts5ErrorRd__lF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -86,7 +87,7 @@
       },
       {
         "kind" : "text",
-        "text" : "<"
+        "text" : "<some "
       },
       {
         "kind" : "typeIdentifier",
@@ -202,7 +203,7 @@
             },
             {
               "kind" : "text",
-              "text" : "<"
+              "text" : "<some "
             },
             {
               "kind" : "typeIdentifier",
@@ -363,8 +364,9 @@
       "type" : "text"
     },
     {
-      "code" : "Operation",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " finishes, along with whether it was cancelled and any errors produced during execution.",
@@ -429,7 +431,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<some "
     },
     {
       "kind" : "typeIdentifier",

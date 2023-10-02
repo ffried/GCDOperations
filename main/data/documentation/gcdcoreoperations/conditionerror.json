@@ -85,10 +85,9 @@
               "text" : "> : "
             },
             {
-              "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:17GCDCoreOperations17AnyConditionErrorP",
-              "text" : "AnyConditionError"
+              "preciseIdentifier" : "s:s5ErrorP",
+              "text" : "Error"
             }
           ]
         }
@@ -99,7 +98,6 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
         "doc:\/\/GCDCoreOperations\/s5ErrorP",
         "doc:\/\/GCDCoreOperations\/s8SendableP"
       ],
@@ -122,6 +120,12 @@
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError\/Condition"
       ],
       "title" : "Associated Types"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError\/conditionName"
+      ],
+      "title" : "Instance Properties"
     }
   ],
   "variants" : [
@@ -148,48 +152,6 @@
   "title" : "GCDCoreOperations",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations"
-},
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/AnyConditionError": {
-  "abstract" : [
-    {
-      "text" : "An error representing a failed condition. This protocol is an implementation detail and should not be used directly. Use ",
-      "type" : "text"
-    },
-    {
-      "code" : "ConditionError",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " instead.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "AnyConditionError"
-    }
-  ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "AnyConditionError"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "AnyConditionError",
-  "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/anyconditionerror"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/ConditionError": {
   "abstract" : [
@@ -262,6 +224,40 @@
   "title" : "Condition",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/conditionerror\/condition"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/ConditionError/conditionName": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "conditionName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError\/conditionName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "conditionName",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/conditionerror\/conditionname"
 },
 "doc://GCDCoreOperations/s5ErrorP": {
   "identifier" : "doc:\/\/GCDCoreOperations\/s5ErrorP",

@@ -5,8 +5,9 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.produce(_:)",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/produce(_:)",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " is executed.",
@@ -271,6 +272,55 @@
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operation"
 },
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/produce(_:)": {
+  "abstract" : [
+    {
+      "text" : "Produces a new operation. This notified all registered observers using the ",
+      "type" : "text"
+    },
+    {
+      "code" : "operation(_:didProduce:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " method.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "produce"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/produce(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "produce(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/produce(_:)"
+},
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationObserver": {
   "abstract" : [
     {
@@ -312,8 +362,9 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.produce(_:)",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/produce(_:)",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " is executed.",

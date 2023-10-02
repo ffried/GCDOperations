@@ -5,8 +5,9 @@
       "type" : "text"
     },
     {
-      "code" : "OperationObserver",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationObserver",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " implementation that executes blocks for each of the methods.",
@@ -155,8 +156,9 @@
       "type" : "text"
     },
     {
-      "code" : "OperationObserver",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationObserver",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " implementation that executes blocks for each of the methods.",
@@ -465,10 +467,7 @@
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockObserver/operation(_:didProduce:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -523,10 +522,7 @@
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockObserver/operationDidFinish(_:wasCancelled:errors:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -586,7 +582,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<some "
     },
     {
       "kind" : "typeIdentifier",
@@ -607,10 +603,7 @@
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockObserver/operationDidStart(_:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

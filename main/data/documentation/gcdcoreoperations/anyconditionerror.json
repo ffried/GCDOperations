@@ -1,16 +1,13 @@
 {
-  "abstract" : [
+  "deprecationSummary" : [
     {
-      "text" : "An error representing a failed condition. This protocol is an implementation detail and should not be used directly. Use ",
-      "type" : "text"
-    },
-    {
-      "code" : "ConditionError",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " instead.",
-      "type" : "text"
+      "inlineContent" : [
+        {
+          "text" : "Use any ConditionError instead",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
     }
   ],
   "hierarchy" : {
@@ -26,11 +23,11 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:17GCDCoreOperations17AnyConditionErrorP",
+    "externalID" : "s:17GCDCoreOperations17AnyConditionErrora",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "protocol"
+        "text" : "typealias"
       },
       {
         "kind" : "text",
@@ -52,9 +49,12 @@
         "text" : "AnyConditionError"
       }
     ],
+    "platforms" : [
+
+    ],
     "role" : "symbol",
-    "roleHeading" : "Protocol",
-    "symbolKind" : "protocol",
+    "roleHeading" : "Type Alias",
+    "symbolKind" : "typealias",
     "title" : "AnyConditionError"
   },
   "primaryContentSections" : [
@@ -70,7 +70,7 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "protocol"
+              "text" : "typealias"
             },
             {
               "kind" : "text",
@@ -82,36 +82,18 @@
             },
             {
               "kind" : "text",
-              "text" : " : "
+              "text" : " = "
             },
             {
+              "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s5ErrorP",
-              "text" : "Error"
+              "preciseIdentifier" : "s:17GCDCoreOperations14ConditionErrorP",
+              "text" : "ConditionError"
             }
           ]
         }
       ],
       "kind" : "declarations"
-    }
-  ],
-  "relationshipsSections" : [
-    {
-      "identifiers" : [
-        "doc:\/\/GCDCoreOperations\/s5ErrorP",
-        "doc:\/\/GCDCoreOperations\/s8SendableP"
-      ],
-      "kind" : "relationships",
-      "title" : "Inherits From",
-      "type" : "inheritsFrom"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError"
-      ],
-      "kind" : "relationships",
-      "title" : "Inherited By",
-      "type" : "inheritedBy"
     }
   ],
   "schemaVersion" : {
@@ -121,14 +103,6 @@
   },
   "sections" : [
 
-  ],
-  "topicSections" : [
-    {
-      "identifiers" : [
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError\/conditionName"
-      ],
-      "title" : "Instance Properties"
-    }
   ],
   "variants" : [
     {
@@ -157,23 +131,13 @@
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/AnyConditionError": {
   "abstract" : [
-    {
-      "text" : "An error representing a failed condition. This protocol is an implementation detail and should not be used directly. Use ",
-      "type" : "text"
-    },
-    {
-      "code" : "ConditionError",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " instead.",
-      "type" : "text"
-    }
+
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "protocol"
+      "text" : "typealias"
     },
     {
       "kind" : "text",
@@ -196,45 +160,6 @@
   "title" : "AnyConditionError",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/anyconditionerror"
-},
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/AnyConditionError/conditionName": {
-  "abstract" : [
-    {
-      "text" : "The name of the condition that failed.",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "conditionName"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    }
-  ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError\/conditionName",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "conditionName",
-  "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/anyconditionerror\/conditionname"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/ConditionError": {
   "abstract" : [
@@ -269,16 +194,6 @@
   "title" : "ConditionError",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/conditionerror"
-},
-"doc://GCDCoreOperations/s5ErrorP": {
-  "identifier" : "doc:\/\/GCDCoreOperations\/s5ErrorP",
-  "title" : "Swift.Error",
-  "type" : "unresolvable"
-},
-"doc://GCDCoreOperations/s8SendableP": {
-  "identifier" : "doc:\/\/GCDCoreOperations\/s8SendableP",
-  "title" : "Swift.Sendable",
-  "type" : "unresolvable"
 }
 }
 }

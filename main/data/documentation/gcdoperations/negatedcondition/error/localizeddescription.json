@@ -48,7 +48,10 @@
     ],
     "modules" : [
       {
-        "name" : "GCDOperations"
+        "name" : "GCDOperations",
+        "relatedModules" : [
+          "Swift"
+        ]
       }
     ],
     "role" : "symbol",

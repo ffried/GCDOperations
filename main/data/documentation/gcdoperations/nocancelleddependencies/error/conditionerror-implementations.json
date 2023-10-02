@@ -142,10 +142,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/NoCancelledDependencies/Error/conditionName": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

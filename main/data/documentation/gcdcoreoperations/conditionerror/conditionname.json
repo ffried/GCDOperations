@@ -1,16 +1,9 @@
 {
-  "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations",
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError\/conditionName"
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError"
       ]
     ]
   },
@@ -138,18 +131,10 @@
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations"
 },
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/AnyConditionError": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/ConditionError": {
   "abstract" : [
     {
-      "text" : "An error representing a failed condition. This protocol is an implementation detail and should not be used directly. Use ",
-      "type" : "text"
-    },
-    {
-      "code" : "ConditionError",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " instead.",
+      "text" : "An error describing a failed condition.",
       "type" : "text"
     }
   ],
@@ -164,67 +149,25 @@
     },
     {
       "kind" : "identifier",
-      "text" : "AnyConditionError"
+      "text" : "ConditionError"
     }
   ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError",
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/ConditionError",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "AnyConditionError"
+      "text" : "ConditionError"
     }
   ],
   "role" : "symbol",
-  "title" : "AnyConditionError",
+  "title" : "ConditionError",
   "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/anyconditionerror"
-},
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/AnyConditionError/conditionName": {
-  "abstract" : [
-    {
-      "text" : "The name of the condition that failed.",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "conditionName"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    }
-  ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/AnyConditionError\/conditionName",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "conditionName",
-  "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/anyconditionerror\/conditionname"
+  "url" : "\/documentation\/gcdcoreoperations\/conditionerror"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/ConditionError/conditionName": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

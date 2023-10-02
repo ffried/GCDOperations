@@ -379,19 +379,12 @@
       "type" : "text"
     },
     {
-      "code" : "OperationCondition",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationCondition",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
-      "text" : " was satisfied, or if it",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "failed with an error.",
+      "text" : " was satisfied, or if it failed with an error.",
       "type" : "text"
     }
   ],

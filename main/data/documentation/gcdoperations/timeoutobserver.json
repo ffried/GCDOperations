@@ -9,7 +9,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation",
+      "code" : "GCDOperation",
       "type" : "codeVoice"
     },
     {
@@ -172,7 +172,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation",
+      "code" : "GCDOperation",
       "type" : "codeVoice"
     },
     {
@@ -284,10 +284,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/TimeoutObserver/operation(_:didProduce:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -342,10 +339,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/TimeoutObserver/operationDidFinish(_:wasCancelled:errors:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -396,7 +390,16 @@
     },
     {
       "kind" : "text",
-      "text" : ": ["
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<some "
     },
     {
       "kind" : "typeIdentifier",
@@ -405,7 +408,7 @@
     },
     {
       "kind" : "text",
-      "text" : "])"
+      "text" : ">)"
     }
   ],
   "identifier" : "doc:\/\/GCDOperations\/documentation\/GCDOperations\/TimeoutObserver\/operationDidFinish(_:wasCancelled:errors:)",
@@ -417,10 +420,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/TimeoutObserver/operationDidStart(_:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

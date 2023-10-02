@@ -97,7 +97,7 @@
               },
               {
                 "path" : "\/documentation\/gcdcoreoperations\/groupoperation\/addoperations(_:)-soqj",
-                "title" : "func addOperations<Operations>(Operations)",
+                "title" : "func addOperations(some Collection<Operation>)",
                 "type" : "method"
               },
               {
@@ -186,7 +186,12 @@
               },
               {
                 "path" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(error:)",
-                "title" : "func aggregate(error: Error)",
+                "title" : "func aggregate(error: some Error)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-23wy6",
+                "title" : "func aggregate(errors: some Collection)",
                 "type" : "method"
               },
               {
@@ -195,13 +200,8 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-xrif",
-                "title" : "func aggregate<Errors>(errors: Errors)",
-                "type" : "method"
-              },
-              {
-                "path" : "\/documentation\/gcdcoreoperations\/operation\/cancel(with:)-sadv",
-                "title" : "func cancel<Errors>(with: Errors)",
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/cancel(with:)-7asfv",
+                "title" : "func cancel(with: some Collection)",
                 "type" : "method"
               },
               {
@@ -211,7 +211,7 @@
               },
               {
                 "path" : "\/documentation\/gcdcoreoperations\/operation\/didfinish(wascancelled:errors:)",
-                "title" : "func didFinish(wasCancelled: Bool, errors: Array<Error>)",
+                "title" : "func didFinish(wasCancelled: Bool, errors: Array<some Error>)",
                 "type" : "method"
               },
               {
@@ -225,8 +225,8 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/gcdcoreoperations\/operation\/finish(with:)-3vmzx",
-                "title" : "func finish<Errors>(with: Errors)",
+                "path" : "\/documentation\/gcdcoreoperations\/operation\/finish(with:)-64rt8",
+                "title" : "func finish(with: some Collection)",
                 "type" : "method"
               },
               {
@@ -238,26 +238,6 @@
                 "path" : "\/documentation\/gcdcoreoperations\/operation\/removedependency(_:)",
                 "title" : "func removeDependency(Operation)",
                 "type" : "method"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/gcdcoreoperations\/operation\/halfwidthcornerquoted",
-                    "title" : "var halfWidthCornerQuoted: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/gcdcoreoperations\/operation\/customstringconvertible-implementations",
-                "title" : "CustomStringConvertible Implementations",
-                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/gcdcoreoperations\/operation",
@@ -354,35 +334,6 @@
           {
             "children" : [
               {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "children" : [
-                      {
-                        "path" : "\/documentation\/gcdcoreoperations\/conditionerror\/conditionname",
-                        "title" : "var conditionName: String",
-                        "type" : "property"
-                      }
-                    ],
-                    "title" : "ConditionError Implementations",
-                    "type" : "groupMarker"
-                  }
-                ],
-                "path" : "\/documentation\/gcdcoreoperations\/anyconditionerror\/conditionname",
-                "title" : "var conditionName: String",
-                "type" : "property"
-              }
-            ],
-            "path" : "\/documentation\/gcdcoreoperations\/anyconditionerror",
-            "title" : "AnyConditionError",
-            "type" : "protocol"
-          },
-          {
-            "children" : [
-              {
                 "title" : "Associated Types",
                 "type" : "groupMarker"
               },
@@ -390,6 +341,15 @@
                 "path" : "\/documentation\/gcdcoreoperations\/conditionerror\/condition",
                 "title" : "Condition",
                 "type" : "associatedtype"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/gcdcoreoperations\/conditionerror\/conditionname",
+                "title" : "var conditionName: String",
+                "type" : "property"
               }
             ],
             "path" : "\/documentation\/gcdcoreoperations\/conditionerror",
@@ -444,7 +404,7 @@
               },
               {
                 "path" : "\/documentation\/gcdcoreoperations\/operationobserver\/operationdidfinish(_:wascancelled:errors:)",
-                "title" : "func operationDidFinish(Operation, wasCancelled: Bool, errors: Array<Error>)",
+                "title" : "func operationDidFinish(Operation, wasCancelled: Bool, errors: Array<some Error>)",
                 "type" : "method"
               },
               {
@@ -493,7 +453,7 @@
               },
               {
                 "path" : "\/documentation\/gcdcoreoperations\/blockobserver\/operationdidfinish(_:wascancelled:errors:)",
-                "title" : "func operationDidFinish(Operation, wasCancelled: Bool, errors: Array<Error>)",
+                "title" : "func operationDidFinish(Operation, wasCancelled: Bool, errors: Array<some Error>)",
                 "type" : "method"
               },
               {
@@ -509,6 +469,11 @@
           {
             "title" : "Type Aliases",
             "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/gcdcoreoperations\/anyconditionerror",
+            "title" : "AnyConditionError",
+            "type" : "typealias"
           },
           {
             "path" : "\/documentation\/gcdcoreoperations\/gcdblockoperation",
@@ -542,7 +507,7 @@
               },
               {
                 "path" : "\/documentation\/gcdcoreoperations\/operationconditionresult\/failed(_:)",
-                "title" : "case failed(AnyConditionError)",
+                "title" : "case failed(ConditionError)",
                 "type" : "case"
               },
               {
@@ -565,6 +530,6 @@
   "schemaVersion" : {
     "major" : 0,
     "minor" : 1,
-    "patch" : 0
+    "patch" : 1
   }
 }

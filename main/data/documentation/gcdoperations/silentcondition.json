@@ -266,10 +266,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/SilentCondition/dependency(for:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -324,10 +321,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/SilentCondition/evaluate(for:completion:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -430,10 +424,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/SilentCondition/isMutuallyExclusive": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -475,10 +466,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/SilentCondition/name": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

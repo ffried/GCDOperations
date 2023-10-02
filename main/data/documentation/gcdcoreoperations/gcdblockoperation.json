@@ -148,7 +148,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.finish(with:)",
+      "code" : "Operation\/finish(with:)",
       "type" : "codeVoice"
     },
     {

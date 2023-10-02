@@ -21,7 +21,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.finish(with:)",
+      "code" : "Operation\/finish(with:)",
       "type" : "codeVoice"
     },
     {
@@ -208,7 +208,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.finish(with:)",
+      "code" : "Operation\/finish(with:)",
       "type" : "codeVoice"
     },
     {
@@ -258,7 +258,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.finish(with:)",
+      "code" : "Operation\/finish(with:)",
       "type" : "codeVoice"
     },
     {
@@ -329,10 +329,7 @@
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockOperation/execute()": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

@@ -302,23 +302,25 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Operations"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "(some "
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Operations"
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:17GCDCoreOperations9OperationC",
+      "text" : "Operation"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
     }
   ],
   "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/GroupOperation\/addOperations(_:)-soqj",
@@ -330,10 +332,7 @@
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/GroupOperation/execute()": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

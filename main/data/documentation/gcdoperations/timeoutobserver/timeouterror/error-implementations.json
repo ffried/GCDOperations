@@ -75,7 +75,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation",
+      "code" : "GCDOperation",
       "type" : "codeVoice"
     },
     {

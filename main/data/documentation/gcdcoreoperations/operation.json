@@ -334,25 +334,18 @@
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/addDependency(_:)",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/addObserver(_:)",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(error:)",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-23wy6",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-8md39",
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-xrif",
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-sadv",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-7asfv",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-zk5m",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/didFinish(wasCancelled:errors:)",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/execute()",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/finish(with:)-1uh3t",
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/finish(with:)-3vmzx",
+        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/finish(with:)-64rt8",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/produce(_:)",
         "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/removeDependency(_:)"
       ],
       "title" : "Instance Methods"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/CustomStringConvertible-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -403,7 +396,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation.finish(with:)",
+      "code" : "Operation\/finish(with:)",
       "type" : "codeVoice"
     },
     {
@@ -541,17 +534,6 @@
   "title" : "Operation",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operation"
-},
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/CustomStringConvertible-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/CustomStringConvertible-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "CustomStringConvertible Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/operation\/customstringconvertible-implementations"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/addCondition(_:)": {
   "abstract" : [
@@ -752,7 +734,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": some "
     },
     {
       "kind" : "typeIdentifier",
@@ -770,6 +752,55 @@
   "title" : "aggregate(error:)",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(error:)"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/aggregate(errors:)-23wy6": {
+  "abstract" : [
+    {
+      "text" : "Aggregates a collection of errors into the list of errors of this operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "aggregate"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "errors"
+    },
+    {
+      "kind" : "text",
+      "text" : ": some "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-23wy6",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "aggregate(errors:)",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-23wy6"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/aggregate(errors:)-8md39": {
   "abstract" : [
@@ -820,63 +851,7 @@
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-8md39"
 },
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/aggregate(errors:)-xrif": {
-  "abstract" : [
-    {
-      "text" : "Aggregates a collection of errors into the list of errors of this operation.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "aggregate"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Errors"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "errors"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Errors"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/aggregate(errors:)-xrif",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "aggregate(errors:)",
-  "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/operation\/aggregate(errors:)-xrif"
-},
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/cancel(with:)-sadv": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/cancel(with:)-7asfv": {
   "abstract" : [
     {
       "text" : "Cancels the operation with a list of errors (can be empty).",
@@ -898,15 +873,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Errors"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "("
     },
     {
       "kind" : "externalParam",
@@ -914,23 +881,24 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": some "
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Errors"
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
     },
     {
       "kind" : "text",
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-sadv",
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/cancel(with:)-7asfv",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "cancel(with:)",
   "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/operation\/cancel(with:)-sadv"
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/cancel(with:)-7asfv"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/cancel(with:)-zk5m": {
   "abstract" : [
@@ -1202,7 +1170,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<some "
     },
     {
       "kind" : "typeIdentifier",
@@ -1349,7 +1317,7 @@
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operation\/finish(with:)-1uh3t"
 },
-"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/finish(with:)-3vmzx": {
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/finish(with:)-64rt8": {
   "abstract" : [
     {
       "text" : "Finishes the operation with a list of errors (can be empty).",
@@ -1371,15 +1339,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Errors"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "("
     },
     {
       "kind" : "externalParam",
@@ -1387,23 +1347,24 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": some "
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Errors"
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
     },
     {
       "kind" : "text",
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/finish(with:)-3vmzx",
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/Operation\/finish(with:)-64rt8",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "finish(with:)",
   "type" : "topic",
-  "url" : "\/documentation\/gcdcoreoperations\/operation\/finish(with:)-3vmzx"
+  "url" : "\/documentation\/gcdcoreoperations\/operation\/finish(with:)-64rt8"
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/Operation/init()": {
   "abstract" : [

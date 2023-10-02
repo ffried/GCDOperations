@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -199,8 +193,9 @@
       "type" : "text"
     },
     {
-      "code" : "OperationObserver",
-      "type" : "codeVoice"
+      "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationObserver",
+      "isActive" : true,
+      "type" : "reference"
     },
     {
       "text" : " implementation that executes blocks for each of the methods.",
@@ -236,10 +231,7 @@
 },
 "doc://GCDCoreOperations/documentation/GCDCoreOperations/BlockObserver/operation(_:didProduce:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -361,6 +353,40 @@
   "title" : "Operation",
   "type" : "topic",
   "url" : "\/documentation\/gcdcoreoperations\/operation"
+},
+"doc://GCDCoreOperations/documentation/GCDCoreOperations/OperationObserver": {
+  "abstract" : [
+    {
+      "text" : "Describes a type that observers operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OperationObserver"
+    }
+  ],
+  "identifier" : "doc:\/\/GCDCoreOperations\/documentation\/GCDCoreOperations\/OperationObserver",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OperationObserver"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OperationObserver",
+  "type" : "topic",
+  "url" : "\/documentation\/gcdcoreoperations\/operationobserver"
 }
 }
 }

@@ -345,10 +345,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/DelayOperation/execute()": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

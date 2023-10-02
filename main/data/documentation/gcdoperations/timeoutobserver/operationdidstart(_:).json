@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -159,7 +153,7 @@
       "type" : "text"
     },
     {
-      "code" : "Operation",
+      "code" : "GCDOperation",
       "type" : "codeVoice"
     },
     {
@@ -196,10 +190,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/TimeoutObserver/operationDidStart(_:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

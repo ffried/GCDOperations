@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -48,7 +42,10 @@
     ],
     "modules" : [
       {
-        "name" : "GCDOperations"
+        "name" : "GCDOperations",
+        "relatedModules" : [
+          "GCDCoreOperations"
+        ]
       }
     ],
     "role" : "symbol",
@@ -228,10 +225,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/NoFailedDependencies/Error/conditionName": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

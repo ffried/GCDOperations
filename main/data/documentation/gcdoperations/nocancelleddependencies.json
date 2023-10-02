@@ -241,10 +241,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/NoCancelledDependencies/dependency(for:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -299,10 +296,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/NoCancelledDependencies/evaluate(for:completion:)": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -389,10 +383,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/NoCancelledDependencies/isMutuallyExclusive": {
   "abstract" : [
-    {
-      "text" : "inherited.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -434,10 +425,7 @@
 },
 "doc://GCDOperations/documentation/GCDOperations/NoCancelledDependencies/name": {
   "abstract" : [
-    {
-      "text" : "inherited",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
